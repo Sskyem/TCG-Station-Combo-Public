@@ -1,0 +1,59 @@
+{
+    "deckName": "Kingambit",
+    "cards": [
+        {
+            "deckCardID": 251,
+            "cardId": "kingambit_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 250,
+            "cardId": "bisharp_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 249,
+            "cardId": "pawniard_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 161,
+            "cardId": "wigglytuff_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 160,
+            "cardId": "jigglypuff_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 223,
+            "cardId": "skarmory_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Metal",
+        "Darkness"
+    ]
+}

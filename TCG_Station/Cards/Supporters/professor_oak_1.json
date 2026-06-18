@@ -1,0 +1,16 @@
+{
+    "cardName": "Professor Oak",
+    "cardId": "professor_oak_1",
+    "imageName": "professor oak_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Supporter",
+    "deckCardId": 131,
+    "effectDescription": "Draw 2 cards.",
+    "effects": [
+        {
+            "cardEffectType": "DrawCard",
+            "cardEffectTarget": "Self",
+            "effectAmount": 2
+        }
+    ]
+}

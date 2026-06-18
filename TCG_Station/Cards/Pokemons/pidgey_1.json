@@ -1,0 +1,23 @@
+{
+    "cardName": "Pidgey",
+    "cardId": "pidgey_1",
+    "imageName": "pidgey_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 115,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Peck",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

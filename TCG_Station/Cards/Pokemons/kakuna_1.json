@@ -1,0 +1,39 @@
+{
+    "cardName": "Kakuna",
+    "cardId": "kakuna_1",
+    "imageName": "kakuna_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 163,
+    "stage": 1,
+    "evolvesFrom": "Weedle",
+    "hp": 160,
+    "type": "Grass",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Shed Skin",
+            "damage": 0,
+            "attackDescription": "Heal 30 damage from this Pokemon. During your opponent's next turn, this Pokemon takes 30 less damage from attacks. This Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

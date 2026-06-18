@@ -1,0 +1,35 @@
+{
+    "cardName": "Magcargo",
+    "cardId": "magcargo_1",
+    "imageName": "magcargo_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 57,
+    "stage": 1,
+    "evolvesFrom": "Slugma",
+    "hp": 190,
+    "type": "Fire",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Magma Mantle",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 50 less damage from attacks. Your opponent's Active Pokemon is now Burned.",
+            "attackCost": [
+                "Fire",
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 50
+                },
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

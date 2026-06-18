@@ -1,0 +1,24 @@
+{
+    "cardName": "Gabite",
+    "cardId": "gabite_1",
+    "imageName": "gabite_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 119,
+    "stage": 1,
+    "evolvesFrom": "Gible",
+    "hp": 120,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Slash",
+            "damage": 80,
+            "attackDescription": "",
+            "attackCost": [
+                "Water",
+                "Fighting"
+            ],
+            "effects": []
+        }
+    ]
+}

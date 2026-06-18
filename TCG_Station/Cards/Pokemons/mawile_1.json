@@ -1,0 +1,35 @@
+{
+    "cardName": "Mawile",
+    "cardId": "mawile_1",
+    "imageName": "mawile_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 86,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Metal",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Metal Crunch",
+            "damage": 10,
+            "attackDescription": "This attack does 10 more damage for each Energy on this Pokemon. Heal from this Pokemon the same amount of damage you did to your opponent's Pokemon.",
+            "attackCost": [
+                "Metal",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "LeechLife",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

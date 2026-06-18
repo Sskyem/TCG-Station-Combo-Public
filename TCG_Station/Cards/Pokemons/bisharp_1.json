@@ -1,0 +1,30 @@
+{
+    "cardName": "Bisharp",
+    "cardId": "bisharp_1",
+    "imageName": "bisharp_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 250,
+    "stage": 1,
+    "evolvesFrom": "Pawniard",
+    "hp": 120,
+    "type": "Metal",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Sharp Blades",
+            "damage": 60,
+            "attackDescription": "During your opponent's next turn, if this Pokemon is damaged by an attack, do 20 damage to the attacking Pokemon.",
+            "attackCost": [
+                "Darkness",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

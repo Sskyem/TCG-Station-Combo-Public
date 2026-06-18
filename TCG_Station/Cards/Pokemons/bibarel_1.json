@@ -1,0 +1,24 @@
+{
+    "cardName": "Bibarel",
+    "cardId": "bibarel_1",
+    "imageName": "bibarel_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 185,
+    "stage": 1,
+    "evolvesFrom": "Bidoof",
+    "hp": 170,
+    "type": "Colorless",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Tail Smash",
+            "damage": 70,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

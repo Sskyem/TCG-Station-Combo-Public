@@ -1,0 +1,30 @@
+{
+    "cardName": "Duraludon",
+    "cardId": "duraludon_1",
+    "imageName": "duraludon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 187,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 180,
+    "type": "Dragon",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Breaking Swipe",
+            "damage": 60,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 20 less damage from attacks.",
+            "attackCost": [
+                "Fighting",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

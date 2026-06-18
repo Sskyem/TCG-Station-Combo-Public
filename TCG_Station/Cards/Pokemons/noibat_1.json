@@ -1,0 +1,29 @@
+{
+    "cardName": "Noibat",
+    "cardId": "noibat_1",
+    "imageName": "noibat_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 30,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "U-Turn",
+            "damage": 20,
+            "attackDescription": "Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

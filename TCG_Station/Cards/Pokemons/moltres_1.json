@@ -1,0 +1,35 @@
+{
+    "cardName": "Moltres",
+    "cardId": "moltres_1",
+    "imageName": "moltres_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 33,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Fire",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Inferno Dance",
+            "damage": 0,
+            "attackDescription": "Take 2 Energy and put it on 1 of your Benched Pokemon. Your opponent's Active Pokemon is now Burned.",
+            "attackCost": [
+                "Fire",
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

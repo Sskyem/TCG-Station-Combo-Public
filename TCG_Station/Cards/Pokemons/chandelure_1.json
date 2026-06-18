@@ -1,0 +1,36 @@
+{
+    "cardName": "Chandelure",
+    "cardId": "chandelure_1",
+    "imageName": "chandelure_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 94,
+    "stage": 2,
+    "evolvesFrom": "Lampent",
+    "hp": 160,
+    "type": "Psychic",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Ominous Flame",
+            "damage": 50,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed and Burned.",
+            "attackCost": [
+                "Psychic",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

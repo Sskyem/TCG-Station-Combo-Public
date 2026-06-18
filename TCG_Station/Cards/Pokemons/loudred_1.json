@@ -1,0 +1,29 @@
+{
+    "cardName": "Loudred",
+    "cardId": "loudred_1",
+    "imageName": "loudred_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 199,
+    "stage": 1,
+    "evolvesFrom": "Whismur",
+    "hp": 140,
+    "type": "Colorless",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Hyper Voice",
+            "damage": 60,
+            "attackDescription": "Discard 1 random Energy from this Pokemon.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

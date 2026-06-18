@@ -1,0 +1,36 @@
+{
+    "cardName": "Drapion",
+    "cardId": "drapion_1",
+    "imageName": "drapion_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 225,
+    "stage": 1,
+    "evolvesFrom": "Skorupi",
+    "hp": 190,
+    "type": "Darkness",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Hazardous Tail",
+            "damage": 110,
+            "attackDescription": "This Pokemon also does 30 damage to itself. Your opponent's Active Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Darkness",
+                "Darkness",
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

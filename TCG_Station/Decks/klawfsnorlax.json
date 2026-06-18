@@ -1,0 +1,58 @@
+{
+    "deckName": "KlawfSnorlax",
+    "cards": [
+        {
+            "deckCardID": 48,
+            "cardId": "mankey_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 177,
+            "cardId": "klawf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 16,
+            "cardId": "snorlax_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 49,
+            "cardId": "primeape_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 136,
+            "cardId": "poke_pill_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 46,
+            "cardId": "cubone_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 47,
+            "cardId": "marowak_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fighting"
+    ]
+}

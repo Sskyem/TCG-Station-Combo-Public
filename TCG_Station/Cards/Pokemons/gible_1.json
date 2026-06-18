@@ -1,0 +1,23 @@
+{
+    "cardName": "Gible",
+    "cardId": "gible_1",
+    "imageName": "gible_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 118,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Gnaw",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

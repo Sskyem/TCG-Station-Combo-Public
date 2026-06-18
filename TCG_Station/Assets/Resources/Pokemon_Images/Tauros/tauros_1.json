@@ -1,0 +1,35 @@
+{
+    "cardName": "Tauros",
+    "cardId": "tauros_1",
+    "imageName": "tauros_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 51,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Fighting",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Raging Horns",
+            "damage": 60,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 20 more damage from attacks. Your opponent's Active Pokemon is now Exposed.",
+            "attackCost": [
+                "Fighting",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": -20
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

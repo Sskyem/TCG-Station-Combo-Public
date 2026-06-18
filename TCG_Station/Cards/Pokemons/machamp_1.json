@@ -1,0 +1,31 @@
+{
+    "cardName": "Machamp",
+    "cardId": "machamp_1",
+    "imageName": "machamp_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 174,
+    "stage": 2,
+    "evolvesFrom": "Machoke",
+    "hp": 220,
+    "type": "Fighting",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Overpower",
+            "damage": 30,
+            "attackDescription": "This attack triggers 4 times.",
+            "attackCost": [
+                "Fighting",
+                "Fighting",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 4
+                }
+            ]
+        }
+    ]
+}

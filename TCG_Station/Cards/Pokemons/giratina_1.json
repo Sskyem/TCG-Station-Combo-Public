@@ -1,0 +1,36 @@
+{
+    "cardName": "Giratina",
+    "cardId": "giratina_1",
+    "imageName": "giratina_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 40,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Psychic",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Chaotic Impact",
+            "damage": 90,
+            "attackDescription": "This attack also does 20 damage to all of your Benched Pokemon. This attack also does 20 damage to all your opponent's Benched Pokemon.",
+            "attackCost": [
+                "Psychic",
+                "Psychic",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

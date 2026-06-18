@@ -1,0 +1,58 @@
+{
+    "deckName": "Venusaur Butterfree",
+    "cards": [
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 192,
+            "cardId": "tropius_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 79,
+            "cardId": "caterpie_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 80,
+            "cardId": "metapod_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 81,
+            "cardId": "butterfree_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 1,
+            "cardId": "bulbasaur_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 2,
+            "cardId": "ivysaur_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 3,
+            "cardId": "venusaur_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Grass"
+    ]
+}

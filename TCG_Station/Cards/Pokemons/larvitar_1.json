@@ -1,0 +1,23 @@
+{
+    "cardName": "Larvitar",
+    "cardId": "larvitar_1",
+    "imageName": "larvitar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 208,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Confront",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

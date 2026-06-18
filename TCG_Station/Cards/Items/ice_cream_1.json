@@ -1,0 +1,21 @@
+{
+    "cardName": "Ice Cream",
+    "cardId": "ice_cream_1",
+    "imageName": "ice cream_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Item",
+    "deckCardId": 138,
+    "effectDescription": "Heal 50 damage from your Active Pokemon. Your Active Pokemon is now Slowed.",
+    "effects": [
+        {
+            "cardEffectType": "Heal",
+            "cardEffectTarget": "Self",
+            "effectAmount": 50
+        },
+        {
+            "cardEffectType": "Slow",
+            "cardEffectTarget": "Self",
+            "effectAmount": 1
+        }
+    ]
+}

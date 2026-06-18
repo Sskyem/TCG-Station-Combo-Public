@@ -1,0 +1,23 @@
+{
+    "cardName": "Pawniard",
+    "cardId": "pawniard_1",
+    "imageName": "pawniard_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 249,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Metal",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Cut",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

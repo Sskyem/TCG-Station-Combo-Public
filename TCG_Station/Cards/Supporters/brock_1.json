@@ -1,0 +1,21 @@
+{
+    "cardName": "Brock",
+    "cardId": "brock_1",
+    "imageName": "brock_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Supporter",
+    "deckCardId": 139,
+    "effectDescription": "During your opponent's next turn, your Active Pokemon takes 30 less damage from attacks. Draw 1 cards.",
+    "effects": [
+        {
+            "cardEffectType": "DmgTakenRed",
+            "cardEffectTarget": "Self",
+            "effectAmount": 30
+        },
+        {
+            "cardEffectType": "DrawCard",
+            "cardEffectTarget": "Self",
+            "effectAmount": 1
+        }
+    ]
+}

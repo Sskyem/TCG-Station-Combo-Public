@@ -1,0 +1,58 @@
+{
+    "deckName": "DarkStageOnes",
+    "cards": [
+        {
+            "deckCardID": 201,
+            "cardId": "grimer_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 113,
+            "cardId": "gulpin_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 114,
+            "cardId": "swalot_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 202,
+            "cardId": "muk_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 224,
+            "cardId": "skorupi_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 225,
+            "cardId": "drapion_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Darkness"
+    ]
+}

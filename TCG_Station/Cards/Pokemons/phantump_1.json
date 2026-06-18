@@ -1,0 +1,30 @@
+{
+    "cardName": "Phantump",
+    "cardId": "phantump_1",
+    "imageName": "phantump_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 231,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 100,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Leech Seed",
+            "damage": 30,
+            "attackDescription": "Heal from this Pokemon the same amount of damage you did to your opponent's Pokemon.",
+            "attackCost": [
+                "Psychic",
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "LeechLife",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

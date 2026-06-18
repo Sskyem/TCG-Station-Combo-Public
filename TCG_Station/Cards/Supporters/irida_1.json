@@ -1,0 +1,21 @@
+{
+    "cardName": "Irida",
+    "cardId": "irida_1",
+    "imageName": "irida_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Supporter",
+    "deckCardId": 130,
+    "effectDescription": "Heal 30 damage from your Active Pokemon. Heal 30 from all your Benched Pokemon.",
+    "effects": [
+        {
+            "cardEffectType": "Heal",
+            "cardEffectTarget": "Self",
+            "effectAmount": 30
+        },
+        {
+            "cardEffectType": "BenchHeal",
+            "cardEffectTarget": "Self",
+            "effectAmount": 30
+        }
+    ]
+}

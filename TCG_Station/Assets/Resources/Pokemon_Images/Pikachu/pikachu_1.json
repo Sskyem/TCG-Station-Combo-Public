@@ -1,0 +1,29 @@
+{
+    "cardName": "Pikachu",
+    "cardId": "pikachu_1",
+    "imageName": "pikachu_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 73,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Spark",
+            "damage": 10,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Lightning"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

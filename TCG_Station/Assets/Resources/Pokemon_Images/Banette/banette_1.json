@@ -1,0 +1,34 @@
+{
+    "cardName": "Banette",
+    "cardId": "banette_1",
+    "imageName": "banette_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 72,
+    "stage": 1,
+    "evolvesFrom": "Shuppet",
+    "hp": 150,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Poltergeist",
+            "damage": 30,
+            "attackDescription": "Discard 1 cards. If you can't, this does nothing. Your opponent's Active Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Psychic"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DiscardHand",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

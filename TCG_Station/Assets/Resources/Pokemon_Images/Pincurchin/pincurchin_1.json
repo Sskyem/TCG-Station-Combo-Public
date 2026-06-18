@@ -1,0 +1,30 @@
+{
+    "cardName": "Pincurchin",
+    "cardId": "pincurchin_1",
+    "imageName": "pincurchin_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 99,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Lightning",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Needle Rush",
+            "damage": 20,
+            "attackDescription": "During your opponent's next turn, if this Pokemon is damaged by an attack, do 20 damage to the attacking Pokemon. Draw 1 cards.",
+            "attackCost": [
+                "Lightning",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

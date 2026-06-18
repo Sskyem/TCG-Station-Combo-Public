@@ -1,0 +1,29 @@
+{
+    "cardName": "Jigglypuff",
+    "cardId": "jigglypuff_1",
+    "imageName": "jigglypuff_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 160,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Sleepy Song",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Asleep.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

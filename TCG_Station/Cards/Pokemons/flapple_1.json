@@ -1,0 +1,30 @@
+{
+    "cardName": "Flapple",
+    "cardId": "flapple_1",
+    "imageName": "flapple_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 109,
+    "stage": 1,
+    "evolvesFrom": "Applin",
+    "hp": 140,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Apple Drop",
+            "damage": 50,
+            "attackDescription": "This attack does 10 more damage for each Energy on this Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,173 @@
+{
+  "_profilesHelp": "Each participant is { \"deck\", \"profile\" }. Valid profile values: Standard, Ramp, TempoAggro, ControlStatus, HealStall, Auto (Auto = detect the deck archetype). Edit a participant's \"profile\" to test a different weight set.",
+  "runEnabled": true,
+  "matchesPerPairing": 10,
+  "swapSeats": true,
+  "includeMirror": false,
+  "randomizeScheduleOrder": true,
+  "autoDetectProfilesByDeck": true,
+  "fastMode": true,
+  "matchWatchdogSeconds": 180.0,
+  "stopOnFinish": true,
+  "participants": [
+    {
+      "deck": "Annihilape",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Banette",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Blastoise",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Charizard Ramp",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Crobat",
+      "profile": "Auto"
+    },
+    {
+      "deck": "DarkStageOnes",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Dragapult",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Durant",
+      "profile": "Auto"
+    },
+    {
+      "deck": "FireAggro",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Flygon",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Frosmoth Stall",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Garchomp",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Gengar",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Goodra Hypno",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Heatran",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Hydrapple",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Hydreigon",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Kammo-o",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Kingambit",
+      "profile": "Auto"
+    },
+    {
+      "deck": "KlawfSnorlax",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Kyurem",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Lanturn",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Leafdrain",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Machamp",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Metagross Ramp",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Miraidon",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Noivern",
+      "profile": "Auto"
+    },
+    {
+      "deck": "PoisonFish",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Rayquaza",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Salamence",
+      "profile": "Auto"
+    },
+    {
+      "deck": "SlowBurn",
+      "profile": "Auto"
+    },
+    {
+      "deck": "SteelixRamp",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Tinkaton",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Trevenant",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Tyranitar",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Venusaur Butterfree",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Vikavolt",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Zapdos",
+      "profile": "Auto"
+    },
+    {
+      "deck": "Zekrom",
+      "profile": "Auto"
+    }
+  ],
+  "algorithmProfiles": [
+    "Standard"
+  ]
+}

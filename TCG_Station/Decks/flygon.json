@@ -1,0 +1,59 @@
+{
+    "deckName": "Flygon",
+    "cards": [
+        {
+            "deckCardID": 153,
+            "cardId": "trapinch_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 154,
+            "cardId": "vibrava_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 155,
+            "cardId": "flygon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 79,
+            "cardId": "caterpie_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 80,
+            "cardId": "metapod_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 81,
+            "cardId": "butterfree_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Grass",
+        "Fighting"
+    ]
+}

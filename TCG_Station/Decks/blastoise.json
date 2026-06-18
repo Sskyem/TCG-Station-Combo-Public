@@ -1,0 +1,68 @@
+{
+    "deckName": "Blastoise",
+    "cards": [
+        {
+            "deckCardID": 64,
+            "cardId": "lapras_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 9,
+            "cardId": "blastoise_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 200,
+            "cardId": "exploud_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 199,
+            "cardId": "loudred_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 8,
+            "cardId": "wartortle_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 7,
+            "cardId": "squirtle_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 198,
+            "cardId": "whismur_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 134,
+            "cardId": "rummage_1",
+            "count": 1
+        }
+    ],
+    "energyTypes": [
+        "Water"
+    ]
+}

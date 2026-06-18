@@ -1,0 +1,31 @@
+{
+    "cardName": "Tinkaton",
+    "cardId": "tinkaton_1",
+    "imageName": "tinkaton_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 238,
+    "stage": 2,
+    "evolvesFrom": "Tinkatuff",
+    "hp": 200,
+    "type": "Psychic",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Alloyed Hammer",
+            "damage": 150,
+            "attackDescription": "This Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Psychic",
+                "Metal",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

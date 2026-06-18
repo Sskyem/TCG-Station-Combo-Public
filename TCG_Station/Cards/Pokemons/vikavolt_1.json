@@ -1,0 +1,36 @@
+{
+    "cardName": "Vikavolt",
+    "cardId": "vikavolt_1",
+    "imageName": "vikavolt_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 244,
+    "stage": 2,
+    "evolvesFrom": "Charjabug",
+    "hp": 200,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Zap Cannon",
+            "damage": 110,
+            "attackDescription": "Discard 1 random Energy from this Pokemon. Your opponent's Active Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Grass",
+                "Lightning",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

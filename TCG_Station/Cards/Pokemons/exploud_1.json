@@ -1,0 +1,27 @@
+{
+    "cardName": "Exploud",
+    "cardId": "exploud_1",
+    "imageName": "exploud_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 200,
+    "stage": 2,
+    "evolvesFrom": "Loudred",
+    "hp": 220,
+    "type": "Colorless",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Boomburst",
+            "damage": 20,
+            "attackDescription": "This attack also does 20 damage to all your opponent's Benched Pokemon.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

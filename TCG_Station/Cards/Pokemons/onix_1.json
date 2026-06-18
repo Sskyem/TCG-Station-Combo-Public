@@ -1,0 +1,25 @@
+{
+    "cardName": "Onix",
+    "cardId": "onix_1",
+    "imageName": "onix_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 121,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Fighting",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Land Crush",
+            "damage": 80,
+            "attackDescription": "",
+            "attackCost": [
+                "Fighting",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

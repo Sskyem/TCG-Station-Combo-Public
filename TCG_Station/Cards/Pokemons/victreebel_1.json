@@ -1,0 +1,36 @@
+{
+    "cardName": "Victreebel",
+    "cardId": "victreebel_1",
+    "imageName": "victreebel_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 213,
+    "stage": 2,
+    "evolvesFrom": "Weepinbell",
+    "hp": 200,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Stick and Absorb",
+            "damage": 50,
+            "attackDescription": "Heal from this Pokemon the same amount of damage you did to your opponent's Pokemon. Your opponent's Active Pokemon is now Rooted.",
+            "attackCost": [
+                "Grass",
+                "Grass",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "LeechLife",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

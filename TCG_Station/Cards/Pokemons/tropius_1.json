@@ -1,0 +1,31 @@
+{
+    "cardName": "Tropius",
+    "cardId": "tropius_1",
+    "imageName": "tropius_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 192,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Grass",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Tropical Swing",
+            "damage": 40,
+            "attackDescription": "Take 3 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Colorless",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 3
+                }
+            ]
+        }
+    ]
+}

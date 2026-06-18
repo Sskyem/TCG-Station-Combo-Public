@@ -1,0 +1,49 @@
+{
+  "model_path": "PYTHON/ML/models/bc_20260605_112612.pt",
+  "device": "cpu",
+  "split": "val",
+  "split_games": 1226,
+  "winners_only": true,
+  "seed": 1234,
+  "val_ratio": 0.08,
+  "evaluated_decisions": 50000,
+  "accuracy": 0.93624,
+  "exact_accuracy": 0.92944,
+  "top3_accuracy": 0.99514,
+  "exact_top3_accuracy": 0.99392,
+  "macro_accuracy": 0.9392215183066652,
+  "macro_top3_accuracy": 0.9958451529088002,
+  "exact_macro_accuracy": 0.9319707287094351,
+  "exact_macro_top3_accuracy": 0.9948093223149557,
+  "per_category": {
+    "AttachEnergy": {
+      "total": 15196,
+      "accuracy": 0.8932613845748881,
+      "exact_accuracy": 0.8772703342984997,
+      "top3_accuracy": 0.9889444590681759,
+      "exact_top3_accuracy": 0.9859831534614372
+    },
+    "Attack": {
+      "total": 13385,
+      "accuracy": 0.9988046320508032,
+      "exact_accuracy": 0.9988046320508032,
+      "top3_accuracy": 1.0,
+      "exact_top3_accuracy": 1.0
+    },
+    "PlayBasic": {
+      "total": 6978,
+      "accuracy": 0.9461163657208369,
+      "exact_accuracy": 0.9339352249928347,
+      "top3_accuracy": 0.9992834623101176,
+      "exact_top3_accuracy": 0.999140154772141
+    },
+    "Retreat": {
+      "total": 14441,
+      "accuracy": 0.9187036908801329,
+      "exact_accuracy": 0.9178727234956028,
+      "top3_accuracy": 0.9951526902569074,
+      "exact_top3_accuracy": 0.9941139810262447
+    }
+  },
+  "elapsed_s": 97.70529433300544
+}

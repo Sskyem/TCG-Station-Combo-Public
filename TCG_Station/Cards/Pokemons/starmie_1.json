@@ -1,0 +1,24 @@
+{
+    "cardName": "Starmie",
+    "cardId": "starmie_1",
+    "imageName": "starmie_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 61,
+    "stage": 1,
+    "evolvesFrom": "Staryu",
+    "hp": 130,
+    "type": "Water",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Star Beam",
+            "damage": 80,
+            "attackDescription": "",
+            "attackCost": [
+                "Water",
+                "Water"
+            ],
+            "effects": []
+        }
+    ]
+}

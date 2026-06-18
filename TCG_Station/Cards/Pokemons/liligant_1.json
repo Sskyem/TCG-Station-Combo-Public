@@ -1,0 +1,30 @@
+{
+    "cardName": "Liligant",
+    "cardId": "liligant_1",
+    "imageName": "liligant_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 204,
+    "stage": 1,
+    "evolvesFrom": "Petilil",
+    "hp": 150,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Petal Dance",
+            "damage": 60,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

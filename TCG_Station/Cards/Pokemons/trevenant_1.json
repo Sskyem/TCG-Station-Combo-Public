@@ -1,0 +1,36 @@
+{
+    "cardName": "Trevenant",
+    "cardId": "trevenant_1",
+    "imageName": "trevenant_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 232,
+    "stage": 1,
+    "evolvesFrom": "Phantump",
+    "hp": 190,
+    "type": "Grass",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Entangling Roots",
+            "damage": 120,
+            "attackDescription": "Both Active Pokemon are now Rooted.",
+            "attackCost": [
+                "Psychic",
+                "Grass",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

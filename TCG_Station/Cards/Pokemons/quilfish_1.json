@@ -1,0 +1,29 @@
+{
+    "cardName": "Quilfish",
+    "cardId": "quilfish_1",
+    "imageName": "quilfish_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 65,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Water",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Spiny Bloat",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, if this Pokemon is damaged by an attack, do 40 damage to the attacking Pokemon.",
+            "attackCost": [
+                "Water"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 40
+                }
+            ]
+        }
+    ]
+}

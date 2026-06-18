@@ -1,0 +1,34 @@
+{
+    "cardName": "Aron",
+    "cardId": "aron_1",
+    "imageName": "aron_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 214,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Metal",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Consume Ore",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 10 less damage from attacks. Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

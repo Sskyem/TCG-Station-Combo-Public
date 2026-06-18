@@ -1,0 +1,30 @@
+{
+    "cardName": "Gengar",
+    "cardId": "gengar_1",
+    "imageName": "gengar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 12,
+    "stage": 2,
+    "evolvesFrom": "Haunter",
+    "hp": 180,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Hypnoblast",
+            "damage": 70,
+            "attackDescription": "Your opponent's Active Pokemon is now Asleep.",
+            "attackCost": [
+                "Psychic",
+                "Psychic"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

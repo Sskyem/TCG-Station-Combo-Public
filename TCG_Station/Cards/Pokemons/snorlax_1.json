@@ -1,0 +1,32 @@
+{
+    "cardName": "Snorlax",
+    "cardId": "snorlax_1",
+    "imageName": "snorlax_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 16,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 180,
+    "type": "Colorless",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Rollout",
+            "damage": 130,
+            "attackDescription": "This Pokemon is now Asleep.",
+            "attackCost": [
+                "Colorless",
+                "Colorless",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

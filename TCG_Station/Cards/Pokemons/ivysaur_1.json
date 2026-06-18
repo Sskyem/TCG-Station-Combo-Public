@@ -1,0 +1,36 @@
+{
+    "cardName": "Ivysaur",
+    "cardId": "ivysaur_1",
+    "imageName": "ivysaur_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 2,
+    "stage": 1,
+    "evolvesFrom": "Bulbasaur",
+    "hp": 140,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Overgrowth",
+            "damage": 40,
+            "attackDescription": "Heal 20 damage from this Pokemon. Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

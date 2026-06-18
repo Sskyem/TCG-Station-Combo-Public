@@ -1,0 +1,15 @@
+# Local virtualenvs are OS-specific and must not be shared through git.
+.venv/
+.venv-windows/
+.venv-macos/
+.venv-*/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Local machine path overrides.
+.env
+ui_paths.json
+
+# Runtime logs and temporary exports.
+runs/

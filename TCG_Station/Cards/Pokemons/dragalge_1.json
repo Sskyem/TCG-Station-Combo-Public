@@ -1,0 +1,30 @@
+{
+    "cardName": "Dragalge",
+    "cardId": "dragalge_1",
+    "imageName": "dragalge_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 24,
+    "stage": 1,
+    "evolvesFrom": "Skrelp",
+    "hp": 150,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Severe Poison",
+            "damage": 30,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned. Do 30 damage rather than the usual amount for this Special Condition.",
+            "attackCost": [
+                "Water",
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

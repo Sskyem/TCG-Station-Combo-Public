@@ -1,0 +1,58 @@
+{
+    "deckName": "FireAggro",
+    "cards": [
+        {
+            "deckCardID": 145,
+            "cardId": "rapidash_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 193,
+            "cardId": "vulpix_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 144,
+            "cardId": "ponyta_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 222,
+            "cardId": "infernape_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 221,
+            "cardId": "monferno_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 134,
+            "cardId": "rummage_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 220,
+            "cardId": "chimchar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 194,
+            "cardId": "ninetales_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire"
+    ]
+}

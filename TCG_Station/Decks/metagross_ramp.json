@@ -1,0 +1,58 @@
+{
+    "deckName": "Metagross Ramp",
+    "cards": [
+        {
+            "deckCardID": 88,
+            "cardId": "beldum_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 89,
+            "cardId": "metang_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 90,
+            "cardId": "metagross_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 38,
+            "cardId": "dialga_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 138,
+            "cardId": "ice_cream_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Metal"
+    ]
+}

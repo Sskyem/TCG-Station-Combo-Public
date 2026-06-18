@@ -1,0 +1,23 @@
+{
+    "cardName": "Staryu",
+    "cardId": "staryu_1",
+    "imageName": "staryu_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 60,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Water",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Spinning Attack",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Water"
+            ],
+            "effects": []
+        }
+    ]
+}

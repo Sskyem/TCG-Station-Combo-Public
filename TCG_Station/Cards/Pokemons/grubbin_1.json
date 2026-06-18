@@ -1,0 +1,24 @@
+{
+    "cardName": "Grubbin",
+    "cardId": "grubbin_1",
+    "imageName": "grubbin_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 242,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Vise Grip",
+            "damage": 50,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

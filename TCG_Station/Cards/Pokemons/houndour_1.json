@@ -1,0 +1,23 @@
+{
+    "cardName": "Houndour",
+    "cardId": "houndour_1",
+    "imageName": "houndour_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 247,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Darkness",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Bite",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

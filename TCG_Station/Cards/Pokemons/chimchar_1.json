@@ -1,0 +1,23 @@
+{
+    "cardName": "Chimchar",
+    "cardId": "chimchar_1",
+    "imageName": "chimchar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 220,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 70,
+    "type": "Fire",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Flare",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Fire"
+            ],
+            "effects": []
+        }
+    ]
+}

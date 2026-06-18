@@ -1,0 +1,34 @@
+{
+    "cardName": "Golbat",
+    "cardId": "golbat_1",
+    "imageName": "golbat_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 14,
+    "stage": 1,
+    "evolvesFrom": "Zubat",
+    "hp": 140,
+    "type": "Darkness",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Echo Hunt",
+            "damage": 20,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed and Confused.",
+            "attackCost": [
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

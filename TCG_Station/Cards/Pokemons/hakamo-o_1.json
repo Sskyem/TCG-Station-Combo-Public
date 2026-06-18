@@ -1,0 +1,30 @@
+{
+    "cardName": "Hakamo-o",
+    "cardId": "hakamo-o_1",
+    "imageName": "hakamo-o_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 106,
+    "stage": 1,
+    "evolvesFrom": "Jangmo-o",
+    "hp": 120,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Golden Claw",
+            "damage": 100,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 10 more damage from attacks.",
+            "attackCost": [
+                "Lightning",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

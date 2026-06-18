@@ -1,0 +1,34 @@
+{
+    "cardName": "Crobat",
+    "cardId": "crobat_1",
+    "imageName": "crobat_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 15,
+    "stage": 2,
+    "evolvesFrom": "Golbat",
+    "hp": 160,
+    "type": "Dark",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Vampiric Fang",
+            "damage": 50,
+            "attackDescription": "Discard 1 random Energy from this Pokemon. Heal from this Pokemon the same amount of damage you did to your opponent's Pokemon.",
+            "attackCost": [
+                "Dark"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DiscardHand",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

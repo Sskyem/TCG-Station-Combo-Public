@@ -1,0 +1,59 @@
+{
+    "deckName": "PoisonFish",
+    "cards": [
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 62,
+            "cardId": "shellder_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 65,
+            "cardId": "quilfish_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 66,
+            "cardId": "overqwil_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 63,
+            "cardId": "cloyster_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 24,
+            "cardId": "dragalge_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 23,
+            "cardId": "skrelp_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Water",
+        "Darkness"
+    ]
+}

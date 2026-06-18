@@ -1,0 +1,29 @@
+{
+    "cardName": "Skrelp",
+    "cardId": "skrelp_1",
+    "imageName": "skrelp_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 23,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Poison Spit",
+            "damage": 10,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

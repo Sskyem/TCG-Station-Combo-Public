@@ -1,0 +1,24 @@
+{
+    "cardName": "Corvisquire",
+    "cardId": "corvisquire_1",
+    "imageName": "corvisquire_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 179,
+    "stage": 1,
+    "evolvesFrom": "Rookidee",
+    "hp": 120,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Drill Peck",
+            "damage": 60,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

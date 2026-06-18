@@ -1,0 +1,35 @@
+{
+    "cardName": "Grimer",
+    "cardId": "grimer_1",
+    "imageName": "grimer_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 201,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 130,
+    "type": "Darkness",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Mud Slap",
+            "damage": 10,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned and Slowed.",
+            "attackCost": [
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

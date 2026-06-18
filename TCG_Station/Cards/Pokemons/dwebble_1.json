@@ -1,0 +1,30 @@
+{
+    "cardName": "Dwebble",
+    "cardId": "dwebble_1",
+    "imageName": "dwebble_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 42,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Fighting",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Dig Claws",
+            "damage": 30,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 20 less damage from attacks.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

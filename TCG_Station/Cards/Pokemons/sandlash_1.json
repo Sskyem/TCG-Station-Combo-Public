@@ -1,0 +1,30 @@
+{
+    "cardName": "Sandlash",
+    "cardId": "sandlash_1",
+    "imageName": "sandlash_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 45,
+    "stage": 1,
+    "evolvesFrom": "Sandshrew",
+    "hp": 140,
+    "type": "Fighting",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Sand Spikes",
+            "damage": 50,
+            "attackDescription": "During your opponent's next turn, if this Pokemon is damaged by an attack, do 20 damage to the attacking Pokemon.",
+            "attackCost": [
+                "Fighting",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "cardName": "Magneton",
+    "cardId": "magneton_1",
+    "imageName": "magneton_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 196,
+    "stage": 1,
+    "evolvesFrom": "Magnemite",
+    "hp": 140,
+    "type": "Metal",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Spinning Attack",
+            "damage": 80,
+            "attackDescription": "",
+            "attackCost": [
+                "Lightning",
+                "Metal"
+            ],
+            "effects": []
+        }
+    ]
+}

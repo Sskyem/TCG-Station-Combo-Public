@@ -1,0 +1,30 @@
+{
+    "cardName": "Primeape",
+    "cardId": "primeape_1",
+    "imageName": "primeape_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 49,
+    "stage": 1,
+    "evolvesFrom": "Mankey",
+    "hp": 150,
+    "type": "Fighting",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Raging Punch",
+            "damage": 90,
+            "attackDescription": "This Pokemon also does 20 damage to itself.",
+            "attackCost": [
+                "Fighting",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

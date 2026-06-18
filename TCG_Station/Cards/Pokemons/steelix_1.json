@@ -1,0 +1,33 @@
+{
+    "cardName": "Steelix",
+    "cardId": "steelix_1",
+    "imageName": "steelix_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 122,
+    "stage": 1,
+    "evolvesFrom": "Onix",
+    "hp": 210,
+    "type": "Metal",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Skull Bash",
+            "damage": 110,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 30 less damage from attacks.",
+            "attackCost": [
+                "Metal",
+                "Metal",
+                "Colorless",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

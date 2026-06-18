@@ -1,0 +1,34 @@
+{
+    "cardName": "Gulpin",
+    "cardId": "gulpin_1",
+    "imageName": "gulpin_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 113,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Darkness",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Smelly Fart",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned and Confused.",
+            "attackCost": [
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

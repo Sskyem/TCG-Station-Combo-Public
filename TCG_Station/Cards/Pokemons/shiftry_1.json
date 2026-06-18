@@ -1,0 +1,35 @@
+{
+    "cardName": "Shiftry",
+    "cardId": "shiftry_1",
+    "imageName": "shiftry_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 207,
+    "stage": 2,
+    "evolvesFrom": "Nuzleaf",
+    "hp": 200,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Spirit Dance",
+            "damage": 20,
+            "attackDescription": "This attack also does 20 damage to all your opponent's Benched Pokemon. Heal from this Pokemon the same amount of damage you did to your opponent's Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "LeechLife",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

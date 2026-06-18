@@ -1,0 +1,25 @@
+{
+    "cardName": "Metang",
+    "cardId": "metang_1",
+    "imageName": "metang_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 89,
+    "stage": 1,
+    "evolvesFrom": "Beldum",
+    "hp": 140,
+    "type": "Metal",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Beam",
+            "damage": 80,
+            "attackDescription": "",
+            "attackCost": [
+                "Metal",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

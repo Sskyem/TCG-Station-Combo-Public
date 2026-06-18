@@ -1,0 +1,16 @@
+{
+    "cardName": "Sabrina",
+    "cardId": "sabrina_1",
+    "imageName": "sabrina_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Supporter",
+    "deckCardId": 127,
+    "effectDescription": "Switch out your opponent's Active Pokemon.",
+    "effects": [
+        {
+            "cardEffectType": "SwapEnemy",
+            "cardEffectTarget": "Opponent",
+            "effectAmount": 1
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "cardName": "Muk",
+    "cardId": "muk_1",
+    "imageName": "muk_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 202,
+    "stage": 1,
+    "evolvesFrom": "Grimer",
+    "hp": 190,
+    "type": "Darkness",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Sludge Drain",
+            "damage": 30,
+            "attackDescription": "This attack deals 10 more damage for each Energy on your opponent's Active Pokemon. Heal from this Pokemon the same amount of damage you did to your opponent's Pokemon.",
+            "attackCost": [
+                "Darkness",
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Psychic",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "LeechLife",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

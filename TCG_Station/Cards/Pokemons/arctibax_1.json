@@ -1,0 +1,31 @@
+{
+    "cardName": "Arctibax",
+    "cardId": "arctibax_1",
+    "imageName": "arctibax_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 255,
+    "stage": 1,
+    "evolvesFrom": "Frigibax",
+    "hp": 160,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Frost Smash",
+            "damage": 60,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 20 less damage from attacks.",
+            "attackCost": [
+                "Water",
+                "Metal",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

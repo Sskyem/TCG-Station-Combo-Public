@@ -1,0 +1,16 @@
+{
+    "cardName": "Erika",
+    "cardId": "erika_1",
+    "imageName": "erika_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Supporter",
+    "deckCardId": 125,
+    "effectDescription": "Heal 50 damage from your Active Pokemon.",
+    "effects": [
+        {
+            "cardEffectType": "Heal",
+            "cardEffectTarget": "Self",
+            "effectAmount": 50
+        }
+    ]
+}

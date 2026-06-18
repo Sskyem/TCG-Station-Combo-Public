@@ -1,0 +1,30 @@
+{
+    "cardName": "Heliolisk",
+    "cardId": "heliolisk_1",
+    "imageName": "heliolisk_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 218,
+    "stage": 1,
+    "evolvesFrom": "Helioptile",
+    "hp": 150,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Hyper Beam",
+            "damage": 30,
+            "attackDescription": "This attack does 20 more damage for each Energy on this Pokemon.",
+            "attackCost": [
+                "Lightning",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

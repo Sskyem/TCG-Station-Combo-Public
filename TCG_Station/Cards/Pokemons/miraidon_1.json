@@ -1,0 +1,36 @@
+{
+    "cardName": "Miraidon",
+    "cardId": "miraidon_1",
+    "imageName": "miraidon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 234,
+    "stage": 1,
+    "evolvesFrom": "Cyclizar",
+    "hp": 170,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Sparlking Breath",
+            "damage": 60,
+            "attackDescription": "This attack also does 20 damage to all your opponent's Benched Pokemon. Your opponent's Active Pokemon is now Confused.",
+            "attackCost": [
+                "Lightning",
+                "Psychic",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "deckName": "Tyranitar",
+    "cards": [
+        {
+            "deckCardID": 208,
+            "cardId": "larvitar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 209,
+            "cardId": "pupitar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 210,
+            "cardId": "tyranitar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 42,
+            "cardId": "dwebble_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 43,
+            "cardId": "crustle_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 156,
+            "cardId": "kecleon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fighting",
+        "Darkness"
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "deckName": "Gengar",
+    "cards": [
+        {
+            "deckCardID": 10,
+            "cardId": "gastly_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 11,
+            "cardId": "haunter_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 12,
+            "cardId": "gengar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 226,
+            "cardId": "deoxys_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 230,
+            "cardId": "mewtwo_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 133,
+            "cardId": "potion_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Psychic"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "cardName": "Noivern",
+    "cardId": "noivern_1",
+    "imageName": "noivern_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 31,
+    "stage": 1,
+    "evolvesFrom": "Noibat",
+    "hp": 130,
+    "type": "Dragon",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Dominating Echo",
+            "damage": 70,
+            "attackDescription": "Switch out your opponent's Active Pokemon. Your opponent's Active Pokemon is now Confused.",
+            "attackCost": [
+                "Psychic",
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapEnemy",
+                    "cardEffectTarget": "Opponent",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

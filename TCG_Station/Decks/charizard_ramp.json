@@ -1,0 +1,58 @@
+{
+    "deckName": "Charizard Ramp",
+    "cards": [
+        {
+            "deckCardID": 4,
+            "cardId": "charmander_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 5,
+            "cardId": "charmeleon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 6,
+            "cardId": "charizard_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 33,
+            "cardId": "moltres_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 133,
+            "cardId": "potion_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 137,
+            "cardId": "chilly_pepper_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "cardName": "Monferno",
+    "cardId": "monferno_1",
+    "imageName": "monferno_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 221,
+    "stage": 1,
+    "evolvesFrom": "Chimchar",
+    "hp": 120,
+    "type": "Fire",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Fire Tail",
+            "damage": 40,
+            "attackDescription": "",
+            "attackCost": [
+                "Fire"
+            ],
+            "effects": []
+        }
+    ]
+}

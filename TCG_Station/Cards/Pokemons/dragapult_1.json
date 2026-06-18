@@ -1,0 +1,35 @@
+{
+    "cardName": "Dragapult",
+    "cardId": "dragapult_1",
+    "imageName": "dragapult_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 28,
+    "stage": 2,
+    "evolvesFrom": "Drakloak",
+    "hp": 160,
+    "type": "Dragon",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Phantom Dive",
+            "damage": 120,
+            "attackDescription": "Discard 2 random Energy from this Pokemon. Draw 2 cards.",
+            "attackCost": [
+                "Fire",
+                "Psychic"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

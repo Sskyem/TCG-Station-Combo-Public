@@ -1,0 +1,36 @@
+{
+    "cardName": "Bellibolt",
+    "cardId": "bellibolt_1",
+    "imageName": "bellibolt_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 182,
+    "stage": 1,
+    "evolvesFrom": "Tadbulb",
+    "hp": 190,
+    "type": "Lightning",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Wiggle Bolt",
+            "damage": 100,
+            "attackDescription": "Both Active Pokemon are now Paralyzed.",
+            "attackCost": [
+                "Lightning",
+                "Lightning",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

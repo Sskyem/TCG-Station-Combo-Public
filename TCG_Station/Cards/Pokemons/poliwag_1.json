@@ -1,0 +1,27 @@
+{
+    "cardName": "Poliwag",
+    "cardId": "poliwag_1",
+    "imageName": "poliwag_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 169,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Water",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Spiral Pattern",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Confused.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

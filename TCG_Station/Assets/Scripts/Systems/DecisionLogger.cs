@@ -1,0 +1,280 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using Newtonsoft.Json;
+using UnityEngine;
+
+/// <summary>
+/// Per-decision JSONL logger for ML behavioral-cloning datasets.
+/// One JSONL line per Algorithm decision group (PlayBasic / Evolve / AttachEnergy / Attack / Retreat / Trainer / EndTurn).
+/// Each line contains: game_id, turn, player_id, decision category, full GameStateSnapshot, all candidate scores, chosen label.
+///
+/// Tier 1 of the two-layer pipeline described in docs/ML_PIPELINE.md.
+/// Python feature_extractor.py consumes these JSONL files later.
+/// </summary>
+public class DecisionLogger : MonoBehaviour
+{
+    public static DecisionLogger Instance { get; private set; }
+
+    /// <summary>Absolute path of the decision file for the current game (null before BeginGame).</summary>
+    public string CurrentFilePath => filePath;
+
+    [Header("Configuration")]
+    [Tooltip("Set false to disable decision logging entirely (e.g. during interactive play).")]
+    public bool enabled_logging = true;
+
+    private string gameId;
+    private string filePath;
+    private StreamWriter writer;
+    private bool active;
+    private int sequenceWithinGame;
+
+    private static readonly JsonSerializerSettings JsonSettings = new JsonSerializerSettings
+    {
+        NullValueHandling = NullValueHandling.Ignore,
+        Formatting = Formatting.None,
+        Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() },
+    };
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(this); return; }
+        Instance = this;
+    }
+
+    private void OnEnable()
+    {
+        BattleManager.OnGameOver -= HandleGameOver;
+        BattleManager.OnGameOver += HandleGameOver;
+    }
+
+    private void OnDisable()
+    {
+        BattleManager.OnGameOver -= HandleGameOver;
+        CloseWriter();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
+    }
+
+    public void BeginGame(string id)
+    {
+        enabled_logging = GameRulesConfig.Instance == null || GameRulesConfig.Instance.enableMlDecisionLogs;
+        if (!enabled_logging) return;
+
+        gameId = id ?? GameManager.CreateBattleId("game");
+        sequenceWithinGame = 0;
+
+        string dir = GetExportDirectory();
+        filePath = Path.Combine(dir, $"{gameId}_decisions.jsonl");
+
+        try
+        {
+            writer = new StreamWriter(filePath, append: false, Encoding.UTF8);
+            active = true;
+            Debug.Log($"[DecisionLogger] BeginGame: {filePath}");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[DecisionLogger] Failed to open {filePath}: {ex.Message}");
+            active = false;
+        }
+    }
+
+    /// <summary>
+    /// Record one decision group (e.g. all PlayBasic candidates scored at this point in the turn).
+    /// Capture the snapshot BEFORE the chosen action is executed.
+    /// </summary>
+    public void LogDecision(
+        string category,
+        int turn,
+        int playerId,
+        GameStateSnapshot snapshot,
+        IReadOnlyList<ScoreEntry> scores,
+        string chosenLabel,
+        int chosenTargetInstanceId = -1)
+    {
+        if (GameRulesConfig.Instance != null && !GameRulesConfig.Instance.enableMlDecisionLogs) return;
+        if (!active || writer == null) return;
+
+        var record = new DecisionRecord
+        {
+            game_id = gameId,
+            seq = sequenceWithinGame++,
+            turn = turn,
+            player_id = playerId,
+            category = category,
+            chosen_label = chosenLabel,
+            chosen_target_instance_id = chosenTargetInstanceId,
+            scores = scores != null ? new List<ScoreEntry>(scores) : new List<ScoreEntry>(),
+            snapshot = snapshot,
+            timestamp_unix_ms = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
+        };
+
+        try
+        {
+            string line = JsonConvert.SerializeObject(record, JsonSettings);
+            writer.WriteLine(line);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[DecisionLogger] Failed to serialize decision: {ex.Message}");
+        }
+    }
+
+    private void HandleGameOver(PlayerController winner)
+    {
+        LogGameEnd(winner);
+        CloseWriter();
+    }
+
+    /// <summary>
+    /// Write a terminal "GameEnd" record capturing the FINAL state and winner. Per-turn
+    /// decision snapshots are taken BEFORE the chosen action, so the deciding KO (the 4th
+    /// point that ends the game) never appears in any decision snapshot — the game stops
+    /// before the next one. This record fills that gap so the winning state is recorded.
+    /// It is tagged category "GameEnd" and excluded from BC training on the Python side
+    /// (logs.NON_TRAINABLE_CATEGORIES); it exists for analysis / Replay / winner recovery.
+    /// </summary>
+    private void LogGameEnd(PlayerController winner)
+    {
+        if (GameRulesConfig.Instance != null && !GameRulesConfig.Instance.enableMlDecisionLogs) return;
+        if (!active || writer == null) return;
+
+        try
+        {
+            var pm = PlayerManager.Instance;
+            if (pm == null || pm.player1 == null || pm.player2 == null) return;
+
+            string winnerLabel = winner == null ? "Draw"
+                : winner == pm.player1 ? "A"
+                : winner == pm.player2 ? "B"
+                : "Unknown";
+            int winnerId = winner == null ? 0 : winner.playerId;
+            int turn = TurnManager.Instance != null ? TurnManager.Instance.turnCounter : 0;
+
+            // Final board state AFTER the deciding KO (scores reflect the winning point).
+            GameStateSnapshot finalSnapshot =
+                GameStateSnapshot.Create(pm.player1, pm.player2, turn, pm.player1.playerId);
+
+            var record = new DecisionRecord
+            {
+                game_id = gameId,
+                seq = sequenceWithinGame++,
+                turn = turn,
+                player_id = winnerId,
+                category = "GameEnd",
+                chosen_label = winnerLabel,
+                scores = new List<ScoreEntry>
+                {
+                    new ScoreEntry(
+                        $"winner:{winnerLabel}",
+                        winner != null ? winner.score : 0,
+                        false,
+                        new List<string> { $"score_a:{pm.player1.score}", $"score_b:{pm.player2.score}" }),
+                },
+                snapshot = finalSnapshot,
+                timestamp_unix_ms = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
+            };
+
+            writer.WriteLine(JsonConvert.SerializeObject(record, JsonSettings));
+            Debug.Log($"[DecisionLogger] GameEnd: winner={winnerLabel} score {pm.player1.score}-{pm.player2.score} turn {turn}");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[DecisionLogger] Failed to write GameEnd: {ex.Message}");
+        }
+    }
+
+    private void CloseWriter()
+    {
+        if (writer == null) return;
+        try
+        {
+            writer.Flush();
+            writer.Dispose();
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning($"[DecisionLogger] Close error: {ex.Message}");
+        }
+        writer = null;
+        active = false;
+    }
+
+    /// <summary>
+    /// Relative folder (under Logs Export/ML/Decisions/) for the current game's logs, so training can
+    /// include/exclude contexts without mixing them:
+    ///   benchmark/                       — Algorithm-vs-Algorithm benchmark runs (fast, mass scale)
+    ///   interactive/&lt;type_vs_type&gt;/      — everything else, bucketed by the player-type matchup
+    ///                                       (order-independent: algorithm_vs_ml == ml_vs_algorithm)
+    /// Only the AlgorithmBrain seat's decisions are ever recorded, but the opponent's type changes the
+    /// board distribution, so each matchup gets its own bucket. Legacy files written before this split
+    /// stay in the Decisions/ root (a separate "legacy" source); SMB-synced logs go to received/.
+    /// </summary>
+    public static string DecisionSourceFolder()
+    {
+        if (BenchmarkRunner.Instance != null && BenchmarkRunner.Instance.runEnabled)
+            return "benchmark";
+
+        GameRulesConfig cfg = GameRulesConfig.Instance;
+        string a = cfg != null ? cfg.player1Type.ToString() : "Unknown";
+        string b = cfg != null ? cfg.player2Type.ToString() : "Unknown";
+        bool aFirst = string.CompareOrdinal(a, b) <= 0;
+        string matchup = ((aFirst ? a : b) + "_vs_" + (aFirst ? b : a)).ToLowerInvariant();
+        return Path.Combine("interactive", matchup);
+    }
+
+    private string GetExportDirectory()
+    {
+        string dir = Path.Combine(RuntimePaths.MlLogsRoot(), "Decisions", DecisionSourceFolder());
+        Directory.CreateDirectory(dir);
+        return dir;
+    }
+
+    // ── Serialized record types ──────────────────────────────────────────────
+
+    [Serializable]
+    public class DecisionRecord
+    {
+        public string game_id;
+        public int seq;
+        public int turn;
+        public int player_id;
+        public string category;
+        public string chosen_label;
+        public int chosen_target_instance_id = -1;
+        public long timestamp_unix_ms;
+        public List<ScoreEntry> scores;
+        public GameStateSnapshot snapshot;
+    }
+
+    [Serializable]
+    public class ScoreEntry
+    {
+        public string label;
+        public int score;
+        public bool blocked;
+        public List<string> reasons;
+
+        // Stable board identity of the candidate's target Pokemon (CardInstance.instanceId),
+        // matching GameStateSnapshot pokemon InstanceId. -1 when the candidate has no board target.
+        // Lets the Python action encoder disambiguate same-name candidates (e.g. active vs bench)
+        // and attach the target's live-state features. Required for AttachEnergy/Retreat/Evolve quality.
+        public int target_instance_id = -1;
+
+        public ScoreEntry() { }
+
+        public ScoreEntry(string label, int score, bool blocked, List<string> reasons, int targetInstanceId = -1)
+        {
+            this.label = label;
+            this.score = score;
+            this.blocked = blocked;
+            this.reasons = reasons ?? new List<string>();
+            this.target_instance_id = targetInstanceId;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "cardName": "Tinkatuff",
+    "cardId": "tinkatuff_1",
+    "imageName": "tinkatuff_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 237,
+    "stage": 1,
+    "evolvesFrom": "Tinkatink",
+    "hp": 140,
+    "type": "Psychic",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Crushing Blow",
+            "damage": 60,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed.",
+            "attackCost": [
+                "Psychic",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

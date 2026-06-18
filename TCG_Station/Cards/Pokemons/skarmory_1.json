@@ -1,0 +1,37 @@
+{
+    "cardName": "Skarmory",
+    "cardId": "skarmory_1",
+    "imageName": "skarmory_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 223,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 100,
+    "type": "Metal",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Iron Ripper",
+            "damage": 50,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 50 less damage from attacks. Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Metal",
+                "Metal",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 50
+                },
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

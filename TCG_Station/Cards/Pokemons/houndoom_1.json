@@ -1,0 +1,24 @@
+{
+    "cardName": "Houndoom",
+    "cardId": "houndoom_1",
+    "imageName": "houndoom_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 248,
+    "stage": 1,
+    "evolvesFrom": "Houndour",
+    "hp": 150,
+    "type": "Darkness",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Vengeful Fang",
+            "damage": 90,
+            "attackDescription": "",
+            "attackCost": [
+                "Fire",
+                "Darkness"
+            ],
+            "effects": []
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "cardName": "Inkay",
+    "cardId": "inkay_1",
+    "imageName": "inkay_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 245,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Darkness",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Hypnotic Ink",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned and Asleep.",
+            "attackCost": [
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

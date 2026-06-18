@@ -1,0 +1,31 @@
+{
+    "cardName": "Hypno",
+    "cardId": "hypno_1",
+    "imageName": "hypno_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 176,
+    "stage": 1,
+    "evolvesFrom": "Drowzee",
+    "hp": 170,
+    "type": "Psychic",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Dream Intruder",
+            "damage": 50,
+            "attackDescription": "Your opponent's Active Pokemon is now Asleep.",
+            "attackCost": [
+                "Psychic",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

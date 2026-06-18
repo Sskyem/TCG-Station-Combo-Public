@@ -1,0 +1,32 @@
+{
+    "cardName": "Koffing",
+    "cardId": "koffing_1",
+    "imageName": "koffing_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 82,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Darkness",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Smog Bomb",
+            "damage": 0,
+            "attackDescription": "This Pokemon also does 10 damage to itself. Your opponent's Active Pokemon is now Poisoned.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

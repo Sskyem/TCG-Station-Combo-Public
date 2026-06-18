@@ -1,0 +1,31 @@
+{
+    "cardName": "Arbok",
+    "cardId": "arbok_1",
+    "imageName": "arbok_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 143,
+    "stage": 1,
+    "evolvesFrom": "Ekans",
+    "hp": 150,
+    "type": "Darkness",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Corner",
+            "damage": 90,
+            "attackDescription": "Your opponent's Active Pokemon is now Rooted.",
+            "attackCost": [
+                "Darkness",
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

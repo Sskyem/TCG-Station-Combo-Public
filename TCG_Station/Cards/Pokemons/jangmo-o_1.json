@@ -1,0 +1,24 @@
+{
+    "cardName": "Jangmo-o",
+    "cardId": "jangmo-o_1",
+    "imageName": "jangmo-o_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 105,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Dragon Claw",
+            "damage": 70,
+            "attackDescription": "",
+            "attackCost": [
+                "Lightning",
+                "Fighting"
+            ],
+            "effects": []
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "cardName": "Beedrill",
+    "cardId": "beedrill_1",
+    "imageName": "beedrill_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 164,
+    "stage": 2,
+    "evolvesFrom": "Kakuna",
+    "hp": 180,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Paralyzing Sting",
+            "damage": 60,
+            "attackDescription": "Both Active Pokemon are now Paralyzed.",
+            "attackCost": [
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

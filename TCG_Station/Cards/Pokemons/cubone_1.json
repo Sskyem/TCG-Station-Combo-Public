@@ -1,0 +1,23 @@
+{
+    "cardName": "Cubone",
+    "cardId": "cubone_1",
+    "imageName": "cubone_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 46,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Fighting",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Bone Beatdown",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Fighting"
+            ],
+            "effects": []
+        }
+    ]
+}

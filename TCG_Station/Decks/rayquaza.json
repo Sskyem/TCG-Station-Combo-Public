@@ -1,0 +1,59 @@
+{
+    "deckName": "Rayquaza",
+    "cards": [
+        {
+            "deckCardID": 227,
+            "cardId": "rayquaza_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 101,
+            "cardId": "reshiram_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 156,
+            "cardId": "kecleon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 34,
+            "cardId": "zapdos_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 33,
+            "cardId": "moltres_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire",
+        "Lightning"
+    ]
+}

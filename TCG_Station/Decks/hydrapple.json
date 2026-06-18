@@ -1,0 +1,58 @@
+{
+    "deckName": "Hydrapple",
+    "cards": [
+        {
+            "deckCardID": 109,
+            "cardId": "flapple_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 110,
+            "cardId": "hydrapple_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 108,
+            "cardId": "applin_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 33,
+            "cardId": "moltres_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 138,
+            "cardId": "ice_cream_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 192,
+            "cardId": "tropius_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire"
+    ]
+}

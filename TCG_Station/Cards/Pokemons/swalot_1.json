@@ -1,0 +1,31 @@
+{
+    "cardName": "Swalot",
+    "cardId": "swalot_1",
+    "imageName": "swalot_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 114,
+    "stage": 1,
+    "evolvesFrom": "Gulpin",
+    "hp": 190,
+    "type": "Darkness",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Swollow Up",
+            "damage": 150,
+            "attackDescription": "This attack deals 30 less damage for each Energy on your opponent's Active Pokemon.",
+            "attackCost": [
+                "Darkness",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Psychic",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": -30
+                }
+            ]
+        }
+    ]
+}

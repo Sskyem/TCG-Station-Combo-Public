@@ -1,0 +1,29 @@
+{
+    "cardName": "Meowth",
+    "cardId": "meowth_1",
+    "imageName": "meowth_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 17,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Pay Day",
+            "damage": 10,
+            "attackDescription": "Draw 1 cards.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

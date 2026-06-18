@@ -1,0 +1,35 @@
+{
+    "cardName": "Deoxys",
+    "cardId": "deoxys_1",
+    "imageName": "deoxys_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 226,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Psychic",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Helix Force",
+            "damage": 60,
+            "attackDescription": "Take 2 Energy and put it on 1 of your Benched Pokemon. Discard 2 cards. If you can't, this does nothing.",
+            "attackCost": [
+                "Psychic",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "DiscardHand",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "cardName": "Dodrio",
+    "cardId": "dodrio_1",
+    "imageName": "dodrio_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 166,
+    "stage": 1,
+    "evolvesFrom": "Doduo",
+    "hp": 130,
+    "type": "Colorless",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Tri Attack",
+            "damage": 10,
+            "attackDescription": "This attack triggers 3 times.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 3
+                }
+            ]
+        }
+    ]
+}

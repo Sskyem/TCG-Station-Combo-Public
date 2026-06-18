@@ -1,0 +1,34 @@
+{
+    "cardName": "Weezing",
+    "cardId": "weezing_1",
+    "imageName": "weezing_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 83,
+    "stage": 1,
+    "evolvesFrom": "Koffing",
+    "hp": 190,
+    "type": "Darkness",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Neutralizing Gas",
+            "damage": 0,
+            "attackDescription": "Remove all Special Conditions from your Active Pokemon. Your opponent's Active Pokemon is now Poisoned. Do 20 damage rather than the usual amount for this Special Condition.",
+            "attackCost": [
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Cleanse",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 0
+                }
+            ]
+        }
+    ]
+}

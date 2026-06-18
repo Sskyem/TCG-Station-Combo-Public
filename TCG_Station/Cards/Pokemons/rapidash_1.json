@@ -1,0 +1,35 @@
+{
+    "cardName": "Rapidash",
+    "cardId": "rapidash_1",
+    "imageName": "rapidash_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 145,
+    "stage": 1,
+    "evolvesFrom": "Ponyta",
+    "hp": 150,
+    "type": "Fire",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Fire Mane",
+            "damage": 70,
+            "attackDescription": "Both Active Pokemon are now Burned.",
+            "attackCost": [
+                "Fire",
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

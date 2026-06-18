@@ -1,0 +1,59 @@
+{
+    "deckName": "Goodra Hypno",
+    "cards": [
+        {
+            "deckCardID": 157,
+            "cardId": "goomy_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 158,
+            "cardId": "sligoo_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 159,
+            "cardId": "goodra_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 230,
+            "cardId": "mewtwo_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 175,
+            "cardId": "drowzee_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 176,
+            "cardId": "hypno_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Water",
+        "Psychic"
+    ]
+}

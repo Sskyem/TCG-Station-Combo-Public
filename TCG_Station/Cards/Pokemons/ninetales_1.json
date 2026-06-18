@@ -1,0 +1,30 @@
+{
+    "cardName": "Ninetales",
+    "cardId": "ninetales_1",
+    "imageName": "ninetales_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 194,
+    "stage": 1,
+    "evolvesFrom": "Vulpix",
+    "hp": 150,
+    "type": "Fire",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Combustion",
+            "damage": 90,
+            "attackDescription": "Discard 1 random Energy from this Pokemon.",
+            "attackCost": [
+                "Fire",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

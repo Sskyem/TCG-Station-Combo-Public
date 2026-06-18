@@ -1,0 +1,34 @@
+{
+    "cardName": "Diglett",
+    "cardId": "diglett_1",
+    "imageName": "diglett_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 167,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Fighting",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Dig Deeper",
+            "damage": 0,
+            "attackDescription": "Draw 1 cards. Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "None",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "cardName": "Gastly",
+    "cardId": "gastly_1",
+    "imageName": "gastly_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 10,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Suffocating Gas",
+            "damage": 10,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

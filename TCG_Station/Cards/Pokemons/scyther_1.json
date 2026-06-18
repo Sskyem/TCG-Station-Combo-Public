@@ -1,0 +1,23 @@
+{
+    "cardName": "Scyther",
+    "cardId": "scyther_1",
+    "imageName": "scyther_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 84,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Cut",
+            "damage": 40,
+            "attackDescription": "",
+            "attackCost": [
+                "Grass"
+            ],
+            "effects": []
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "cardName": "Lairon",
+    "cardId": "lairon_1",
+    "imageName": "lairon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 215,
+    "stage": 1,
+    "evolvesFrom": "Aron",
+    "hp": 160,
+    "type": "Metal",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Iron Defense",
+            "damage": 20,
+            "attackDescription": "Heal 20 damage from this Pokemon. During your opponent's next turn, this Pokemon takes 20 less damage from attacks.",
+            "attackCost": [
+                "Metal",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

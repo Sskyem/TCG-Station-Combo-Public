@@ -1,0 +1,30 @@
+{
+    "cardName": "Magnezone",
+    "cardId": "magnezone_1",
+    "imageName": "magnezone_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 197,
+    "stage": 2,
+    "evolvesFrom": "Magneton",
+    "hp": 200,
+    "type": "Metal",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Energy Magnet",
+            "damage": 0,
+            "attackDescription": "This attack deals 50 more damage for each Energy on your opponent's Active Pokemon.",
+            "attackCost": [
+                "Lightning",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Psychic",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 50
+                }
+            ]
+        }
+    ]
+}

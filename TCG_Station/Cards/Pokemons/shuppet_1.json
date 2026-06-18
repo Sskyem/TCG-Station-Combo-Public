@@ -1,0 +1,27 @@
+{
+    "cardName": "Shuppet",
+    "cardId": "shuppet_1",
+    "imageName": "shuppet_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 71,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Fear",
+            "damage": 0,
+            "attackDescription": "Switch out your opponent's Active Pokemon.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "SwapEnemy",
+                    "cardEffectTarget": "Opponent",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

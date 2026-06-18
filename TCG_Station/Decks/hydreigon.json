@@ -1,0 +1,59 @@
+{
+    "deckName": "Hydreigon",
+    "cards": [
+        {
+            "deckCardID": 33,
+            "cardId": "moltres_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 150,
+            "cardId": "deino_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 151,
+            "cardId": "zweilous_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 152,
+            "cardId": "hydreigon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 248,
+            "cardId": "houndoom_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 133,
+            "cardId": "potion_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 247,
+            "cardId": "houndour_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire",
+        "Darkness"
+    ]
+}

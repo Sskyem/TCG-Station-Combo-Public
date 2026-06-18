@@ -1,0 +1,27 @@
+{
+    "cardName": "Mew",
+    "cardId": "mew_1",
+    "imageName": "mew_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 141,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 100,
+    "type": "Colorless",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Legendary Guidance",
+            "damage": 0,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

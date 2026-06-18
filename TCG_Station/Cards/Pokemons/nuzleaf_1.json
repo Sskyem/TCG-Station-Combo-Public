@@ -1,0 +1,30 @@
+{
+    "cardName": "Nuzleaf",
+    "cardId": "nuzleaf_1",
+    "imageName": "nuzleaf_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 206,
+    "stage": 1,
+    "evolvesFrom": "Seedot",
+    "hp": 120,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Shadow Leaf",
+            "damage": 40,
+            "attackDescription": "Heal from this Pokemon the same amount of damage you did to your opponent's Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "LeechLife",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

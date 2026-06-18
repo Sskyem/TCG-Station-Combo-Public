@@ -1,0 +1,35 @@
+{
+    "cardName": "Hydrapple",
+    "cardId": "hydrapple_1",
+    "imageName": "hydrapple_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 110,
+    "stage": 2,
+    "evolvesFrom": "Flapple",
+    "hp": 220,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Hydra Breath",
+            "damage": 0,
+            "attackDescription": "This attack triggers 3 times. This attack does 10 more damage for each Energy on this Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 3
+                },
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

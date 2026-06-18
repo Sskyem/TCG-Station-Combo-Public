@@ -1,0 +1,30 @@
+{
+    "cardName": "Infernape",
+    "cardId": "infernape_1",
+    "imageName": "infernape_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 222,
+    "stage": 2,
+    "evolvesFrom": "Monferno",
+    "hp": 160,
+    "type": "Fire",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Burst Punch",
+            "damage": 120,
+            "attackDescription": "Discard 2 random Energy from this Pokemon.",
+            "attackCost": [
+                "Fire",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

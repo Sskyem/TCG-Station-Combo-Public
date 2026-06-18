@@ -1,0 +1,42 @@
+{
+    "cardName": "Hydreigon",
+    "cardId": "hydreigon_1",
+    "imageName": "hydreigon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 152,
+    "stage": 2,
+    "evolvesFrom": "Zweilous",
+    "hp": 220,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Tri Howl",
+            "damage": 60,
+            "attackDescription": "This Pokemon also does 20 damage to itself. Discard 1 random Energy from this Pokemon. This attack triggers 3 times.",
+            "attackCost": [
+                "Fire",
+                "Darkness",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 3
+                }
+            ]
+        }
+    ]
+}

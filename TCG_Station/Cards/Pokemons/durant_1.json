@@ -1,0 +1,35 @@
+{
+    "cardName": "Durant",
+    "cardId": "durant_1",
+    "imageName": "durant_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 132,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Metal",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Metal Mandibles",
+            "damage": 80,
+            "attackDescription": "This Pokemon also does 20 damage to itself. During your opponent's next turn, this Pokemon takes 20 less damage from attacks.",
+            "attackCost": [
+                "Grass",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

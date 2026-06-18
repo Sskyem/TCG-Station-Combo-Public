@@ -1,0 +1,30 @@
+{
+    "cardName": "Pupitar",
+    "cardId": "pupitar_1",
+    "imageName": "pupitar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 209,
+    "stage": 1,
+    "evolvesFrom": "Larvitar",
+    "hp": 140,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Shell Blast",
+            "damage": 60,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 20 less damage from attacks.",
+            "attackCost": [
+                "Darkness",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

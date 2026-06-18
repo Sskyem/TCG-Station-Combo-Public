@@ -1,0 +1,30 @@
+{
+    "cardName": "Dreepy",
+    "cardId": "dreepy_1",
+    "imageName": "dreepy_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 26,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 70,
+    "type": "Dragon",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Bite",
+            "damage": 50,
+            "attackDescription": "Draw 1 cards.",
+            "attackCost": [
+                "Fire",
+                "Psychic"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

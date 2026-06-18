@@ -1,0 +1,30 @@
+{
+    "cardName": "Shellder",
+    "cardId": "shellder_1",
+    "imageName": "shellder_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 62,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Water",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Shell Press",
+            "damage": 30,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 30 less damage from attacks.",
+            "attackCost": [
+                "Water",
+                "Water"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

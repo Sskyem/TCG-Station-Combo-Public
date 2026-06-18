@@ -1,0 +1,35 @@
+{
+    "cardName": "Kyurem",
+    "cardId": "kyurem_1",
+    "imageName": "kyurem_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 25,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Ice Blade",
+            "damage": 60,
+            "attackDescription": "Your opponent's Active Pokemon is now Rooted and Slowed.",
+            "attackCost": [
+                "Water",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

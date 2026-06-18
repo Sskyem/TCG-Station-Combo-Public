@@ -1,0 +1,36 @@
+{
+    "cardName": "Rayquaza",
+    "cardId": "rayquaza_1",
+    "imageName": "rayquaza_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 227,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Spiral Burst",
+            "damage": 130,
+            "attackDescription": "Discard 2 random Energy from this Pokemon. Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Fire",
+                "Lightning",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

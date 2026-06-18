@@ -1,0 +1,29 @@
+{
+    "cardName": "Bidoof",
+    "cardId": "bidoof_1",
+    "imageName": "bidoof_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 184,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Colorless",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Wood Crunch",
+            "damage": 0,
+            "attackDescription": "This attack deals 20 more damage for each Energy on your opponent's Active Pokemon.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Psychic",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

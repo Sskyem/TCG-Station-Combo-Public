@@ -1,0 +1,31 @@
+{
+    "cardName": "Goodra",
+    "cardId": "goodra_1",
+    "imageName": "goodra_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 159,
+    "stage": 2,
+    "evolvesFrom": "Sligoo",
+    "hp": 220,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Spiral Drain",
+            "damage": 80,
+            "attackDescription": "Heal 40 damage from this Pokemon.",
+            "attackCost": [
+                "Water",
+                "Psychic",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 40
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "cardName": "Metapod",
+    "cardId": "metapod_1",
+    "imageName": "metapod_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 80,
+    "stage": 1,
+    "evolvesFrom": "Caterpie",
+    "hp": 160,
+    "type": "Grass",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Hardened Shell",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 40 less damage from attacks. Draw 1 cards.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 40
+                },
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

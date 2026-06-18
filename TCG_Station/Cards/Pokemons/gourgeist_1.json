@@ -1,0 +1,29 @@
+{
+    "cardName": "Gourgeist",
+    "cardId": "gourgeist_1",
+    "imageName": "gourgeist_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 189,
+    "stage": 1,
+    "evolvesFrom": "Pumpkaboo",
+    "hp": 120,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Soul Shot",
+            "damage": 80,
+            "attackDescription": "Discard 1 cards. If you can't, this does nothing.",
+            "attackCost": [
+                "Psychic"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DiscardHand",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

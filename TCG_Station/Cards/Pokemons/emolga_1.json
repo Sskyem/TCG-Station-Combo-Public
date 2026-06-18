@@ -1,0 +1,29 @@
+{
+    "cardName": "Emolga",
+    "cardId": "emolga_1",
+    "imageName": "emolga_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 75,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Static Glide",
+            "damage": 40,
+            "attackDescription": "Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Lightning"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

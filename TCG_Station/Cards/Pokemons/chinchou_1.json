@@ -1,0 +1,29 @@
+{
+    "cardName": "Chinchou",
+    "cardId": "chinchou_1",
+    "imageName": "chinchou_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 190,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Aqua Spark",
+            "damage": 10,
+            "attackDescription": "Your opponent's Active Pokemon is now Confused.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}
