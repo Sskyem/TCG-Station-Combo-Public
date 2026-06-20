@@ -1,4 +1,5 @@
 {
+  "_section_gameRules": "GAME RULES",
   "headlessMode": false,
   "deckSize": 30,
   "benchSize": 4,
@@ -7,30 +8,44 @@
   "maxTurns": 45,
   "poisonDamagePerTurn": 10,
   "burnDamagePerTurn": 20,
+
+  "_section_matchSetup": "MATCH SETUP",
   "player1Type": "Algorithm",
   "player2Type": "Algorithm",
   "player1AlgorithmProfile": "Auto",
   "player2AlgorithmProfile": "Auto",
   "player1DeckName": "Garchomp",
   "player2DeckName": "Flygon",
+
+  "_section_llmFallbacks": "LLM FALLBACKS",
   "llmProvider": "Gemini",
-  "player1LlmProvider": "Gemini",
-  "player2LlmProvider": "Ollama",
   "geminiModel": "Flash20",
-  "player1GeminiModel": "Flash20",
-  "player2GeminiModel": "Flash20",
   "ollamaModel": "Gemma3_12b",
-  "player1OllamaModel": "Gemma3_12b",
-  "player2OllamaModel": "Gemma4_E4b_It_Q4_K_M",
   "openAiModel": "Gpt4oMini",
+
+  "_section_player1Llm": "PLAYER 1 — LLM",
+  "player1LlmProvider": "Gemini",
+  "player1GeminiModel": "Flash20",
+  "player1OllamaModel": "Gemma3_12b",
   "player1OpenAiModel": "Gpt4oMini",
+
+  "_section_player2Llm": "PLAYER 2 — LLM",
+  "player2LlmProvider": "Ollama",
+  "player2GeminiModel": "Flash20",
+  "player2OllamaModel": "Gemma4_E4b_It_Q4_K_M",
   "player2OpenAiModel": "Gpt4oMini",
+
+  "_section_mlServer": "ML SERVER",
   "mlServerPreset": "Localhost",
   "mlServerUrl": "http://127.0.0.1:8000/predict",
+
+  "_section_llmAdvisor": "LLM ADVISOR",
   "llmAdvisorProvider": "Ollama",
   "llmAdvisorGeminiModel": "Flash25Lite",
   "llmAdvisorOllamaModel": "Qwen3_8b",
   "llmAdvisorOpenAiModel": "Gpt4oMini",
+
+  "_section_llmShared": "LLM SHARED SETTINGS",
   "ollamaEndpointPreset": "Localhost",
   "ollamaBaseUrl": "http://127.0.0.1:11434/api/chat",
   "llmUseRulesFile": true,
@@ -38,12 +53,18 @@
   "ollamaHistoryTurnsVisible": 1,
   "llmAutoDelay": true,
   "llmTurnDelay": 0.0,
+
+  "_section_generation": "GENERATION SETTINGS",
   "geminiTemperature": 0.2,
   "geminiMaxOutputTokens": 2048,
   "openAiTemperature": 0.2,
   "openAiMaxOutputTokens": 2048,
+
+  "_section_remoteUpload": "OPTIONAL REMOTE LOG UPLOAD",
   "logUploadEnabled": false,
   "uploadLogsDuringBenchmark": false,
+
+  "_section_localLogs": "LOCAL LOG EXPORT",
   "enableReadableBattleLogs": true,
   "enableDeckbuilderBattleLogs": true,
   "enableMatchupStatsLogs": true,
@@ -51,6 +72,8 @@
   "enableMlGameResultLogs": true,
   "enableLlmPromptLogs": true,
   "enableLlmDecisionLogs": true,
+
+  "_section_visualTiming": "VISUALS AND TIMING",
   "aiDelayScale": 1.0,
   "attackPunchScale": 1.25
 }

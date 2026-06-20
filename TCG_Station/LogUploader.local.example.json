@@ -1,4 +1,5 @@
 {
+  "_help": "Copy this file to LogUploader.local.json. The local file is ignored by Git.",
   "serverUrl": "https://your-log-receiver.example",
   "apiKey": "replace-locally"
 }

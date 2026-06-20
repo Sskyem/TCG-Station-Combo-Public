@@ -479,6 +479,7 @@ public class GameRulesConfig : MonoBehaviour
 
         JObject obj = new JObject
         {
+            ["_section_gameRules"] = "GAME RULES",
             ["headlessMode"]        = headlessMode,
             ["deckSize"]            = deckSize,
             ["benchSize"]           = benchSize,
@@ -488,6 +489,7 @@ public class GameRulesConfig : MonoBehaviour
             ["poisonDamagePerTurn"] = poisonDamagePerTurn,
             ["burnDamagePerTurn"]   = burnDamagePerTurn,
 
+            ["_section_matchSetup"] = "MATCH SETUP",
             ["player1Type"]     = player1Type.ToString(),
             ["player2Type"]     = player2Type.ToString(),
             ["player1AlgorithmProfile"] = player1AlgorithmProfile.ToString(),
@@ -495,27 +497,35 @@ public class GameRulesConfig : MonoBehaviour
             ["player1DeckName"] = player1DeckName,
             ["player2DeckName"] = player2DeckName,
 
+            ["_section_llmFallbacks"] = "LLM FALLBACKS",
             ["llmProvider"]        = llmProvider.ToString(),
-            ["player1LlmProvider"] = player1LlmProvider.ToString(),
-            ["player2LlmProvider"] = player2LlmProvider.ToString(),
             ["geminiModel"]        = geminiModel.ToString(),
-            ["player1GeminiModel"] = player1GeminiModel.ToString(),
-            ["player2GeminiModel"] = player2GeminiModel.ToString(),
             ["ollamaModel"]        = ollamaModel.ToString(),
-            ["player1OllamaModel"] = player1OllamaModel.ToString(),
-            ["player2OllamaModel"] = player2OllamaModel.ToString(),
             ["openAiModel"]        = openAiModel.ToString(),
+
+            ["_section_player1Llm"] = "PLAYER 1 — LLM",
+            ["player1LlmProvider"] = player1LlmProvider.ToString(),
+            ["player1GeminiModel"] = player1GeminiModel.ToString(),
+            ["player1OllamaModel"] = player1OllamaModel.ToString(),
             ["player1OpenAiModel"] = player1OpenAiModel.ToString(),
+
+            ["_section_player2Llm"] = "PLAYER 2 — LLM",
+            ["player2LlmProvider"] = player2LlmProvider.ToString(),
+            ["player2GeminiModel"] = player2GeminiModel.ToString(),
+            ["player2OllamaModel"] = player2OllamaModel.ToString(),
             ["player2OpenAiModel"] = player2OpenAiModel.ToString(),
 
+            ["_section_mlServer"] = "ML SERVER",
             ["mlServerPreset"] = mlServerPreset.ToString(),
             ["mlServerUrl"]    = mlServerUrl,
 
+            ["_section_llmAdvisor"] = "LLM ADVISOR",
             ["llmAdvisorProvider"]    = llmAdvisorProvider.ToString(),
             ["llmAdvisorGeminiModel"] = llmAdvisorGeminiModel.ToString(),
             ["llmAdvisorOllamaModel"] = llmAdvisorOllamaModel.ToString(),
             ["llmAdvisorOpenAiModel"] = llmAdvisorOpenAiModel.ToString(),
 
+            ["_section_llmShared"] = "LLM SHARED SETTINGS",
             ["ollamaEndpointPreset"]      = ollamaEndpointPreset.ToString(),
             ["ollamaBaseUrl"]             = ollamaBaseUrl,
             ["llmUseRulesFile"]           = llmUseRulesFile,
@@ -524,14 +534,17 @@ public class GameRulesConfig : MonoBehaviour
             ["llmAutoDelay"]              = llmAutoDelay,
             ["llmTurnDelay"]              = llmTurnDelay,
 
+            ["_section_generation"] = "GENERATION SETTINGS",
             ["geminiTemperature"]     = geminiTemperature,
             ["geminiMaxOutputTokens"] = geminiMaxOutputTokens,
             ["openAiTemperature"]     = openAiTemperature,
             ["openAiMaxOutputTokens"] = openAiMaxOutputTokens,
 
+            ["_section_remoteUpload"] = "OPTIONAL REMOTE LOG UPLOAD",
             ["logUploadEnabled"] = logUploadEnabled,
             ["uploadLogsDuringBenchmark"] = uploadLogsDuringBenchmark,
 
+            ["_section_localLogs"] = "LOCAL LOG EXPORT",
             ["enableReadableBattleLogs"]    = enableReadableBattleLogs,
             ["enableDeckbuilderBattleLogs"] = enableDeckbuilderBattleLogs,
             ["enableMatchupStatsLogs"]      = enableMatchupStatsLogs,
@@ -540,6 +553,7 @@ public class GameRulesConfig : MonoBehaviour
             ["enableLlmPromptLogs"]         = enableLlmPromptLogs,
             ["enableLlmDecisionLogs"]       = enableLlmDecisionLogs,
 
+            ["_section_visualTiming"] = "VISUALS AND TIMING",
             ["aiDelayScale"]     = aiDelayScale,
             ["attackPunchScale"] = attackPunchScale,
         };

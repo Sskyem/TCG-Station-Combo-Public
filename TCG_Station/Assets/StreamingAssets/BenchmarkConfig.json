@@ -1,4 +1,5 @@
 {
+  "_section_schedule": "BENCHMARK SCHEDULE",
   "_profilesHelp": "Each participant is { \"deck\", \"profile\" }. Valid profile values: Standard, Ramp, TempoAggro, ControlStatus, HealStall, Auto (Auto = detect the deck archetype). Edit a participant's \"profile\" to test a different weight set.",
   "runEnabled": false,
   "matchesPerPairing": 5,
@@ -9,6 +10,8 @@
   "fastMode": true,
   "matchWatchdogSeconds": 180.0,
   "stopOnFinish": true,
+
+  "_section_participants": "PARTICIPANTS",
   "participants": [
     {
       "deck": "Annihilape",
@@ -167,6 +170,8 @@
       "profile": "Auto"
     }
   ],
+
+  "_section_profileSweep": "OPTIONAL PROFILE SWEEP",
   "algorithmProfiles": [
     "Standard"
   ]

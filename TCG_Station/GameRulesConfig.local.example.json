@@ -1,6 +1,10 @@
 {
+  "_help": "Copy this file to GameRulesConfig.local.json. The local file is ignored by Git and overrides the main config.",
+  "_section_mlServer": "ML SERVER",
   "mlServerPreset": "Custom",
   "mlServerUrl": "http://your-private-host:8000/predict",
+
+  "_section_ollama": "OLLAMA",
   "ollamaEndpointPreset": "Custom",
   "ollamaBaseUrl": "http://your-private-host:11434/api/chat"
 }

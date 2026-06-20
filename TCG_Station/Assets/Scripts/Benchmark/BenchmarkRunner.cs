@@ -1212,6 +1212,7 @@ public class BenchmarkRunner : MonoBehaviour
 
         JObject obj = new JObject
         {
+            ["_section_schedule"]      = "BENCHMARK SCHEDULE",
             ["_profilesHelp"]        = "Each participant is { \"deck\", \"profile\" }. Valid profile values: " +
                                        "Standard, Ramp, TempoAggro, ControlStatus, HealStall, Auto " +
                                        "(Auto = detect the deck archetype). Edit a participant's \"profile\" to test a different weight set.",
@@ -1224,6 +1225,7 @@ public class BenchmarkRunner : MonoBehaviour
             ["fastMode"]             = fastMode,
             ["matchWatchdogSeconds"] = matchWatchdogSeconds,
             ["stopOnFinish"]         = stopOnFinish,
+            ["_section_participants"] = "PARTICIPANTS",
             // Always write the explicit object form { "deck", "profile" } so every participant shows its
             // weight profile next to its deck name — editable in a build without knowing the JSON schema.
             // Profile = preserved override, else a faithful default: "Auto" when autoDetectProfilesByDeck
@@ -1246,11 +1248,14 @@ public class BenchmarkRunner : MonoBehaviour
         };
 
         if (algorithmProfiles != null)
+        {
+            obj["_section_profileSweep"] = "OPTIONAL PROFILE SWEEP";
             obj["algorithmProfiles"] = new JArray(algorithmProfiles
                                                   .Where(p => !string.IsNullOrWhiteSpace(p))
                                                   .Select(p => p.Trim())
                                                   .Cast<object>()
                                                   .ToArray());
+        }
 
         try
         {
