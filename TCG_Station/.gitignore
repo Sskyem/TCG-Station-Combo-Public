@@ -78,6 +78,12 @@ crashlytics-build.properties
 .DS_Store
 Assets/.DS_Store
 Cards/.DS_Store
+GameRulesConfig.local.json
+BenchmarkConfig.local.json
+LogUploader.local.json
+GEMINI_API_KEY.txt
+OPENAI_API_KEY.txt
+.claude/settings.local.json
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
@@ -102,4 +108,5 @@ Assets/UNITY Stuff/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF -
 .DS_Store
 *.slnx
 debug_log.txt
+.claude/settings.local.json
 Assets/UNITY Stuff/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset

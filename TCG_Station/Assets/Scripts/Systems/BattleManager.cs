@@ -452,7 +452,8 @@ public class BattleManager : MonoBehaviour
 
     /// <summary>
     /// Wybiera najlepszego kandydata do promocji z ławki AI.
-    /// Priorytet: gotowy do ataku (max dmg) > najwięcej energii > pierwszy z listy.
+    /// Ocenia zarówno ataki gotowe teraz, jak i ataki uruchamiane przez energię,
+    /// którą właściciel dostanie do podpięcia w swojej najbliższej turze.
     /// </summary>
     private CardInstance ChooseBestPromotion(PlayerController owner)
     {
@@ -463,33 +464,153 @@ public class BattleManager : MonoBehaviour
         if (candidates.Count == 0)
             candidates = bench;
 
-        // 1. Pokemon który już może atakować — preferuj ten z najwyższym dmg ataku
-        CardInstance readyAttacker = null;
-        int readyMaxDmg = -1;
-        foreach (var card in candidates)
+        PlayerController opponent = GetOpponent(owner);
+        EnumPokemonType projectedEnergy = GetPromotionTurnEnergy(owner);
+
+        CardInstance chosen = candidates
+            .OrderByDescending(card => GetBestPromotionAttackValue(card, opponent, projectedEnergy))
+            .ThenByDescending(card => CanAttackAfterProjectedAttach(card, projectedEnergy))
+            .ThenByDescending(card => CanAttackNow(card))
+            .ThenByDescending(card => card.pokemonLogic?.energyEquipped?.Values.Sum() ?? 0)
+            .ThenByDescending(card => card.pokemonLogic?.currentHp ?? 0)
+            .First();
+
+        Debug.Log(
+            $"[BattleManager] Promotion choice P{owner.playerId}: {chosen.baseData.cardName}; " +
+            $"projected energy={projectedEnergy}, " +
+            $"attack value={GetBestPromotionAttackValue(chosen, opponent, projectedEnergy)}, " +
+            $"ready now={CanAttackNow(chosen)}, " +
+            $"ready after attach={CanAttackAfterProjectedAttach(chosen, projectedEnergy)}.");
+
+        return chosen;
+    }
+
+    private EnumPokemonType GetPromotionTurnEnergy(PlayerController owner)
+    {
+        EnergyZone zone = playerManager?.GetEnergyZoneFor(owner);
+        if (zone == null) return EnumPokemonType.None;
+
+        // A KO normally happens during the opponent's turn. AdvanceEnergy runs at the
+        // beginning of the promoted Pokemon owner's turn, making nextEnergy available.
+        // If promotion happens during the owner's own turn, currentEnergy is still usable.
+        return playerManager.activePlayer == owner
+            ? zone.currentEnergy
+            : zone.nextEnergy;
+    }
+
+    private int GetBestPromotionAttackValue(
+        CardInstance card,
+        PlayerController opponent,
+        EnumPokemonType projectedEnergy)
+    {
+        if (card?.pokemonLogic == null || card.baseData is not PokemonData pokemonData ||
+            pokemonData.attacks == null)
+            return 0;
+
+        Dictionary<EnumPokemonType, int> projected =
+            new Dictionary<EnumPokemonType, int>(card.pokemonLogic.energyEquipped);
+        AddProjectedEnergy(projected, projectedEnergy);
+
+        int benchCount = opponent?.benchPokemons?.Count(bench => bench?.pokemonLogic != null) ?? 0;
+        return pokemonData.attacks
+            .Where(attack => CanPayAttackCost(
+                projected,
+                attack,
+                card.pokemonLogic.tempBuffsData.attackEnergyCostChange))
+            .Select(attack => attack.damage + GetBenchDamageValue(attack, benchCount))
+            .DefaultIfEmpty(0)
+            .Max();
+    }
+
+    private bool CanAttackNow(CardInstance card)
+    {
+        if (card?.pokemonLogic == null || card.baseData is not PokemonData pokemonData ||
+            pokemonData.attacks == null)
+            return false;
+
+        return pokemonData.attacks.Any(attack =>
+            CardActions.CanAffordAttack(card.pokemonLogic, attack));
+    }
+
+    private bool CanAttackAfterProjectedAttach(CardInstance card, EnumPokemonType projectedEnergy)
+    {
+        if (projectedEnergy == EnumPokemonType.None ||
+            card?.pokemonLogic == null ||
+            card.baseData is not PokemonData pokemonData ||
+            pokemonData.attacks == null)
+            return false;
+
+        Dictionary<EnumPokemonType, int> projected =
+            new Dictionary<EnumPokemonType, int>(card.pokemonLogic.energyEquipped);
+        AddProjectedEnergy(projected, projectedEnergy);
+
+        return pokemonData.attacks.Any(attack => CanPayAttackCost(
+            projected,
+            attack,
+            card.pokemonLogic.tempBuffsData.attackEnergyCostChange));
+    }
+
+    private static void AddProjectedEnergy(
+        Dictionary<EnumPokemonType, int> energy,
+        EnumPokemonType energyType)
+    {
+        if (energyType == EnumPokemonType.None) return;
+        energy.TryGetValue(energyType, out int current);
+        energy[energyType] = current + 1;
+    }
+
+    private static bool CanPayAttackCost(
+        Dictionary<EnumPokemonType, int> available,
+        AttackData attack,
+        int attackEnergyCostChange)
+    {
+        if (attack?.attackCost == null) return false;
+
+        Dictionary<EnumPokemonType, int> remaining =
+            new Dictionary<EnumPokemonType, int>(available);
+        int wildcard = remaining
+            .Where(pair => CardActions.IsWildcardEnergy(pair.Key))
+            .Sum(pair => pair.Value);
+
+        foreach (EnumPokemonType required in attack.attackCost.Where(type =>
+                     type != EnumPokemonType.Colorless))
         {
-            var pd = card.baseData as PokemonData;
-            if (pd?.attacks == null) continue;
-            foreach (var atk in pd.attacks)
+            remaining.TryGetValue(required, out int count);
+            if (count > 0)
             {
-                if (CardActions.CanAffordAttack(card.pokemonLogic, atk) && atk.damage > readyMaxDmg)
-                {
-                    readyMaxDmg = atk.damage;
-                    readyAttacker = card;
-                }
+                remaining[required] = count - 1;
+            }
+            else if (wildcard > 0)
+            {
+                wildcard--;
+            }
+            else
+            {
+                return false;
             }
         }
-        if (readyAttacker != null) return readyAttacker;
 
-        // 2. Pokemon z największą ilością energii (najbliższy gotowości)
-        CardInstance mostEnergy = candidates[0];
-        int maxEnergy = 0;
-        foreach (var card in candidates)
-        {
-            int total = card.pokemonLogic.energyEquipped.Values.Sum();
-            if (total > maxEnergy) { maxEnergy = total; mostEnergy = card; }
-        }
-        return mostEnergy;
+        int colorlessNeeded = attack.attackCost.Count(type =>
+            type == EnumPokemonType.Colorless);
+        colorlessNeeded = Mathf.Max(0, colorlessNeeded + attackEnergyCostChange);
+
+        int remainingEnergy = remaining
+            .Where(pair => !CardActions.IsWildcardEnergy(pair.Key))
+            .Sum(pair => pair.Value) + wildcard;
+        return remainingEnergy >= colorlessNeeded;
+    }
+
+    private static int GetBenchDamageValue(AttackData attack, int enemyBenchCount)
+    {
+        if (attack?.effects == null || enemyBenchCount <= 0) return 0;
+
+        return attack.effects
+            .Where(effect =>
+                effect.cardEffectType == EnumCardEffectType.BenchDmg &&
+                (effect.cardEffectTarget == EnumCardEffectTarget.EnemyBenchPokemon ||
+                 effect.cardEffectTarget == EnumCardEffectTarget.AllOpponents ||
+                 effect.cardEffectTarget == EnumCardEffectTarget.All))
+            .Sum(effect => Mathf.Max(0, effect.effectAmount) * enemyBenchCount);
     }
 
     private bool HasFinalEvolutionWaitingInHand(PlayerController owner, CardInstance benchPokemon)

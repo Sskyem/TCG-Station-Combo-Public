@@ -14,6 +14,7 @@ TCG_Station/ProjectSettings/GraphicsSettings.asset
 # Local-only secret/config material
 *.secret*
 *.local*
+!**/*.local.example.json
 .env
 .env.*
 !.env.example

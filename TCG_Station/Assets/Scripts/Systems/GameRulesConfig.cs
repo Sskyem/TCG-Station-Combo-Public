@@ -257,6 +257,29 @@ public class GameRulesConfig : MonoBehaviour
                 CommentHandling = CommentHandling.Ignore
             });
 
+            string localPath = RuntimePaths.ConfigPath("GameRulesConfig.local.json");
+            if (File.Exists(localPath))
+            {
+                try
+                {
+                    JObject localObj = JObject.Parse(File.ReadAllText(localPath), new JsonLoadSettings
+                    {
+                        CommentHandling = CommentHandling.Ignore
+                    });
+                    obj.Merge(localObj, new JsonMergeSettings
+                    {
+                        MergeArrayHandling = MergeArrayHandling.Replace,
+                        MergeNullValueHandling = MergeNullValueHandling.Ignore
+                    });
+                    Debug.Log($"[GameRulesConfig] Zastosowano lokalne nadpisania z {localPath}");
+                }
+                catch (Exception localError)
+                {
+                    Debug.LogError(
+                        $"[GameRulesConfig] Pomijam nieprawidłowy {localPath}: {localError.Message}");
+                }
+            }
+
             headlessMode        = Get(obj, "headlessMode",        headlessMode);
             deckSize            = Get(obj, "deckSize",            deckSize);
             benchSize           = Get(obj, "benchSize",           benchSize);
@@ -530,6 +553,62 @@ public class GameRulesConfig : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError($"[GameRulesConfig] Nie udało się zapisać JSON: {e.Message}");
+        }
+    }
+
+    /// <summary>
+    /// Persists only fields controlled by StartupMenuController.
+    /// Hand-authored settings that are not exposed in the menu (especially LLM provider/model
+    /// configuration) keep their existing JSON values.
+    /// </summary>
+    public bool SaveStartupMenuSettingsToJson()
+    {
+        ValidateValues();
+
+        string path = RuntimePaths.ConfigPath("GameRulesConfig.json");
+        JObject obj;
+
+        try
+        {
+            obj = File.Exists(path)
+                ? JObject.Parse(File.ReadAllText(path), new JsonLoadSettings
+                {
+                    CommentHandling = CommentHandling.Ignore
+                })
+                : new JObject();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(
+                $"[GameRulesConfig] Nie zapisano ustawień menu, ponieważ istniejący JSON jest nieprawidłowy: {e.Message}");
+            return false;
+        }
+
+        obj["headlessMode"] = headlessMode;
+        obj["benchSize"] = benchSize;
+        obj["pointsToWin"] = pointsToWin;
+        obj["maxTurns"] = maxTurns;
+
+        obj["player1Type"] = player1Type.ToString();
+        obj["player2Type"] = player2Type.ToString();
+        obj["player1AlgorithmProfile"] = player1AlgorithmProfile.ToString();
+        obj["player2AlgorithmProfile"] = player2AlgorithmProfile.ToString();
+        obj["player1DeckName"] = player1DeckName;
+        obj["player2DeckName"] = player2DeckName;
+
+        obj["logUploadEnabled"] = logUploadEnabled;
+        obj["aiDelayScale"] = aiDelayScale;
+
+        try
+        {
+            File.WriteAllText(path, obj.ToString(Formatting.Indented));
+            Debug.Log($"[GameRulesConfig] Zapisano ustawienia menu do {path}, zachowując pozostałe pola.");
+            return true;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[GameRulesConfig] Nie udało się zapisać ustawień menu: {e.Message}");
+            return false;
         }
     }
 }

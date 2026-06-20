@@ -14,8 +14,8 @@ using UnityEngine.UI;
 /// Design notes:
 ///   - The menu edits GameRulesConfig.Instance fields directly, so a GameRulesConfig
 ///     component MUST be present in the Initialization scene (with loadFromJson = true so
-///     the UI prefills from the current config). On Start it calls SaveToJson(); the fresh
-///     GameRulesConfig in the gameplay scene reloads that file on Awake — no extra plumbing.
+///     the UI prefills from the current config). On Start it merges only menu-owned fields into
+///     the JSON; the fresh GameRulesConfig in the gameplay scene reloads that file on Awake.
 ///   - Benchmark settings are persisted via the static BenchmarkRunner.SaveConfig(). For the
 ///     Simulation mode to actually run, the BenchmarkRunner component in the gameplay scene
 ///     must have its Inspector runEnabled = true (the Inspector switch is checked before JSON).
@@ -104,9 +104,8 @@ public class StartupMenuController : MonoBehaviour
         else
         {
             // Author from the actual JSON file, not stale Inspector defaults. This matters when the
-            // Initialization scene's GameRulesConfig has loadFromJson = false: without this, SaveToJson()
-            // on Start would clobber hand-edited fields the menu doesn't expose (e.g. headlessMode) with
-            // Inspector values. Reloading first makes the menu round-trip the file and prefill correctly.
+            // Initialization scene's GameRulesConfig may have loadFromJson = false. Reloading here
+            // still ensures the UI is prefilled from the actual runtime file.
             cfg.ReloadFromJson();
         }
 
@@ -180,9 +179,9 @@ public class StartupMenuController : MonoBehaviour
         {
             modeLabel.text = m switch
             {
-                MenuMode.Simulation => "Symulacja (benchmark)",
-                MenuMode.WatchAi    => "Oglądaj AI vs AI",
-                _                   => "Gra: Człowiek vs AI",
+                MenuMode.Simulation => "Wybrane: Symulacja (benchmark)",
+                MenuMode.WatchAi    => "Wybrane: Oglądaj AI vs AI",
+                _                   => "Wybrane: Gra: Człowiek vs AI",
             };
         }
 
@@ -269,7 +268,14 @@ public class StartupMenuController : MonoBehaviour
         if (mode != MenuMode.Simulation)
             cfg.player2AlgorithmProfile = SelectedAlgorithmProfile(player2ProfileDropdown, cfg.player2AlgorithmProfile);
 
-        cfg.SaveToJson();
+        // The startup UI owns only a subset of GameRulesConfig. Merge those values into the
+        // existing file so hand-edited LLM models/providers and other advanced settings are not
+        // replaced by values held by the scene object.
+        if (!cfg.SaveStartupMenuSettingsToJson())
+        {
+            Debug.LogError("[StartupMenuController] Start cancelled because GameRulesConfig.json could not be saved safely.");
+            return;
+        }
 
         // Participants: full round-robin over every loaded deck (sensible default for a demo).
         // SaveConfig preserves the hand-authored autoDetectProfilesByDeck flag and per-participant

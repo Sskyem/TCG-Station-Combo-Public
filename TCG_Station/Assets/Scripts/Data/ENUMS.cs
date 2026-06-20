@@ -206,8 +206,6 @@ public enum EnumOllamaModel
 public enum EnumOllamaEndpointPreset
 {
     Localhost,
-    RemotePreset1,
-    RemotePreset2,
     Custom
 }
 
@@ -215,8 +213,6 @@ public enum EnumOllamaEndpointPreset
 public enum EnumMlServerPreset
 {
     Localhost,
-    RemotePreset1,
-    RemotePreset2,
     Custom
 }
 

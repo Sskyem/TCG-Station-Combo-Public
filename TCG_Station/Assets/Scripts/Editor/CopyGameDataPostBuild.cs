@@ -25,6 +25,11 @@ public static class CopyGameDataPostBuild
 {
     private static readonly string[] DataFolders = { "Cards", "Decks" };
     private static readonly string[] ConfigFiles = { "GameRulesConfig.json", "BenchmarkConfig.json" };
+    private static readonly string[] LocalConfigExamples =
+    {
+        "GameRulesConfig.local.example.json",
+        "LogUploader.local.example.json"
+    };
 
     [PostProcessBuild(1)]
     public static void OnPostProcessBuild(BuildTarget target, string pathToBuiltProject)
@@ -54,7 +59,16 @@ public static class CopyGameDataPostBuild
             CopyFile(src, dst);
         }
 
-        Debug.Log($"[CopyGameDataPostBuild] Copied {string.Join(", ", DataFolders)} and {string.Join(", ", ConfigFiles)} into: {gameRoot}");
+        foreach (string fileName in LocalConfigExamples)
+        {
+            string src = Path.Combine(projectRoot, fileName);
+            string dst = Path.Combine(gameRoot, fileName);
+            CopyFile(src, dst);
+        }
+
+        Debug.Log(
+            $"[CopyGameDataPostBuild] Copied {string.Join(", ", DataFolders)}, " +
+            $"{string.Join(", ", ConfigFiles)}, and local config examples into: {gameRoot}");
     }
 
     /// <summary>

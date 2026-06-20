@@ -1,0 +1,6 @@
+{
+  "mlServerPreset": "Custom",
+  "mlServerUrl": "http://your-private-host:8000/predict",
+  "ollamaEndpointPreset": "Custom",
+  "ollamaBaseUrl": "http://your-private-host:11434/api/chat"
+}

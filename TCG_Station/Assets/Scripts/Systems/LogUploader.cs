@@ -16,14 +16,12 @@ public class LogUploader : MonoBehaviour
 {
     public static LogUploader Instance { get; private set; }
 
-    // --- Hardcoded server endpoint -----------------------------------------
-    // Kept in code (not StreamingAssets) so it isn't sitting as a plaintext
-    // JSON file next to the .exe. NOTE: strings are still recoverable from
-    // the compiled assembly with any binary inspector — this only stops
-    // casual lookup, not a determined attacker. Rotate the key on both
-    // sides (here + log_receiver.py) if it leaks.
-    private const string LogServerUrl    = "http://127.0.0.1:8001";
-    private const string LogServerApiKey = "PUBLIC_PLACEHOLDER_CHANGE_ME";
+    [Serializable]
+    private sealed class LocalUploadConfig
+    {
+        public string serverUrl;
+        public string apiKey;
+    }
 
     private static readonly JsonSerializerSettings JsonSettings = new JsonSerializerSettings
     {
@@ -83,9 +81,13 @@ public class LogUploader : MonoBehaviour
             yield break;
         }
 
+        LocalUploadConfig uploadConfig = LoadLocalUploadConfig();
+        if (uploadConfig == null)
+            yield break;
+
         string gameId  = record.game_id;
-        string baseUrl = LogServerUrl.TrimEnd('/');
-        string apiKey  = LogServerApiKey;
+        string baseUrl = uploadConfig.serverUrl.TrimEnd('/');
+        string apiKey  = uploadConfig.apiKey;
         string clientId = GetOrCreateClientId();
 
         // 1. Upload game result (adds client_id to the existing record)
@@ -131,6 +133,36 @@ public class LogUploader : MonoBehaviour
                           "application/x-ndjson", apiKey, timeout: 30);
 
         Debug.Log($"[LogUploader] Uploaded game {gameId} ({fileBytes.Length / 1024} KB decisions)");
+    }
+
+    private static LocalUploadConfig LoadLocalUploadConfig()
+    {
+        string path = RuntimePaths.ConfigPath("LogUploader.local.json");
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning(
+                $"[LogUploader] Upload enabled, but {path} does not exist. Copy LogUploader.local.example.json and fill it locally.");
+            return null;
+        }
+
+        try
+        {
+            LocalUploadConfig config = JsonConvert.DeserializeObject<LocalUploadConfig>(File.ReadAllText(path));
+            if (config == null ||
+                string.IsNullOrWhiteSpace(config.serverUrl) ||
+                string.IsNullOrWhiteSpace(config.apiKey))
+            {
+                Debug.LogWarning($"[LogUploader] {path} is missing serverUrl or apiKey.");
+                return null;
+            }
+
+            return config;
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning($"[LogUploader] Could not read {path}: {e.Message}");
+            return null;
+        }
     }
 
     private IEnumerator Post(string url, byte[] body, string contentType, string apiKey, int timeout)

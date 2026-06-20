@@ -727,9 +727,12 @@ public class AlgorithmBrain : PlayerBrain
             return score;
         }
 
-        if (!HasEnergyForAnyAttack(target))
+        // Retreat is only useful when the promoted Pokemon can actually declare an attack.
+        // Energy readiness alone is insufficient for attacks with additional costs such as
+        // Garchomp's DiscardHand: after evolutions the hand may be empty even with full energy.
+        if (!CanDeclareAnyAttack(target, context.Opponent))
         {
-            score.Block("target is not ready to attack");
+            score.Block("target cannot declare an attack after retreat");
             return score;
         }
 
@@ -741,6 +744,8 @@ public class AlgorithmBrain : PlayerBrain
 
         int activeDamage = GetMaxReadyDamage(active, context.EnemyActive);
         int targetDamage = GetMaxReadyDamage(target, context.EnemyActive);
+        int activeAttackValue = GetMaxReadyAttackValue(active, context.EnemyActive, context.Opponent);
+        int targetAttackValue = GetMaxReadyAttackValue(target, context.EnemyActive, context.Opponent);
         bool activeUsefulRamp = ActiveHasUsefulRampAttack(active);
         int enemyHp = context.EnemyActive?.pokemonLogic?.currentHp ?? int.MaxValue;
         bool activeCanKo = activeDamage >= enemyHp;
@@ -766,8 +771,8 @@ public class AlgorithmBrain : PlayerBrain
         else if (!targetLikelyKo)
             score.Add(Mathf.Min(profile.targetSurvivalBufferCap, target.pokemonLogic.currentHp / profile.targetSurvivalBufferDivisor), "retreat target survival buffer");
 
-        bool targetImprovesBoard = targetDamage > 0 || ActiveHasUsefulRampAttack(target);
-        if (activeDamage == 0 && !activeUsefulRamp && targetImprovesBoard)
+        bool targetImprovesBoard = targetAttackValue > 0 || ActiveHasUsefulRampAttack(target);
+        if (activeAttackValue == 0 && !activeUsefulRamp && targetImprovesBoard)
             score.Add(profile.activeNoDamageBonus, "active has no damage and no useful ramp");
 
         if (activeUsefulRamp)
@@ -779,13 +784,14 @@ public class AlgorithmBrain : PlayerBrain
         if (BestReadyAttackHasEffect(target, context.EnemyActive, EnumCardEffectType.SwapSelf))
             score.Add(activeCanKo ? profile.targetSwapAfterRetreatKoPenalty : profile.targetSwapPenalty, "target attack switches after manual retreat");
 
-        int damageDelta = targetDamage - activeDamage;
-        score.Add(Mathf.Clamp(damageDelta, profile.damageDeltaClampMin, profile.damageDeltaClampMax), "damage delta vs active");
+        int damageDelta = targetAttackValue - activeAttackValue;
+        score.Add(Mathf.Clamp(damageDelta, profile.damageDeltaClampMin, profile.damageDeltaClampMax), "attack value delta vs active");
 
         if (targetCanKo && !activeCanKo)
             score.Add(profile.benchCanKoBonus, "bench can KO current active");
 
-        if (targetDamage >= activeDamage + profile.benchMuchStrongerDamageDelta && targetDamage >= activeDamage * 2)
+        if (targetAttackValue >= activeAttackValue + profile.benchMuchStrongerDamageDelta &&
+            targetAttackValue >= activeAttackValue * 2)
             score.Add(profile.benchMuchStrongerBonus, "bench is much stronger attacker");
 
         if (!context.ActiveLikelyKo && damageDelta <= 0 && activeUsefulRamp)
@@ -1009,31 +1015,44 @@ public class AlgorithmBrain : PlayerBrain
         if (evolutionCard?.baseData is not PokemonData evolutionData || evolutionData.stage <= 0)
             return false;
 
-        if (playerManager.GetEvolvableTargets(evolutionCard, myPlayer).Count > 0)
+        if (CanContinueEvolutionTurnAfterTurn(evolutionCard, evolutionData))
             return true;
 
-        return BoardHasPokemonNamed(evolutionData.evolvesFrom) ||
-               BoardHasAncestorForEvolution(evolutionData);
+        // A future copy still in the deck makes a currently unusable evolution replaceable.
+        // Do not skip an entire attack merely to protect a card whose missing intermediate
+        // evolution has not been found yet.
+        return !myPlayer.deck.Any(card =>
+            card?.baseData is PokemonData deckPokemon &&
+            deckPokemon.cardName == evolutionData.cardName);
     }
 
-    private bool BoardHasAncestorForEvolution(PokemonData evolutionData)
+    private bool CanContinueEvolutionTurnAfterTurn(CardInstance evolutionCard, PokemonData evolutionData)
     {
         if (evolutionData == null || string.IsNullOrEmpty(evolutionData.evolvesFrom))
             return false;
 
-        List<PokemonData> ownedPokemon = GetOwnedPokemonData()
-            .GroupBy(p => p.cardName)
-            .Select(g => g.First())
-            .ToList();
+        if (BoardHasPokemonNamed(evolutionData.evolvesFrom))
+            return true;
 
-        string parent = evolutionData.evolvesFrom;
-        while (!string.IsNullOrEmpty(parent))
+        string requiredParent = evolutionData.evolvesFrom;
+        var usedHandCards = new HashSet<CardInstance> { evolutionCard };
+
+        while (!string.IsNullOrEmpty(requiredParent))
         {
-            if (BoardHasPokemonNamed(parent))
+            CardInstance parentCard = myPlayer.hand.FirstOrDefault(card =>
+                card != null &&
+                !usedHandCards.Contains(card) &&
+                card.baseData is PokemonData handPokemon &&
+                handPokemon.cardName == requiredParent);
+
+            if (parentCard?.baseData is not PokemonData parentData)
+                return false;
+
+            usedHandCards.Add(parentCard);
+            if (BoardHasPokemonNamed(parentData.evolvesFrom))
                 return true;
 
-            PokemonData parentData = ownedPokemon.FirstOrDefault(p => p.cardName == parent);
-            parent = parentData?.evolvesFrom;
+            requiredParent = parentData.evolvesFrom;
         }
 
         return false;
@@ -2265,30 +2284,111 @@ public class AlgorithmBrain : PlayerBrain
         CardInstance active = myPlayer.activePokemon;
         if (active?.pokemonLogic == null || myPlayer.benchPokemons.Count == 0) return false;
 
-        bool readyBenchExists = myPlayer.benchPokemons.Any(HasEnergyForAnyAttack);
-        if (!readyBenchExists) return false;
-
         CardInstance enemyActive = opponent?.activePokemon;
+        CardInstance swapTarget = ChooseAutomaticSwapSelfTarget();
+        if (swapTarget == null) return false;
 
-        // If the active can KO the enemy this turn, attacking is strictly better than switching it
-        // out — switching wastes the KO and (after a follow-up retreat back) caused the observed
-        // Hydrapple↔Tropius ping-pong.
-        if (enemyActive?.pokemonLogic != null &&
-            GetMaxReadyDamage(active, enemyActive) >= enemyActive.pokemonLogic.currentHp)
+        EnergyZone zone = playerManager.GetEnergyZoneFor(myPlayer);
+        EnumPokemonType availableEnergy = myPlayer.canAddEnergy && zone != null
+            ? zone.currentEnergy
+            : EnumPokemonType.None;
+
+        // Trainers are played before the normal energy attachment. Compare the actual target that
+        // CardActions will promote with the active after that pending attachment; otherwise Leaf
+        // sees an temporarily unready Flygon and replaces it with an already-ready Metapod.
+        int activeProjectedValue = GetProjectedAttackValueAfterTrainer(
+            active, enemyActive, opponent, availableEnergy);
+        int targetProjectedValue = GetProjectedAttackValueAfterTrainer(
+            swapTarget, enemyActive, opponent, availableEnergy);
+
+        if (activeProjectedValue >= targetProjectedValue)
             return false;
 
-        // Active cannot attack at all — bringing in a ready attacker is clearly better.
-        if (!HasEnergyForAnyAttack(active)) return true;
+        // A clearly better target may replace an active that still cannot produce a useful attack
+        // after this turn's attachment. If both can attack, preserve the current active unless it is
+        // threatened with KO; this avoids spending Leaf for marginal reshuffling.
+        if (activeProjectedValue <= 0)
+            return targetProjectedValue > 0;
 
-        // Active can attack but is at KO risk: only switch if a ready bench Pokemon is at least as
-        // strong an attacker. Otherwise the swap trades a usable attacker for a weaker one, and a
-        // later step or next turn just swaps/retreats it back.
         int enemyDmg = EstimateEnemyMaxDamage(opponent);
-        if (active.pokemonLogic.currentHp > enemyDmg) return false;
+        return active.pokemonLogic.currentHp <= enemyDmg;
+    }
 
-        int activeDamage = GetMaxReadyDamage(active, enemyActive);
-        return myPlayer.benchPokemons.Any(b =>
-            HasEnergyForAnyAttack(b) && GetMaxReadyDamage(b, enemyActive) >= activeDamage);
+    /// Mirrors CardActions.ChooseBestSwapSelfTarget so the trainer heuristic evaluates the Pokemon
+    /// that the automatic SwapSelf effect will actually promote.
+    private CardInstance ChooseAutomaticSwapSelfTarget()
+    {
+        CardInstance bestTarget = null;
+        int bestPrintedDamage = int.MinValue;
+
+        foreach (CardInstance benchCard in myPlayer.benchPokemons)
+        {
+            var pokemonData = benchCard?.baseData as PokemonData;
+            if (benchCard?.pokemonLogic == null || pokemonData?.attacks == null) continue;
+
+            int maxDamage = pokemonData.attacks
+                .Where(attack => CardActions.CanAffordAttack(benchCard.pokemonLogic, attack))
+                .Select(attack => attack.damage)
+                .DefaultIfEmpty(int.MinValue)
+                .Max();
+
+            if (maxDamage == int.MinValue) continue;
+            if (bestTarget == null || maxDamage > bestPrintedDamage)
+            {
+                bestTarget = benchCard;
+                bestPrintedDamage = maxDamage;
+            }
+        }
+
+        return bestTarget;
+    }
+
+    private int GetProjectedAttackValueAfterTrainer(
+        CardInstance attacker,
+        CardInstance defender,
+        PlayerController opponent,
+        EnumPokemonType availableEnergy)
+    {
+        var pokemonData = attacker?.baseData as PokemonData;
+        if (attacker?.pokemonLogic == null ||
+            pokemonData?.attacks == null ||
+            !attacker.pokemonLogic.tempBuffsData.canAttack)
+        {
+            return 0;
+        }
+
+        Dictionary<EnumPokemonType, int> energy = CopyEnergy(attacker.pokemonLogic.energyEquipped);
+        AddSimulatedEnergy(energy, availableEnergy);
+        int costChange = attacker.pokemonLogic.tempBuffsData.attackEnergyCostChange;
+        int handCountAfterTrainer = Mathf.Max(0, myPlayer.hand.Count - 1);
+
+        return pokemonData.attacks
+            .Where(attack => EnergyMissingForAttack(energy, attack, costChange) == 0)
+            .Where(attack => handCountAfterTrainer >= GetProjectedHandDiscardCost(attack, handCountAfterTrainer))
+            .Select(attack =>
+            {
+                int damage = EstimateAttackDamage(attacker, defender, attack);
+                int value = damage + EstimateBenchDamageValue(attack, opponent);
+                value += ScoreOffensiveDebuffs(attack, attacker, defender, damage);
+                if (HasEnergyRampEffect(attack) && ChooseRampBenchTargetForActiveUtility(attacker) != null)
+                    value += profile.rampEnablesUtilityBonus;
+                return value;
+            })
+            .DefaultIfEmpty(0)
+            .Max();
+    }
+
+    private int GetProjectedHandDiscardCost(AttackData attack, int projectedHandCount)
+    {
+        if (attack?.effects == null) return 0;
+
+        return attack.effects
+            .Where(effect => effect.cardEffectType == EnumCardEffectType.DiscardHand)
+            .Select(effect => effect.effectAmount >= 100
+                ? projectedHandCount
+                : Mathf.Max(0, effect.effectAmount))
+            .DefaultIfEmpty(0)
+            .Sum();
     }
 
     /// Sabrina forces the opponent's Active to swap with a RANDOM benched Pokemon. It is a tempo
@@ -2476,6 +2576,29 @@ public class AlgorithmBrain : PlayerBrain
             .Where(atk => CardActions.CanAffordAttack(card.pokemonLogic, atk))
             .Where(atk => HasEnoughCardsForAttack(owner, atk))
             .Select(atk => EstimateAttackDamage(card, defender, atk))
+            .DefaultIfEmpty(0)
+            .Max();
+    }
+
+    /// Total immediate pressure used for comparing attackers during Retreat decisions.
+    /// Active damage remains separate for KO checks; bench damage is added only to the
+    /// relative value comparison so attacks such as Flygon's Sand Sweep are not underrated.
+    private int GetMaxReadyAttackValue(
+        CardInstance card,
+        CardInstance defender,
+        PlayerController opponent)
+    {
+        var pd = card?.baseData as PokemonData;
+        if (card?.pokemonLogic == null || pd?.attacks == null || pd.attacks.Count == 0)
+            return 0;
+
+        PlayerController owner = GetBoardOwner(card);
+        return pd.attacks
+            .Where(attack => CardActions.CanAffordAttack(card.pokemonLogic, attack))
+            .Where(attack => HasEnoughCardsForAttack(owner, attack))
+            .Select(attack =>
+                EstimateAttackDamage(card, defender, attack) +
+                EstimateBenchDamageValue(attack, opponent))
             .DefaultIfEmpty(0)
             .Max();
     }

@@ -5790,12 +5790,12 @@ MonoBehaviour:
   player2LlmProvider: 1
   player2GeminiModel: 0
   player2OllamaModel: 3
-  mlServerPreset: 2
+  mlServerPreset: 0
   mlServerUrl: http://127.0.0.1:8000/predict
   llmAdvisorProvider: 1
   llmAdvisorGeminiModel: 1
   llmAdvisorOllamaModel: 0
-  ollamaEndpointPreset: 2
+  ollamaEndpointPreset: 0
   ollamaBaseUrl: http://127.0.0.1:11434/api/chat
   llmUseRulesFile: 1
   llmRulesFileName: LLM_RULES.txt

@@ -40,6 +40,11 @@ The editable config files (`GameRulesConfig.json`, `BenchmarkConfig.json`) ship 
 
 At runtime the build reads them from that folder (`RuntimePaths.ConfigPath`); the copies under `Assets/StreamingAssets/` are only the source-controlled defaults used inside the Unity Editor.
 
+For machine-specific URLs, copy `GameRulesConfig.local.example.json` to
+`GameRulesConfig.local.json` next to the project/build and edit only the local copy. It is
+ignored by Git and merged over `GameRulesConfig.json` at runtime. Use `Custom` for the matching
+preset when supplying a private ML or Ollama URL.
+
 **Two ways to configure — in-game menu vs. JSON.** On launch the build shows a startup menu (`StartupMenuController`, in the `Initialization` scene) that covers the most common settings: play mode (*Simulation* / *Watch AI vs AI* / *Human vs AI*), each side's deck, AI types, `AlgorithmBrain` profiles, matches per pairing (Simulation), log upload, and an *Advanced* section for `pointsToWin`, `maxTurns`, `benchSize`, AI speed, and stop-on-finish. Pressing **Start** writes the choices back to `GameRulesConfig.json` + `BenchmarkConfig.json` and launches the match — so the menu is just a front-end over the same files. The menu **reloads the JSON before authoring** (`GameRulesConfig.ReloadFromJson()` on `Show()`), so fields it doesn't expose are read from the file and written back unchanged rather than clobbered with Inspector defaults — even when the Initialization scene has `loadFromJson = false`. Everything more advanced (LLM provider/model per player, `ollamaBaseUrl`, `mlServerUrl`, Gemini/OpenAI temperature and token limits, rules-file toggle, individual logger toggles, telemetry) is **not** exposed in the menu and is edited directly in `GameRulesConfig.json` (and `BenchmarkConfig.json` for per-participant benchmark setup). Headless mode (`headlessMode`, no scene visuals — faster benchmark) can be set in the JSON or via the menu's optional headless toggle in *Simulation* mode; `Application.isBatchMode` (launching the build with `-batchmode`) also forces it.
 
 #### Settings precedence (why a setting sometimes doesn't apply)
@@ -47,9 +52,10 @@ At runtime the build reads them from that folder (`RuntimePaths.ConfigPath`); th
 The same setting can live in the JSON, the in-game menu, and the Unity Inspector. The menu is **not** a separate tier — it just writes the JSON on **Start** (`StartupMenuController.SaveToJson`). What actually wins, highest first:
 
 1. **Runtime overrides** — the benchmark (`ConfigureNextMatch`) and `Auto` profile detection set player types, decks, and Algorithm profiles in `GameManager.StartGame`, regardless of the JSON.
-2. **Presets** — `mlServerPreset` / `ollamaEndpointPreset`: unless set to `Custom`, they overwrite `mlServerUrl` / `ollamaBaseUrl` with the preset value. Set the preset to `Custom` to use a hand-typed URL.
-3. **JSON** (`GameRulesConfig.json`) — wins over the Inspector **when `loadFromJson = true`** (the default). The build reads it from next to the executable at runtime, **not** from `Assets/StreamingAssets/` (that copy only matters in the Editor).
-4. **Unity Inspector** — used only for keys missing from the JSON, **or** for every field when `loadFromJson = false` (then the JSON is ignored entirely). To avoid confusion, the custom Inspectors hide the JSON-overridden fields in a collapsed "Inactive" foldout while `loadFromJson` is ON.
+2. **Local JSON override** (`GameRulesConfig.local.json`) — optional machine-specific values merged over the main JSON and ignored by Git.
+3. **Presets** — `mlServerPreset` / `ollamaEndpointPreset`: unless set to `Custom`, they overwrite `mlServerUrl` / `ollamaBaseUrl` with localhost. Set the preset to `Custom` to use a URL from the local override.
+4. **JSON** (`GameRulesConfig.json`) — wins over the Inspector **when `loadFromJson = true`** (the default). The build reads it from next to the executable at runtime, **not** from `Assets/StreamingAssets/` (that copy only matters in the Editor).
+5. **Unity Inspector** — used only for keys missing from the JSON, **or** for every field when `loadFromJson = false` (then the JSON is ignored entirely). To avoid confusion, the custom Inspectors hide the JSON-overridden fields in a collapsed "Inactive" foldout while `loadFromJson` is ON.
 
 The benchmark master switch behaves differently: `BenchmarkRunner.runEnabled` in the **Inspector** is a hard gate checked *before* the JSON loads — if it's OFF, no `BenchmarkConfig.json` can turn the benchmark on; if it's ON, the JSON can still turn it back off and override the rest.
 
@@ -315,7 +321,7 @@ Prefer enum names over numeric enum values in JSON:
 
 The legacy fallback fields (`llmProvider`, `geminiModel`, `ollamaModel`, `openAiModel`) are kept for compatibility; full per-player configuration should use `player1*` and `player2*` keys.
 
-#### Supported config values
+#### Allowed config values
 
 Enum values in `GameRulesConfig.json` must use one of the exact, case-sensitive names below. Prefer these names instead of numeric values, because numbers depend on the enum ordering in the source code.
 
@@ -327,11 +333,9 @@ Enum values in `GameRulesConfig.json` must use one of the exact, case-sensitive 
 | `geminiModel`, `player1GeminiModel`, `player2GeminiModel`, `llmAdvisorGeminiModel` | `Flash25`, `Flash25Lite`, `Pro25`, `Flash20`, `Flash20Lite`, `Flash31Lite`, `Flash35`, `Flash15`, `Flash30`, `Gemma4_26b`, `Gemma4_31b` |
 | `openAiModel`, `player1OpenAiModel`, `player2OpenAiModel`, `llmAdvisorOpenAiModel` | `Gpt4oMini`, `Gpt4o`, `Gpt41Mini`, `Gpt41`, `Gpt5Mini`, `Gpt5`, `O4Mini` |
 | `ollamaModel`, `player1OllamaModel`, `player2OllamaModel`, `llmAdvisorOllamaModel` | `Gemma3_12b`, `Qwen3_8b`, `Gemma4_12b_It_Q4_K_M`, `Gemma4_E4b_It_Q4_K_M` |
-| `mlServerPreset`, `ollamaEndpointPreset` | `Localhost`, `RemotePreset1`, `RemotePreset2`, `Custom` |
+| `mlServerPreset`, `ollamaEndpointPreset` | `Localhost`, `Custom` |
 
 `player1DeckName`, `player2DeckName`, and benchmark participant `deck` values must match an available deck JSON filename without the `.json` extension. Benchmark participant `profile` uses the same Algorithm profile values listed above.
-
-Arbitrary model names are not currently accepted through JSON. Supporting another Gemini, OpenAI, or Ollama model requires adding it to the corresponding enum and API-client mapping in the C# source.
 
 `mlServerUrl` is **not an LLM setting**. It belongs to `MLBrain`, `MLSuggestionButton`, and `AdvisorEventReporter`; it points Unity at the Python FastAPI `/predict` server from `ML Pipeline/`. It appears in the same `GameRulesConfig.json` because all runtime AI configuration is stored in one file.
 
@@ -350,17 +354,19 @@ Numeric values still work, but they depend on enum ordering. Current `EnumPlayer
 3 = Algorithm
 ```
 
-### Optional remote log upload
+### Telemetry — Remote Log Upload
 
-`LogUploader` can upload per-game results and decision JSONL files to a separately deployed compatible receiver after each battle. Toggle it via `GameRulesConfig`:
+`LogUploader` can upload per-game results and decision JSONL files to a compatible remote receiver after each battle. Toggle via `GameRulesConfig`:
 
 ```json
 "logUploadEnabled": true
 ```
 
-The public source contains placeholder receiver settings in `Assets/Scripts/Systems/LogUploader.cs`; no receiver implementation or hosted endpoint is included. To use this feature, provide your own compatible receiver and replace the placeholder URL and API key before building.
+Copy `LogUploader.local.example.json` to `LogUploader.local.json` next to the project/build and provide `serverUrl` plus `apiKey`. The local file is ignored by Git and is never part of a source archive.
 
-Upload is fire-and-forget, so failures only log a warning and never block gameplay. With `logUploadEnabled: false` (the default), all logs remain local under `Logs Export/`.
+Upload is fire-and-forget — failures log a warning and never block gameplay. A per-machine `client_id.txt` UUID is created next to the executable on first run.
+
+No receiver implementation or hosted endpoint is included in the public export. With `logUploadEnabled: false` (the default), all logs remain local under `Logs Export/`.
 
 ### `MLBrain`
 
@@ -537,9 +543,14 @@ Place deck files in `Decks/<name>.json`.
 | Attack cost invalid | Must be an array: `["Fire", "Colorless"]`, not a plain string |
 | Effect not triggering | Check `cardEffectType` spelling — case sensitive |
 | Duplicate card error | Every `cardId` must be unique across all cards |
-| Deck loads fewer than `deckSize` cards | A deck entry references a `cardId` with no matching card file. Check every `cardId`, count, and evolution link before building. |
+| Deck loads fewer than `deckSize` cards | A deck entry references a `cardId` with no card file (a dangling id / typo) — it's silently skipped at load. Run the validator below. |
 
-At runtime, `CardValidator` reports card-data issues in the Unity console. The public package does not include the separate development-only command-line validator.
+**Validate decks before building:** `tools/validate_decks.py` (stdlib-only Python, cross-platform) checks every deck in `Decks/` against the card library and reports dangling `cardId`s, totals that don't match `deckSize`, duplicate ids within a deck, and bad counts. It also validates the card library's **evolution chains** — a stage > 0 Pokémon whose `evolvesFrom` names no real previous form (a typo) or is empty (an orphan that can never be played). It exits non-zero on any problem, so it can gate a build or run in CI.
+
+```bash
+python3 tools/validate_decks.py          # uses deckSize from GameRulesConfig.json (else 30)
+python3 tools/validate_decks.py --quiet  # only print problems + summary
+```
 
 ---
 
@@ -576,9 +587,9 @@ AI-vs-AI data collection is driven by `BenchmarkRunner` (`Assets/Scripts/Benchma
 In the Unity Editor, `<folder_exe>` resolves to the project root. In a Windows build,
 it resolves to the folder containing the `.exe`; in a macOS build, it resolves to the folder containing the `.app` bundle.
 
-This export is the implemented bridge to a separate partner deck-builder project, not an internal ML training log for `MLBrain`. The partner project supplies card definitions and deck JSON files; this game simulates those decks and sends back per-match `Real Battles` data for deck and card analysis.
+This export is the implemented bridge to Maciek's separate deck-builder project, not an internal ML training log for `MLBrain`. Maciek's project sends this game the card definitions and deck JSON files; this game simulates those decks and sends back per-match `Real Battles` data so the deck builder can analyze deck/card performance and, in future work, train directly from real outcomes. The exchange is documented in [`PARTNER_DECKBUILDER.md`](<../Deckbuilder i prezentacja/PARTNER_DECKBUILDER.md>).
 
-What this project receives from the deck builder:
+What this project receives from Maciek:
 
 - Card JSON definitions that are loaded from `Cards/`
 - Deck JSON definitions that are loaded from `Decks/` and selected by `GameRulesConfig` / `BenchmarkConfig`
@@ -668,7 +679,7 @@ Current JSON shape:
 - [x] `LLMBrain.PerformTurn()` — Gemini/OpenAI sequence mode (`ACTION_SEQUENCE`) and Ollama step mode (`ACTION_INDEX`)
 - [x] Benchmark loggers: `DecisionLogger` (+ terminal `GameEnd`), `GameResultLogger` (+ `end_reason`), `LLMLogger`, `MatchupStatsLogger`, `HumanReadableBattleLogger`
 - [x] `BenchmarkRunner` — round-robin AI-vs-AI matches with scene reload
-- [x] Optional remote log upload client (`LogUploader`; receiver not included)
+- [x] Optional remote log upload client (`LogUploader`; receiver configured locally)
 - [x] In-scene advisors (`MLSuggestionButton`, `LLMSuggestionButton`) + dashboard `Advisors` tab
 - [x] Python ML pipeline (`ML Pipeline/`): feature/dataset/model library, BC trainer (save-best, winners-only, MPS/CUDA), held-out evaluation
 - [x] Python ML inference server + training/metrics/replay dashboard (`serve.py`)
@@ -686,4 +697,4 @@ Current JSON shape:
 - **ML pipeline:** Python 3 + PyTorch (behavioral cloning), FastAPI inference server + web dashboard; GPU via CUDA or Apple Silicon MPS
 - **Card/deck data:** JSON
 - **Game logs:** JSONL (`games.jsonl`, per-game decision logs, `llm_decisions.jsonl`)
-- **Optional log upload:** HTTP client with public placeholder settings; receiver not included
+- **Optional log upload:** HTTP client configured through ignored local settings

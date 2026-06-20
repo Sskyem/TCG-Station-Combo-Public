@@ -1,7 +1,7 @@
 {
   "_profilesHelp": "Each participant is { \"deck\", \"profile\" }. Valid profile values: Standard, Ramp, TempoAggro, ControlStatus, HealStall, Auto (Auto = detect the deck archetype). Edit a participant's \"profile\" to test a different weight set.",
-  "runEnabled": true,
-  "matchesPerPairing": 10,
+  "runEnabled": false,
+  "matchesPerPairing": 5,
   "swapSeats": true,
   "includeMirror": false,
   "randomizeScheduleOrder": true,

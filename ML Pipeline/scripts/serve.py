@@ -4614,15 +4614,18 @@ def create_app(
         return {"kind": kind, "path": str(logs[kind]) if logs[kind] else None, "text": tail(logs[kind])}
 
     # ---- Server log sync (SMB → local Decisions) ----------------------------------------
-    # Optional source share for private lab setups. Configure before use.
-    # The same share resolves to different local paths per OS, so translate before copying.
-    SMB_HOST = "example.invalid"
-    SMB_SHARE = "tcg_station_logs"
+    # Optional private-lab source. The same share resolves to different local paths per OS.
+    SMB_HOST = os.environ.get("TCG_SMB_HOST", "example.invalid")
+    SMB_SHARE = os.environ.get("TCG_SMB_SHARE", "tcg_station_logs")
     SMB_SUBPATH = ("tcg_station_log_server", "received", "decisions")
     # The ML-logs-mirror target is no longer hardcoded: the user supplies the path to a
     # logs copy in the dashboard (or via TCG_DECISIONS_MIRROR_DIR) and its subfolders are
     # auto-detected. See normalize_mirror_path / run_decisions_mirror_sync below.
-    PROJECT_JSONS_SHORTCUT_ID = "PUBLIC_PLACEHOLDER_CHANGE_ME"
+    PROJECT_JSONS_SHORTCUT_ID = os.environ.get(
+        "TCG_PROJECT_JSONS_SHORTCUT_ID",
+        "PUBLIC_PLACEHOLDER_CHANGE_ME",
+    )
+    GOOGLE_DRIVE_ACCOUNT = os.environ.get("TCG_GOOGLE_DRIVE_ACCOUNT", "account")
 
     def timestamp_for_archive() -> str:
         return time.strftime("%Y%m%d_%H%M%S")
@@ -4646,10 +4649,10 @@ def create_app(
             candidates.append(Path(env).expanduser())
         home = Path.home()
         candidates.extend([
-            home / "Library" / "CloudStorage" / "GoogleDrive-jarubas.dawid@gmail.com" / ".shortcut-targets-by-id" / PROJECT_JSONS_SHORTCUT_ID / "ProjektJSONs",
+            home / "Library" / "CloudStorage" / f"GoogleDrive-{GOOGLE_DRIVE_ACCOUNT}" / ".shortcut-targets-by-id" / PROJECT_JSONS_SHORTCUT_ID / "ProjektJSONs",
             home / "Google Drive" / ".shortcut-targets-by-id" / PROJECT_JSONS_SHORTCUT_ID / "ProjektJSONs",
             home / "My Drive" / ".shortcut-targets-by-id" / PROJECT_JSONS_SHORTCUT_ID / "ProjektJSONs",
-            home / "GoogleDrive-jarubas.dawid@gmail.com" / ".shortcut-targets-by-id" / PROJECT_JSONS_SHORTCUT_ID / "ProjektJSONs",
+            home / f"GoogleDrive-{GOOGLE_DRIVE_ACCOUNT}" / ".shortcut-targets-by-id" / PROJECT_JSONS_SHORTCUT_ID / "ProjektJSONs",
         ])
         for candidate in candidates:
             if candidate.exists():
