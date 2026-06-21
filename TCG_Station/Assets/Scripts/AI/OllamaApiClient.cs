@@ -9,6 +9,7 @@ public class OllamaApiClient : MonoBehaviour, ILLMClient
     public static OllamaApiClient Instance { get; private set; }
 
     private EnumOllamaModel? _modelOverride;
+    public string LastErrorMessage { get; private set; }
 
     private void Awake() { }
 
@@ -43,6 +44,8 @@ public class OllamaApiClient : MonoBehaviour, ILLMClient
 
     public IEnumerator SendPrompt(string prompt, Action<string> onResponse)
     {
+        LastErrorMessage = null;
+
         GameRulesConfig config = GameRulesConfig.Instance;
         string targetUrl = config != null ? config.ollamaBaseUrl : "http://127.0.0.1:11434/api/chat";
         EnumOllamaModel resolvedModel = _modelOverride ?? (config != null ? config.ollamaModel : EnumOllamaModel.Gemma3_12b);
@@ -88,6 +91,14 @@ public class OllamaApiClient : MonoBehaviour, ILLMClient
                     ? responseData.message.content
                     : null;
 
+                if (string.IsNullOrWhiteSpace(aiText))
+                {
+                    LastErrorMessage = $"Ollama zwrocila pusta odpowiedz dla modelu {targetModel}.";
+                    Debug.LogError($"[OllamaApiClient] Empty response from {targetModel}.");
+                    onResponse?.Invoke(null);
+                    yield break;
+                }
+
                 Debug.Log("Czysta odpowiedź Ollama: " + aiText);
                 onResponse?.Invoke(aiText);
 
@@ -98,6 +109,9 @@ public class OllamaApiClient : MonoBehaviour, ILLMClient
             }
             else
             {
+                LastErrorMessage = www.responseCode == 0
+                    ? $"Nie mozna polaczyc sie z Ollama pod adresem {targetUrl}. Sprawdz, czy serwer dziala."
+                    : $"Ollama nie dziala dla modelu {targetModel} (HTTP {www.responseCode}).";
                 Debug.LogError($"[OllamaApiClient] Błąd {www.responseCode}: {www.error}");
                 onResponse?.Invoke(null);
             }

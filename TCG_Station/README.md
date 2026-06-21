@@ -88,6 +88,7 @@ Everything is driven from a web dashboard at **`http://localhost:8000`**.
 - **OpenAI:** put your key in a file named **`OPENAI_API_KEY.txt`** in the build folder, next to the game executable. The key is read at runtime by `OpenAiApiClient` and is not baked into the build.
 - **Ollama (local):** run Ollama and pull a model (e.g. `ollama pull gemma3:12b` or `qwen3:8b`); point `ollamaBaseUrl` in `GameRulesConfig.json` at it (default `http://127.0.0.1:11434/api/chat`).
 - Provider and model are selected per player via `player1LlmProvider` / `player2LlmProvider` (and the matching `*GeminiModel` / `*OllamaModel` / `*OpenAiModel`) in `GameRulesConfig.json`.
+- The complete list of model values accepted by the build is included under [Allowed config values](#allowed-config-values).
 
 ### Planned LLM telemetry dashboard
 
@@ -323,7 +324,9 @@ The legacy fallback fields (`llmProvider`, `geminiModel`, `ollamaModel`, `openAi
 
 #### Allowed config values
 
-Enum values in `GameRulesConfig.json` must use one of the exact, case-sensitive names below. Prefer these names instead of numeric values, because numbers depend on the enum ordering in the source code.
+Enum values in `GameRulesConfig.json` must use exact, case-sensitive enum names. Prefer names instead of numeric values, because numbers depend on enum ordering in the source code.
+
+The model names shown in the JSON example are defaults. The complete set of values accepted by this build is listed below.
 
 | Config field(s) | Allowed values |
 |---|---|
@@ -334,6 +337,31 @@ Enum values in `GameRulesConfig.json` must use one of the exact, case-sensitive 
 | `openAiModel`, `player1OpenAiModel`, `player2OpenAiModel`, `llmAdvisorOpenAiModel` | `Gpt4oMini`, `Gpt4o`, `Gpt41Mini`, `Gpt41`, `Gpt5Mini`, `Gpt5`, `O4Mini` |
 | `ollamaModel`, `player1OllamaModel`, `player2OllamaModel`, `llmAdvisorOllamaModel` | `Gemma3_12b`, `Qwen3_8b`, `Gemma4_12b_It_Q4_K_M`, `Gemma4_E4b_It_Q4_K_M` |
 | `mlServerPreset`, `ollamaEndpointPreset` | `Localhost`, `Custom` |
+
+Gemini model values map to provider model identifiers as follows:
+
+| Config value | Gemini model identifier |
+|---|---|
+| `Flash25` | `gemini-2.5-flash` |
+| `Flash25Lite` | `gemini-2.5-flash-lite` |
+| `Pro25` | `gemini-2.5-pro` |
+| `Flash20` | `gemini-2.0-flash` |
+| `Flash20Lite` | `gemini-2.0-flash-lite` |
+| `Flash31Lite` | `gemini-3.1-flash-lite` |
+| `Flash35` | `gemini-3.5-flash` |
+| `Flash15` | `gemini-1.5-flash` |
+| `Flash30` | `gemini-3.0-flash` |
+| `Gemma4_26b` | `gemma-4-26b-a4b-it` |
+| `Gemma4_31b` | `gemma-4-31b-it` |
+
+Ollama model values map to installed model names as follows:
+
+| Config value | Ollama model name |
+|---|---|
+| `Gemma3_12b` | `gemma3:12b` |
+| `Qwen3_8b` | `qwen3:8b` |
+| `Gemma4_12b_It_Q4_K_M` | `gemma4:12b-it-q4_K_M` |
+| `Gemma4_E4b_It_Q4_K_M` | `gemma4:e4b-it-q4_K_M` |
 
 `player1DeckName`, `player2DeckName`, and benchmark participant `deck` values must match an available deck JSON filename without the `.json` extension. Benchmark participant `profile` uses the same Algorithm profile values listed above.
 

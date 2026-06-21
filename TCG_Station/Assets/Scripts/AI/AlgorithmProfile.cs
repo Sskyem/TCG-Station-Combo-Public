@@ -89,6 +89,7 @@ public class AlgorithmProfile
     public int rampEnablesUtilityBonus = 180;
     public int discardTradeoffHighBonus = 35;
     public int discardTradeoffLowPenalty = -15;
+    public int importantEvolutionDiscardPenalty = 120;
     public int noDamageNoUtilityPenalty = -60;
 
     // ── Structural-numeric constants ────────────────────────────────────────

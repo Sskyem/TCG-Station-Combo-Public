@@ -58,7 +58,7 @@ public class CardActions : MonoBehaviour
     public bool ExecuteCardEffects(PlayerController sourcePlayer, List<EffectData> effects)
     {
         if (effects == null || effects.Count == 0) return false;
-        StartCoroutine(ExecuteCardEffectsCoroutine(sourcePlayer, null, effects, null, null));
+        StartCoroutine(ExecuteCardEffectsCoroutine(sourcePlayer, null, effects, null, null, null));
         return true;
     }
 
@@ -745,7 +745,14 @@ public class CardActions : MonoBehaviour
                                                AttackEffectContext context, int attackDamage)
     {
         if (effectsToRun != null && effectsToRun.Count > 0)
-            yield return ExecuteCardEffectsCoroutine(attackerOwner, attackerCard, effectsToRun, attack, context, attackDamage);
+            yield return ExecuteCardEffectsCoroutine(
+                attackerOwner,
+                attackerCard,
+                effectsToRun,
+                attack,
+                context,
+                defenderCard?.pokemonLogic,
+                attackDamage);
     }
 
     private IEnumerator ExecuteCardEffectsCoroutine(
@@ -754,6 +761,7 @@ public class CardActions : MonoBehaviour
         List<EffectData> effects,
         AttackData currentAttack,
         AttackEffectContext attackContext,
+        Pokemon attackTargetPokemon,
         int resolvedAttackDamage = 0)
     {
         PlayerController opponent = BattleManager.Instance.GetOpponent(sourcePlayer);
@@ -787,12 +795,28 @@ public class CardActions : MonoBehaviour
                 case EnumCardEffectTarget.Self:
                 case EnumCardEffectTarget.ActivePokemon:
                     targetPlayer = sourcePlayer;
-                    targetPokemon = sourcePlayer.activePokemon?.pokemonLogic;
+                    targetPokemon = currentAttack != null
+                        ? sourcePokemon
+                        : sourcePlayer.activePokemon?.pokemonLogic;
                     break;
                 case EnumCardEffectTarget.Opponent:
                 case EnumCardEffectTarget.EnemyActivePokemon:
                     targetPlayer = opponent;
-                    targetPokemon = opponent?.activePokemon?.pokemonLogic;
+                    if (currentAttack == null)
+                    {
+                        targetPokemon = opponent?.activePokemon?.pokemonLogic;
+                    }
+                    else
+                    {
+                        // Attack effects belong to the Pokemon that was defending when the attack
+                        // started. A delayed manual effect (for example EnergyRamp) must not retarget
+                        // Root/Paralyze/etc. to a replacement promoted after the defender was KO'd.
+                        bool targetStillActive = opponent?.activePokemon?.pokemonLogic == attackTargetPokemon;
+                        targetPokemon = targetStillActive ||
+                                        effect.cardEffectType == EnumCardEffectType.Multiattack
+                            ? attackTargetPokemon
+                            : null;
+                    }
                     break;
                 case EnumCardEffectTarget.BenchPokemon:
                     targetPlayer = sourcePlayer;
@@ -1068,11 +1092,14 @@ public class CardActions : MonoBehaviour
                 case EnumCardEffectType.DebuffSelf:
                 {
                     var debuffTargets = new List<Pokemon>();
-                    if (effect.effectAmount == 0 && opponent?.activePokemon != null)
-                        debuffTargets.Add(opponent.activePokemon.pokemonLogic);
+                    Pokemon enemyTarget = currentAttack != null
+                        ? targetPokemon
+                        : opponent?.activePokemon?.pokemonLogic;
+                    if (effect.effectAmount == 0 && enemyTarget != null)
+                        debuffTargets.Add(enemyTarget);
                     else if (effect.effectAmount == 1)
                     {
-                        if (opponent?.activePokemon != null) debuffTargets.Add(opponent.activePokemon.pokemonLogic);
+                        if (enemyTarget != null) debuffTargets.Add(enemyTarget);
                         if (sourcePokemon != null) debuffTargets.Add(sourcePokemon);
                     }
                     else if (effect.effectAmount == 2 && sourcePokemon != null)

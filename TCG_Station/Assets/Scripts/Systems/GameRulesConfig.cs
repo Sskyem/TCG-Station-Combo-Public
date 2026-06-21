@@ -42,19 +42,19 @@ public class GameRulesConfig : MonoBehaviour
 
     [Header("LLM — Fallbacks (used when per-player keys absent in JSON)")]
     public EnumLlmProvider llmProvider = EnumLlmProvider.Gemini;
-    public EnumGeminiModel geminiModel = EnumGeminiModel.Flash20;
+    public EnumGeminiModel geminiModel = EnumGeminiModel.Flash25Lite;
     public EnumOllamaModel ollamaModel = EnumOllamaModel.Qwen3_8b;
     public EnumOpenAiModel openAiModel = EnumOpenAiModel.Gpt4oMini;
 
     [Header("Player 1 — LLM")]
     public EnumLlmProvider player1LlmProvider = EnumLlmProvider.Gemini;
-    public EnumGeminiModel player1GeminiModel = EnumGeminiModel.Flash20;
+    public EnumGeminiModel player1GeminiModel = EnumGeminiModel.Flash25Lite;
     public EnumOllamaModel player1OllamaModel = EnumOllamaModel.Qwen3_8b;
     public EnumOpenAiModel player1OpenAiModel = EnumOpenAiModel.Gpt4oMini;
 
     [Header("Player 2 — LLM")]
     public EnumLlmProvider player2LlmProvider = EnumLlmProvider.Gemini;
-    public EnumGeminiModel player2GeminiModel = EnumGeminiModel.Flash20;
+    public EnumGeminiModel player2GeminiModel = EnumGeminiModel.Flash25Lite;
     public EnumOllamaModel player2OllamaModel = EnumOllamaModel.Qwen3_8b;
     public EnumOpenAiModel player2OpenAiModel = EnumOpenAiModel.Gpt4oMini;
 

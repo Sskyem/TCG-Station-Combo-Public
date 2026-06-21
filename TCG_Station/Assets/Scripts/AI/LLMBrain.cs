@@ -104,6 +104,7 @@ public class LLMBrain : PlayerBrain
             geminiClient.SetModelOverride(fallback);
 
         Debug.LogWarning($"[LLMBrain] Auto-switched P{myPlayer.playerId} Gemini model after rate limit: {model} -> {fallback}.");
+        SetThinkingUI($"Gemini odrzucil model {GeminiModelDisplayName(model)} z powodu limitu. Probuje ponownie: {GeminiModelDisplayName(fallback)}...");
         OnGeminiApiFailed?.Invoke(myPlayer, model);
     }
 
@@ -142,6 +143,7 @@ public class LLMBrain : PlayerBrain
         AppendPromptOnly(myPlayer.playerName, 0, prompt);
 
         string aiChoice = null;
+        SetThinkingUI("Wysyla ustawienie poczatkowe do modelu i czeka na odpowiedz...");
         yield return llmClient.SendPrompt(prompt, response => aiChoice = response);
 
         AppendResponseOnly(aiChoice);
@@ -149,6 +151,7 @@ public class LLMBrain : PlayerBrain
         if (string.IsNullOrWhiteSpace(aiChoice))
         {
             Debug.LogWarning("[LLMBrain] Provider LLM nie zwrócił odpowiedzi. Wybieram awaryjnie pierwszą kartę.");
+            SetThinkingUI(GetProviderFailureMessage());
             if (GetMyProvider() == EnumLlmProvider.Gemini)
                 OnGeminiApiFailed?.Invoke(myPlayer, GetMyGeminiModel());
             onSetupComplete?.Invoke(new List<CardInstance> { availablePokemons[0] });
@@ -217,6 +220,7 @@ public class LLMBrain : PlayerBrain
         if (delay > 0f)
         {
             Debug.Log($"[LLMBrain] Rate limit delay: {delay}s");
+            SetThinkingUI($"Czeka {delay:0.#} s na limit API...");
             yield return new WaitForSeconds(delay);
         }
 
@@ -246,6 +250,7 @@ public class LLMBrain : PlayerBrain
         AppendPromptOnly(myPlayer.playerName, TurnManager.Instance.turnCounter, prompt);
 
         string aiResponse = null;
+        SetThinkingUI("Wysyla stan gry do modelu i czeka na odpowiedz...");
         yield return llmClient.SendPrompt(prompt, r => aiResponse = r);
         AppendResponseOnly(aiResponse);
 
@@ -273,6 +278,7 @@ public class LLMBrain : PlayerBrain
         if (string.IsNullOrWhiteSpace(aiResponse))
         {
             Debug.LogWarning("[LLMBrain] Empty response — ending turn.");
+            SetThinkingUI(GetProviderFailureMessage());
             if (GetMyProvider() == EnumLlmProvider.Gemini)
                 OnGeminiApiFailed?.Invoke(myPlayer, GetMyGeminiModel());
             TurnManager.Instance.RequestEndTurn();
@@ -747,6 +753,38 @@ public class LLMBrain : PlayerBrain
         return $"{playerName} — {GetMyProvider()} / {GetMyModelName()}";
     }
 
+    private string GetProviderFailureMessage()
+    {
+        if (GetMyProvider() == EnumLlmProvider.OpenAI)
+        {
+            if (llmClient is OpenAiApiClient openAiClient &&
+                !string.IsNullOrWhiteSpace(openAiClient.LastErrorMessage))
+                return openAiClient.LastErrorMessage;
+
+            string keyPath = RuntimePaths.ApiKeyPath("OPENAI_API_KEY.txt");
+            if (!File.Exists(keyPath))
+                return "OpenAI nie odpowiedzial: brakuje pliku OPENAI_API_KEY.txt.";
+            if (string.IsNullOrWhiteSpace(File.ReadAllText(keyPath)))
+                return "OpenAI nie odpowiedzial: plik OPENAI_API_KEY.txt jest pusty.";
+            return "OpenAI nie zwrocil odpowiedzi. Sprawdz klucz, saldo/limity konta i Console.";
+        }
+
+        if (GetMyProvider() == EnumLlmProvider.Gemini)
+        {
+            if (llmClient is GeminiApiClient geminiClient &&
+                !string.IsNullOrWhiteSpace(geminiClient.LastErrorMessage))
+                return geminiClient.LastErrorMessage;
+
+            return $"Gemini nie zwrocil odpowiedzi dla {GeminiModelDisplayName(GetMyGeminiModel())}. Sprawdz limit API i Console.";
+        }
+
+        if (llmClient is OllamaApiClient ollamaClient &&
+            !string.IsNullOrWhiteSpace(ollamaClient.LastErrorMessage))
+            return ollamaClient.LastErrorMessage;
+
+        return "Model lokalny nie zwrocil odpowiedzi. Sprawdz, czy Ollama dziala i czy model jest pobrany.";
+    }
+
     private static List<int> ParseActionSequence(string aiResponse, int actionCount)
     {
         var result = new List<int>();
@@ -954,7 +992,7 @@ public class LLMBrain : PlayerBrain
 
     private EnumGeminiModel GetMyGeminiModel()
     {
-        if (GameRulesConfig.Instance == null) return EnumGeminiModel.Flash20;
+        if (GameRulesConfig.Instance == null) return EnumGeminiModel.Flash25Lite;
         return IsPlayer1
             ? GameRulesConfig.Instance.player1GeminiModel
             : GameRulesConfig.Instance.player2GeminiModel;

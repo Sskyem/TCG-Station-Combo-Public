@@ -104,9 +104,12 @@ the browser UI.
 - **ML data paths** lets you paste a build root or a direct `Logs Export/ML` path. Use
   **Check** first to see the resolved path and decision-file count, then **Apply** to make
   Scan / Train / Evaluate use it immediately. The choice is saved to `ui_paths.json`.
-- **Synchronize** can merge missing decision logs and `games.jsonl` metadata between local
-  build folders. Server-fetch and card/deck patch controls require environment-specific
-  endpoints that are intentionally left as placeholders in the public source.
+- **Synchronize** contains the handoff tools:
+  - **Fetch logs from server** pulls collected logs into the local ML logs tree.
+  - **Sync ML logs mirror** copies missing decision logs and merges `games.jsonl` between local
+    logs and one or two device/build folders.
+  - **Download patch** mirrors the latest card/deck JSONs into local `Cards/` and `Decks/`,
+    archiving the previous copies first.
 
 ### Training tab
 
@@ -151,7 +154,7 @@ the browser UI.
 
 - **Benchmark Data Analysis** summarizes win rates and card/deck usage from `games.jsonl`,
   with filters for benchmark vs interactive games and matchup type.
-- **Process Log** shows live setup, training, evaluation, and local synchronization logs. Use it instead of
+- **Process Log** shows live setup, training, evaluation, and sync logs. Use it instead of
   watching terminal output during the dashboard workflow.
 
 Manual setup:

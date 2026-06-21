@@ -1,17 +1,48 @@
 {
-  "_section_schedule": "BENCHMARK SCHEDULE",
-  "_profilesHelp": "Each participant is { \"deck\", \"profile\" }. Valid profile values: Standard, Ramp, TempoAggro, ControlStatus, HealStall, Auto (Auto = detect the deck archetype). Edit a participant's \"profile\" to test a different weight set.",
+  // =============================================================================
+  // BENCHMARK SCHEDULE
+  // Comments are supported by the Newtonsoft.Json loader.
+  // The startup menu may rewrite this file and remove comments after pressing Start.
+  // A benchmark also requires BenchmarkRunner.runEnabled in the Unity Inspector.
+  // =============================================================================
+
+  // false = play a normal single match; true = run the schedule automatically.
   "runEnabled": false,
+
+  // Number of games for every unordered deck pairing.
   "matchesPerPairing": 5,
+
+  // Alternate Player 1 and Player 2 seats to reduce first-player bias.
   "swapSeats": true,
+
+  // Also play each deck against an identical copy of itself.
   "includeMirror": false,
+
+  // Shuffle match order without changing pairings or match counts.
   "randomizeScheduleOrder": true,
+
+  // Select an Algorithm profile for each deck based on its detected archetype.
   "autoDetectProfilesByDeck": true,
+
+  // Force AI delays to zero for substantially faster benchmark runs.
   "fastMode": true,
+
+  // Force-finish a stuck match after this many real-time seconds. 0 disables it.
   "matchWatchdogSeconds": 180.0,
+
+  // Quit the build or leave Play Mode after the complete schedule finishes.
   "stopOnFinish": true,
 
-  "_section_participants": "PARTICIPANTS",
+  // =============================================================================
+  // PARTICIPANTS
+  // Each entry contains a deck name and an Algorithm profile.
+  // Deck names must match a deck from the Decks folder (without .json).
+  // Profiles: Standard, Ramp, TempoAggro, ControlStatus, HealStall, Auto.
+  // Auto detects a profile from the deck. Per-participant profile overrides take
+  // precedence over algorithmProfiles below.
+  // Remove entries to benchmark only a smaller selection of decks.
+  // =============================================================================
+
   "participants": [
     {
       "deck": "Annihilape",
@@ -170,8 +201,13 @@
       "profile": "Auto"
     }
   ],
+  // =============================================================================
+  // OPTIONAL PROFILE SWEEP
+  // When autoDetectProfilesByDeck is false, the complete round-robin is repeated
+  // once for every profile below, using that profile for both players.
+  // An empty list behaves as Standard only.
+  // =============================================================================
 
-  "_section_profileSweep": "OPTIONAL PROFILE SWEEP",
   "algorithmProfiles": [
     "Standard"
   ]

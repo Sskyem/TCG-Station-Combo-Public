@@ -46,6 +46,7 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
     private string apiToken;
     private string finalUrl;
     private EnumGeminiModel? _modelOverride;
+    public string LastErrorMessage { get; private set; }
 
     public void SetModelOverride(EnumGeminiModel model)
     {
@@ -66,23 +67,33 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
         EnumGeminiModel.Flash30     => "gemini-3.0-flash",
         EnumGeminiModel.Gemma4_26b  => "gemma-4-26b-a4b-it",
         EnumGeminiModel.Gemma4_31b  => "gemma-4-31b-it",
-        _                           => "gemini-2.5-flash",
+        _                           => "gemini-2.5-flash-lite",
     };
 
     private void LoadToken()
     {
-        string path = Path.Combine(Directory.GetCurrentDirectory(), "GEMINI_API_KEY.txt");
+        string path = RuntimePaths.ApiKeyPath("GEMINI_API_KEY.txt");
 
         if (File.Exists(path))
         {
-            string rawToken = File.ReadAllText(path);
-            apiToken = rawToken.Trim();
-            apiToken = System.Text.RegularExpressions.Regex.Replace(apiToken, @"[^\x20-\x7E]", "");
-            BuildFinalUrl();
-            Debug.Log($"Token wczytany. Długość: {apiToken.Length} znaków.");
+            try
+            {
+                string rawToken = File.ReadAllText(path);
+                apiToken = rawToken.Trim();
+                apiToken = System.Text.RegularExpressions.Regex.Replace(apiToken, @"[^\x20-\x7E]", "");
+                BuildFinalUrl();
+                Debug.Log($"Token wczytany. Długość: {apiToken.Length} znaków.");
+            }
+            catch (Exception e)
+            {
+                apiToken = null;
+                LastErrorMessage = $"Nie mozna odczytac GEMINI_API_KEY.txt: {e.Message}";
+                Debug.LogError($"[GeminiApiClient] {LastErrorMessage}");
+            }
         }
         else
         {
+            LastErrorMessage = "Brakuje pliku GEMINI_API_KEY.txt.";
             Debug.LogError("Nie znaleziono pliku GEMINI_API_KEY.txt!");
         }
     }
@@ -98,7 +109,7 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
     private EnumGeminiModel GetCurrentModel()
     {
         return _modelOverride
-            ?? (GameRulesConfig.Instance != null ? GameRulesConfig.Instance.geminiModel : EnumGeminiModel.Flash20);
+            ?? (GameRulesConfig.Instance != null ? GameRulesConfig.Instance.geminiModel : EnumGeminiModel.Flash25Lite);
     }
 
     public void SendPrompt(string userText)
@@ -108,8 +119,15 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
 
     public IEnumerator SendPrompt(string userText, System.Action<string> onResponse)
     {
+        if (!string.IsNullOrEmpty(apiToken))
+            LastErrorMessage = null;
+
         if (string.IsNullOrEmpty(apiToken))
         {
+            string keyPath = RuntimePaths.ApiKeyPath("GEMINI_API_KEY.txt");
+            LastErrorMessage ??= File.Exists(keyPath)
+                ? "Plik GEMINI_API_KEY.txt jest pusty albo nie zawiera poprawnego klucza."
+                : "Brakuje pliku GEMINI_API_KEY.txt obok pliku gry.";
             Debug.LogError("Brak tokena! Nie można wysłać zapytania.");
             onResponse?.Invoke(null);
             yield break;
@@ -168,6 +186,7 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
 
                     if (responseData?.candidates == null || responseData.candidates.Length == 0)
                     {
+                        LastErrorMessage = "Gemini nie zwrocilo zadnego kandydata odpowiedzi.";
                         Debug.LogError($"[GeminiApiClient] No candidates in response. Raw JSON:\n{rawJson}");
                         onResponse?.Invoke(null);
                         yield break;
@@ -178,6 +197,7 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
 
                     if (cand.content?.parts == null || cand.content.parts.Count == 0)
                     {
+                        LastErrorMessage = $"Gemini zwrocilo pusta odpowiedz (finishReason: {finishReason}).";
                         Debug.LogError($"[GeminiApiClient] Empty content (finishReason={finishReason}). Raw JSON:\n{rawJson}");
                         onResponse?.Invoke(null);
                         yield break;
@@ -209,6 +229,7 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
                         OnFirstRateLimitHit?.Invoke(this, modelBeforeFallback);
                     }
                     string responseBody = www.downloadHandler != null ? www.downloadHandler.text : "";
+                    LastErrorMessage = BuildApiErrorMessage(www.responseCode, responseBody);
                     if (!string.IsNullOrWhiteSpace(responseBody))
                         Debug.LogWarning($"[GeminiApiClient] {www.responseCode} response body:\n{responseBody}");
                     int waitSeconds = GetCurrentModel() != modelBeforeFallback ? 2 : retryDelay;
@@ -219,6 +240,7 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
                 else
                 {
                     string responseBody = www.downloadHandler != null ? www.downloadHandler.text : "";
+                    LastErrorMessage = BuildApiErrorMessage(www.responseCode, responseBody);
                     Debug.LogError($"Błąd {www.responseCode}: {www.error}\n{responseBody}");
                     onResponse?.Invoke(null);
                     yield break;
@@ -226,8 +248,36 @@ public class GeminiApiClient : MonoBehaviour, ILLMClient
             }
         }
 
+        LastErrorMessage ??= "Gemini nie odpowiedzialo po wszystkich probach.";
         Debug.LogError($"[GeminiApiClient] All {maxRetries} attempts failed (429). Giving up.");
         onResponse?.Invoke(null);
+    }
+
+    private static string BuildApiErrorMessage(long responseCode, string responseBody)
+    {
+        string apiMessage = null;
+        try
+        {
+            GeminiErrorResponse error = JsonUtility.FromJson<GeminiErrorResponse>(responseBody);
+            apiMessage = error?.error?.message;
+        }
+        catch
+        {
+            // The HTTP status still gives a useful and safe message.
+        }
+
+        if (responseCode == 400)
+            return "Gemini odrzucilo zapytanie albo nazwe modelu (HTTP 400).";
+        if (responseCode == 401 || responseCode == 403)
+            return $"Gemini odrzucilo klucz API albo dostep do modelu (HTTP {responseCode}).";
+        if (responseCode == 429)
+            return "Gemini ma pusty limit lub przekroczona kwote dla wybranego modelu (HTTP 429).";
+        if (responseCode == 503)
+            return "Gemini jest chwilowo niedostepne (HTTP 503).";
+
+        return string.IsNullOrWhiteSpace(apiMessage)
+            ? $"Gemini nie dziala dla wybranego modelu (HTTP {responseCode})."
+            : $"Gemini: {apiMessage}";
     }
 }
 
@@ -271,6 +321,20 @@ public class Part
 public class GeminiResponse
 {
     public Candidate[] candidates;
+}
+
+[Serializable]
+public class GeminiErrorResponse
+{
+    public GeminiError error;
+}
+
+[Serializable]
+public class GeminiError
+{
+    public int code;
+    public string message;
+    public string status;
 }
 
 [Serializable]

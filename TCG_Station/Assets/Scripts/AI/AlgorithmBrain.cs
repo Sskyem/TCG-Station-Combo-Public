@@ -848,12 +848,11 @@ public class AlgorithmBrain : PlayerBrain
             if (opponent?.activePokemon?.pokemonLogic != null && damage >= opponent.activePokemon.pokemonLogic.currentHp)
                 score.Add(profile.attackKoBonus, "attack KOs current active");
 
-            if (AttackRisksImportantEvolutionInHand(attack) &&
+            int importantDiscardPenalty = GetImportantEvolutionDiscardPenalty(attack);
+            if (importantDiscardPenalty > 0 &&
                 (opponent?.activePokemon?.pokemonLogic == null || damage < opponent.activePokemon.pokemonLogic.currentHp))
             {
-                score.Block("hand-discard attack risks needed evolution in hand");
-                scores.Add(score);
-                continue;
+                score.Add(-importantDiscardPenalty, "random hand discard may hit a needed evolution");
             }
 
             if (HasEnergyRampEffect(attack) && ChooseRampBenchTargetForActiveUtility(active) != null)
@@ -1004,10 +1003,22 @@ public class AlgorithmBrain : PlayerBrain
             _turnStartSnapshot, candidates, primary);
     }
 
-    private bool AttackRisksImportantEvolutionInHand(AttackData attack)
+    private int GetImportantEvolutionDiscardPenalty(AttackData attack)
     {
-        if (GetHandDiscardCost(myPlayer, attack) <= 0) return false;
-        return myPlayer.hand.Any(IsImportantEvolutionToKeep);
+        int discardCost = GetHandDiscardCost(myPlayer, attack);
+        int handSize = myPlayer?.hand?.Count ?? 0;
+        if (discardCost <= 0 || handSize <= 0) return 0;
+
+        int importantCards = myPlayer.hand.Count(IsImportantEvolutionToKeep);
+        if (importantCards <= 0) return 0;
+
+        // The discard is random. Penalize its expected risk instead of treating any important
+        // evolution in hand as a hard veto. Example: discarding 1 from a six-card hand containing
+        // one needed evolution costs only 1/6 of the full penalty, so a useful 100-damage attack
+        // remains attractive. A one-card hand containing that evolution still receives full risk.
+        float expectedImportantDiscards =
+            Mathf.Min(discardCost, handSize) * importantCards / (float)handSize;
+        return Mathf.RoundToInt(profile.importantEvolutionDiscardPenalty * expectedImportantDiscards);
     }
 
     private bool IsImportantEvolutionToKeep(CardInstance evolutionCard)

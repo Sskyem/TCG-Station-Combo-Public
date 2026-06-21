@@ -33,6 +33,8 @@ public static class RuntimePaths
 
     public static string DebugLogPath() => Path.Combine(GameRoot(), "debug_log.txt");
 
+    public static string ApiKeyPath(string fileName) => Path.Combine(GameRoot(), fileName);
+
     public static string ConfigPath(string fileName)
     {
         string external = Path.Combine(GameRoot(), fileName);

@@ -82,8 +82,9 @@ public class LLMSuggestionButton : MonoBehaviour
 
         if (string.IsNullOrWhiteSpace(response))
         {
-            SetOutput($"LLM Advisor — {provider} / {model}\nProvider returned an empty response.");
-            yield return AdvisorEventReporter.Post("LLM", "error", "Provider returned an empty response.", player, provider: provider.ToString(), model: model);
+            string error = GetClientErrorMessage(provider);
+            SetOutput($"LLM Advisor — {provider} / {model}\n{error}");
+            yield return AdvisorEventReporter.Post("LLM", "error", error, player, provider: provider.ToString(), model: model);
             yield break;
         }
 
@@ -179,6 +180,23 @@ public class LLMSuggestionButton : MonoBehaviour
             boardVisualizer.llmThinkingLog.text = message;
 
         Debug.Log($"[LLMSuggestionButton] {message}");
+    }
+
+    private string GetClientErrorMessage(EnumLlmProvider provider)
+    {
+        if (llmClient is OpenAiApiClient openAiClient &&
+            !string.IsNullOrWhiteSpace(openAiClient.LastErrorMessage))
+            return openAiClient.LastErrorMessage;
+
+        if (llmClient is GeminiApiClient geminiClient &&
+            !string.IsNullOrWhiteSpace(geminiClient.LastErrorMessage))
+            return geminiClient.LastErrorMessage;
+
+        if (llmClient is OllamaApiClient ollamaClient &&
+            !string.IsNullOrWhiteSpace(ollamaClient.LastErrorMessage))
+            return ollamaClient.LastErrorMessage;
+
+        return $"{provider} nie zwrocil odpowiedzi.";
     }
 
     private static int ParseActionIndex(string response, int actionCount)

@@ -66,9 +66,11 @@ public static class CopyGameDataPostBuild
             CopyFile(src, dst);
         }
 
+        WriteLlmKeysReadme(gameRoot);
+
         Debug.Log(
             $"[CopyGameDataPostBuild] Copied {string.Join(", ", DataFolders)}, " +
-            $"{string.Join(", ", ConfigFiles)}, and local config examples into: {gameRoot}");
+            $"{string.Join(", ", ConfigFiles)}, local config examples, and LLM key instructions into: {gameRoot}");
     }
 
     /// <summary>
@@ -134,6 +136,20 @@ public static class CopyGameDataPostBuild
 
         Directory.CreateDirectory(Path.GetDirectoryName(dst));
         File.Copy(src, dst, overwrite: true);
+    }
+
+    private static void WriteLlmKeysReadme(string gameRoot)
+    {
+        string path = Path.Combine(gameRoot, "LLM_API_KEYS_README.txt");
+        File.WriteAllText(
+            path,
+            "TCG Station - external LLM API keys\n" +
+            "===================================\n\n" +
+            "To use the OpenAI player, place OPENAI_API_KEY.txt next to the game executable.\n" +
+            "To use the Gemini advisor/player, place GEMINI_API_KEY.txt next to the game executable.\n\n" +
+            "Each file must contain only the corresponding API key.\n" +
+            "Keys are intentionally not copied into builds automatically.\n" +
+            "If a key, model, quota, or service is unavailable, the in-game Thinking field shows the reason.\n");
     }
 
     private static string GetRelativePath(string root, string fullPath)

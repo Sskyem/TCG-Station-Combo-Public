@@ -43,7 +43,7 @@ Human and Algorithm players work without the ML dashboard. Start the dashboard f
 
 3. Keep the API-key file or Ollama service available while the game is running, then press **Start**.
 
-Supported provider and model names are listed in [`TCG_Station/README.md`](TCG_Station/README.md#supported-config-values).
+The API key files are included as empty placeholders. Do not commit or share them after adding real keys. Provider names and the rules for selecting models are described in [`TCG_Station/README.md`](TCG_Station/README.md#allowed-config-values).
 
 ### Run the ML dashboard
 

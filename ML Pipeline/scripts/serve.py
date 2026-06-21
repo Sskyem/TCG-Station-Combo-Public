@@ -3066,7 +3066,7 @@ HTML = r"""<!doctype html>
       document.getElementById('replay-hidemeta-btn').classList.toggle('active', hideMeta);
       stage.style.display = '';
       const vis = visibleIndices();
-      replay.idx = vis.length ? vis[0] : 0;
+      replay.idx = vis.length ? vis[0] : -1;
       const slider = document.getElementById('replay-slider');
       slider.max = Math.max(0, vis.length - 1);
       slider.value = 0;
@@ -3087,13 +3087,15 @@ HTML = r"""<!doctype html>
         const only = idx.filter(i => String(replay.steps[i].player_id) === replay.playerFilter);
         idx = only;  // honor the filter even if it leaves nothing (e.g. a player made no logged decisions)
       }
-      return idx.length ? idx : replay.steps.map((_, i) => i);
+      // Do not silently fall back to the other player's decisions. Human turns are not logged as
+      // expert decisions, so a Human P1 legitimately produces an empty P1 replay filter.
+      return replay.playerFilter ? idx : (idx.length ? idx : replay.steps.map((_, i) => i));
     }
 
     function setReplayPlayer(v) {
       replay.playerFilter = v;
       const vis = visibleIndices();
-      if (!vis.includes(replay.idx)) replay.idx = vis.length ? vis[0] : 0;
+      if (!vis.includes(replay.idx)) replay.idx = vis.length ? vis[0] : -1;
       const slider = document.getElementById('replay-slider');
       slider.max = Math.max(0, vis.length - 1);
       slider.value = Math.max(0, vis.indexOf(replay.idx));
@@ -3105,7 +3107,7 @@ HTML = r"""<!doctype html>
       try { localStorage.setItem('tcgml-replay-hidemeta', replay.hideTurnMeta ? '1' : '0'); } catch (e) {}
       document.getElementById('replay-hidemeta-btn').classList.toggle('active', replay.hideTurnMeta);
       const vis = visibleIndices();
-      if (!vis.includes(replay.idx)) replay.idx = vis[0];
+      if (!vis.includes(replay.idx)) replay.idx = vis.length ? vis[0] : -1;
       const slider = document.getElementById('replay-slider');
       slider.value = vis.indexOf(replay.idx);
       slider.max = Math.max(0, vis.length - 1);
@@ -3125,7 +3127,7 @@ HTML = r"""<!doctype html>
           : '';
       }
       const vis = visibleIndices();
-      if (!vis.includes(replay.idx)) replay.idx = vis[0];
+      if (!vis.includes(replay.idx)) replay.idx = vis.length ? vis[0] : -1;
       const slider = document.getElementById('replay-slider');
       slider.value = vis.indexOf(replay.idx);
       slider.max = Math.max(0, vis.length - 1);
@@ -3134,12 +3136,14 @@ HTML = r"""<!doctype html>
 
     function replayGoto(sliderPos) {
       const vis = visibleIndices();
+      if (!vis.length) { replay.idx = -1; renderReplayStep(); return; }
       replay.idx = vis[Math.max(0, Math.min(sliderPos, vis.length - 1))];
       renderReplayStep();
     }
 
     function replayStep(delta) {
       const vis = visibleIndices();
+      if (!vis.length) { replay.idx = -1; renderReplayStep(); return; }
       let pos = vis.indexOf(replay.idx) + delta;
       pos = Math.max(0, Math.min(pos, vis.length - 1));
       replay.idx = vis[pos];

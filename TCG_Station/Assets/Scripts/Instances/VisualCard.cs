@@ -14,10 +14,15 @@ public class VisualCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public float yOffset = 0.5f;
     public float animationSpeed = 15f;
 
+    [Header("Pointer Audio")]
+    [SerializeField] AudioClip pointerSound;
+    [SerializeField, Range(0f, 1f)] float pointerSoundVolume = 2f;
+
     public Vector3 originalScale = Vector3.one;
     public Vector3 originalPosition;
     private bool hasCachedOriginalTransform;
     private Canvas canvas;
+    private AudioSource pointerAudioSource;
     private int originalSortingOrder;
     private Coroutine currentAnimation;
     private Coroutine damageTextCoroutine;
@@ -85,6 +90,10 @@ public class VisualCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private void Awake()
     {
         CacheOriginalVisualTransform(force: true);
+        pointerAudioSource = gameObject.AddComponent<AudioSource>();
+        pointerAudioSource.playOnAwake = false;
+        pointerAudioSource.loop = false;
+        pointerAudioSource.spatialBlend = 0f;
     }
 
     private void OnValidate()
@@ -155,8 +164,9 @@ public class VisualCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         CacheOriginalVisualTransform();
+        PlayPointerSound();
 
-        // Twarda blokada: Jeśli karta jest zakryta lub nie ma grafiki, ignorujemy
+        // Zakryta karta nadal odtwarza dźwięk, ale nie pokazuje animacji awersu.
         if (IsHidden() || visualRoot == null)
         {
             return;
@@ -257,10 +267,22 @@ public class VisualCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void HandleCardClick()
     {
+        PlayPointerSound();
         Debug.Log($"[VisualCard] Kliknięto kartę: {this.cardData.cardId}");
 
         // Widok zgłasza tylko dane karty. Logika gry nie powinna znać VisualCard.
         CardInputEvents.RaiseCardClicked(cardInstance);
+    }
+
+    private void PlayPointerSound()
+    {
+        if (pointerSound == null ||
+            pointerAudioSource == null)
+        {
+            return;
+        }
+
+        pointerAudioSource.PlayOneShot(pointerSound, pointerSoundVolume);
     }
 
 

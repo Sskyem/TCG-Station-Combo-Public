@@ -1468,15 +1468,29 @@ public class PlayerManager : MonoBehaviour
         // For UI-driven players (Human), the attack itself ends the turn — AI brains
         // already call RequestEndTurn explicitly after their own visual delay.
         if (activePlayer.brain is HumanBrain)
-            StartCoroutine(EndTurnAfterHumanAttack());
+            StartCoroutine(EndTurnAfterHumanAttack(activePlayer));
     }
 
-    private IEnumerator EndTurnAfterHumanAttack()
+    private IEnumerator EndTurnAfterHumanAttack(PlayerController attackingPlayer)
     {
         float delay = GameRulesConfig.Instance != null
             ? GameRulesConfig.Instance.aiEndTurnDelay
             : 1f;
         yield return new WaitForSeconds(delay);
+
+        // Some attacks pause while the human selects a target for a follow-up effect
+        // (for example EnergyRamp). RequestEndTurn rejects an active selection, so wait
+        // instead of issuing one failed request and leaving the turn stuck indefinitely.
+        yield return new WaitUntil(() =>
+            activePlayer != attackingPlayer ||
+            !selectionModeActive &&
+            !attackingPlayer.chooseMode);
+
+        // Another game event may already have changed the turn while the delayed attack effects
+        // were resolving. Never end whichever player's turn happens to be active now.
+        if (activePlayer != attackingPlayer)
+            yield break;
+
         TurnManager.Instance.RequestEndTurn();
     }
 

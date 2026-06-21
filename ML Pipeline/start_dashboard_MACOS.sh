@@ -73,10 +73,15 @@ if [ ! -x "$VENV_PYTHON" ]; then
   exit 1
 fi
 
-if ! "$VENV_PYTHON" -c "import fastapi, uvicorn, pydantic, numpy" 2>/dev/null; then
-  echo "Installing dashboard dependencies..."
-  "$VENV_PYTHON" -m pip install --upgrade pip
-  "$VENV_PYTHON" -m pip install "fastapi" "uvicorn[standard]" "pydantic" "numpy"
+if ! "$VENV_PYTHON" -c "import fastapi, uvicorn, pydantic, numpy, torch" 2>/dev/null; then
+  echo "Installing dashboard and ML dependencies..."
+  if [ -f "scripts/setup_env.py" ]; then
+    "$VENV_PYTHON" scripts/setup_env.py --profile auto
+  else
+    echo "scripts/setup_env.py not found; falling back to requirements.txt"
+    "$VENV_PYTHON" -m pip install --upgrade pip
+    "$VENV_PYTHON" -m pip install -r requirements.txt
+  fi
 fi
 
 open "http://localhost:8000" 2>/dev/null || true

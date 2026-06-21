@@ -7,20 +7,9 @@ TCG_Station/Assets/Resources/PerformanceTestRunInfo.json
 TCG_Station/Assets/UNITY Stuff/Settings/UniversalRP.asset
 TCG_Station/Assets/UNITY Stuff/UniversalRenderPipelineGlobalSettings.asset
 TCG_Station/ProjectSettings/GraphicsSettings.asset
+TCG_Station/Logs Export.zip
+Logs Export Patch -1.zip
 
-# Local archives and temporary bundles
-*.zip
-
-# Local-only secret/config material
-*.secret*
-*.local*
-!**/*.local.example.json
 .env
 .env.*
 !.env.example
-
-# Local credential files
-**/*KEY*.txt
-**/*TOKEN*.txt
-**/*SECRET*.txt
-**/*credential*.txt

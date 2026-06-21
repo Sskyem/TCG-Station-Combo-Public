@@ -1,0 +1,40 @@
+# Everything below is private, generated, or local-only and must not appear in git archive exports.
+/.agents export-ignore
+/.agents/** export-ignore
+/.claude export-ignore
+/.claude/** export-ignore
+"/Deckbuilder i prezentacja" export-ignore
+"/Deckbuilder i prezentacja/**" export-ignore
+/tmp export-ignore
+/tmp/** export-ignore
+/PUBLIC_EXPORT_NOTES.md export-ignore
+"/copy projects for public release.sh" export-ignore
+/export-public.ps1 export-ignore
+/*.zip export-ignore
+
+"/ML Pipeline/models" export-ignore
+"/ML Pipeline/models/**" export-ignore
+"/ML Pipeline/reports" export-ignore
+"/ML Pipeline/reports/**" export-ignore
+"/ML Pipeline/runs" export-ignore
+"/ML Pipeline/runs/**" export-ignore
+
+/TCG_Station/docs export-ignore
+/TCG_Station/docs/** export-ignore
+/TCG_Station/memory export-ignore
+/TCG_Station/memory/** export-ignore
+/TCG_Station/tools export-ignore
+/TCG_Station/tools/** export-ignore
+/TCG_Station/PYTHON export-ignore
+/TCG_Station/PYTHON/** export-ignore
+"/TCG_Station/Server PI5" export-ignore
+"/TCG_Station/Server PI5/**" export-ignore
+/TCG_Station/Backups export-ignore
+/TCG_Station/Backups/** export-ignore
+/TCG_Station/PrePatchesData export-ignore
+/TCG_Station/PrePatchesData/** export-ignore
+/TCG_Station/Assets/Scripts.zip export-ignore
+/TCG_Station/Assets/Scripts.zip.meta export-ignore
+/TCG_Station/Assets/_Recovery export-ignore
+/TCG_Station/Assets/_Recovery/** export-ignore
+/TCG_Station/Assets/_Recovery.meta export-ignore

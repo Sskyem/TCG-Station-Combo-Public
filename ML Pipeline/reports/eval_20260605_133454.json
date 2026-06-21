@@ -1,5 +1,5 @@
 {
-  "model_path": "PYTHON/ML/models/bc_20260605_112612.pt",
+  "model_path": "models/bc_20260605_112612.pt",
   "device": "cpu",
   "split": "val",
   "split_games": 1226,

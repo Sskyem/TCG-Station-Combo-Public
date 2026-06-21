@@ -21,6 +21,7 @@ public class OpenAiApiClient : MonoBehaviour, ILLMClient
 
     private string apiToken;
     private EnumOpenAiModel? _modelOverride;
+    public string LastErrorMessage { get; private set; }
 
     private void Awake()
     {
@@ -93,25 +94,42 @@ public class OpenAiApiClient : MonoBehaviour, ILLMClient
 
     private void LoadToken()
     {
-        string path = Path.Combine(Directory.GetCurrentDirectory(), "OPENAI_API_KEY.txt");
+        string path = RuntimePaths.ApiKeyPath("OPENAI_API_KEY.txt");
 
         if (File.Exists(path))
         {
-            string rawToken = File.ReadAllText(path);
-            apiToken = rawToken.Trim();
-            apiToken = System.Text.RegularExpressions.Regex.Replace(apiToken, @"[^\x20-\x7E]", "");
-            Debug.Log($"[OpenAiApiClient] Token wczytany. Dlugosc: {apiToken.Length} znakow.");
+            try
+            {
+                string rawToken = File.ReadAllText(path);
+                apiToken = rawToken.Trim();
+                apiToken = System.Text.RegularExpressions.Regex.Replace(apiToken, @"[^\x20-\x7E]", "");
+                Debug.Log($"[OpenAiApiClient] Token wczytany. Dlugosc: {apiToken.Length} znakow.");
+            }
+            catch (Exception e)
+            {
+                apiToken = null;
+                LastErrorMessage = $"Nie mozna odczytac OPENAI_API_KEY.txt: {e.Message}";
+                Debug.LogError($"[OpenAiApiClient] {LastErrorMessage}");
+            }
         }
         else
         {
+            LastErrorMessage = "Brakuje pliku OPENAI_API_KEY.txt.";
             Debug.LogError("Nie znaleziono pliku OPENAI_API_KEY.txt!");
         }
     }
 
     public IEnumerator SendPrompt(string userText, Action<string> onResponse)
     {
+        if (!string.IsNullOrEmpty(apiToken))
+            LastErrorMessage = null;
+
         if (string.IsNullOrEmpty(apiToken))
         {
+            string keyPath = RuntimePaths.ApiKeyPath("OPENAI_API_KEY.txt");
+            LastErrorMessage ??= File.Exists(keyPath)
+                ? "Plik OPENAI_API_KEY.txt jest pusty albo nie zawiera poprawnego klucza."
+                : "Brakuje pliku OPENAI_API_KEY.txt obok pliku gry.";
             Debug.LogError("[OpenAiApiClient] Brak tokena! Nie mozna wyslac zapytania.");
             onResponse?.Invoke(null);
             yield break;
@@ -182,6 +200,7 @@ public class OpenAiApiClient : MonoBehaviour, ILLMClient
                     }
                     catch (Exception e)
                     {
+                        LastErrorMessage = $"Nie udalo sie odczytac odpowiedzi OpenAI: {e.Message}";
                         Debug.LogError($"[OpenAiApiClient] Failed to parse response: {e.Message}\nRaw JSON:\n{rawJson}");
                         onResponse?.Invoke(null);
                         yield break;
@@ -191,6 +210,7 @@ public class OpenAiApiClient : MonoBehaviour, ILLMClient
 
                     if (string.IsNullOrEmpty(aiText))
                     {
+                        LastErrorMessage = $"OpenAI zwrocilo pusta odpowiedz (finish_reason: {finishReason}).";
                         Debug.LogError($"[OpenAiApiClient] Empty content (finishReason={finishReason}). Raw JSON:\n{rawJson}");
                         onResponse?.Invoke(null);
                         yield break;
@@ -211,6 +231,7 @@ public class OpenAiApiClient : MonoBehaviour, ILLMClient
                 if (www.responseCode == 429 || www.responseCode == 503)
                 {
                     string responseBody = www.downloadHandler != null ? www.downloadHandler.text : "";
+                    LastErrorMessage = BuildApiErrorMessage(www.responseCode, responseBody);
                     Debug.LogWarning($"[OpenAiApiClient] {www.responseCode} - waiting {retryDelay}s before retry {attempt + 1}/{maxRetries - 1}.\n{responseBody}");
                     yield return new WaitForSeconds(retryDelay);
                     retryDelay *= 2;
@@ -218,6 +239,7 @@ public class OpenAiApiClient : MonoBehaviour, ILLMClient
                 else
                 {
                     string responseBody = www.downloadHandler != null ? www.downloadHandler.text : "";
+                    LastErrorMessage = BuildApiErrorMessage(www.responseCode, responseBody);
                     Debug.LogError($"[OpenAiApiClient] Blad {www.responseCode}: {www.error}\n{responseBody}");
                     onResponse?.Invoke(null);
                     yield break;
@@ -225,7 +247,32 @@ public class OpenAiApiClient : MonoBehaviour, ILLMClient
             }
         }
 
+        LastErrorMessage ??= "OpenAI nie odpowiedzial po wszystkich probach.";
         Debug.LogError($"[OpenAiApiClient] All {maxRetries} attempts failed (rate-limited). Giving up.");
         onResponse?.Invoke(null);
+    }
+
+    private static string BuildApiErrorMessage(long responseCode, string responseBody)
+    {
+        string apiMessage = null;
+        try
+        {
+            apiMessage = (string)JObject.Parse(responseBody)?["error"]?["message"];
+        }
+        catch
+        {
+            // The HTTP status still gives a useful and safe message.
+        }
+
+        if (responseCode == 401)
+            return "OpenAI odrzucilo klucz API (HTTP 401).";
+        if (responseCode == 429)
+            return "OpenAI przekroczylo limit zapytan albo dostepna kwote (HTTP 429).";
+        if (responseCode == 503)
+            return "OpenAI jest chwilowo niedostepne (HTTP 503).";
+
+        return string.IsNullOrWhiteSpace(apiMessage)
+            ? $"OpenAI nie dziala dla wybranego modelu (HTTP {responseCode})."
+            : $"OpenAI: {apiMessage}";
     }
 }

@@ -1,6 +1,14 @@
 {
-  "_section_gameRules": "GAME RULES",
+  // =============================================================================
+  // GAME RULES
+  // Comments are supported by the Newtonsoft.Json loader.
+  // The startup menu may rewrite this file and remove comments after pressing Start.
+  // =============================================================================
+
+  // Disables scene visuals for faster simulations. Unity -batchmode also forces this.
   "headlessMode": false,
+
+  // Core match rules.
   "deckSize": 30,
   "benchSize": 4,
   "starterHandSize": 7,
@@ -9,7 +17,14 @@
   "poisonDamagePerTurn": 10,
   "burnDamagePerTurn": 20,
 
-  "_section_matchSetup": "MATCH SETUP",
+  // =============================================================================
+  // PLAYERS AND DECKS
+  // Player types: Human, Algorithm, LLM, ML.
+  // Deck names must match a deck from the Decks folder (without the .json extension).
+  // Algorithm profiles: Standard, Ramp, TempoAggro, ControlStatus, HealStall, Auto.
+  // Auto detects a suitable Algorithm profile from the selected deck.
+  // =============================================================================
+
   "player1Type": "Algorithm",
   "player2Type": "Algorithm",
   "player1AlgorithmProfile": "Auto",
@@ -17,54 +32,104 @@
   "player1DeckName": "Garchomp",
   "player2DeckName": "Flygon",
 
-  "_section_llmFallbacks": "LLM FALLBACKS",
+  // =============================================================================
+  // LLM FALLBACKS
+  // Used when a matching per-player setting below is absent.
+  // Providers: Gemini, Ollama, OpenAI.
+  // =============================================================================
+
   "llmProvider": "Gemini",
-  "geminiModel": "Flash20",
+  "geminiModel": "Flash25Lite",
   "ollamaModel": "Gemma3_12b",
   "openAiModel": "Gpt4oMini",
 
-  "_section_player1Llm": "PLAYER 1 — LLM",
-  "player1LlmProvider": "Gemini",
-  "player1GeminiModel": "Flash20",
+  // =============================================================================
+  // PLAYER 1 LLM
+  // Only the model matching player1LlmProvider is used.
+  //
+  // Gemini: Flash25, Flash25Lite, Pro25, Flash20, Flash20Lite, Flash31Lite,
+  //         Flash35, Flash15, Flash30, Gemma4_26b, Gemma4_31b.
+  // OpenAI: Gpt4oMini, Gpt4o, Gpt41Mini, Gpt41, Gpt5Mini, Gpt5, O4Mini.
+  // Ollama: Gemma3_12b, Qwen3_8b, Gemma4_12b_It_Q4_K_M,
+  //         Gemma4_E4b_It_Q4_K_M.
+  // =============================================================================
+
+  "player1LlmProvider": "OpenAI",
+  "player1GeminiModel": "Flash25Lite",
   "player1OllamaModel": "Gemma3_12b",
   "player1OpenAiModel": "Gpt4oMini",
 
-  "_section_player2Llm": "PLAYER 2 — LLM",
+  // =============================================================================
+  // PLAYER 2 LLM
+  // These values are ignored while player2Type is not LLM.
+  // =============================================================================
+
   "player2LlmProvider": "Ollama",
-  "player2GeminiModel": "Flash20",
+  "player2GeminiModel": "Flash25Lite",
   "player2OllamaModel": "Gemma4_E4b_It_Q4_K_M",
   "player2OpenAiModel": "Gpt4oMini",
 
-  "_section_mlServer": "ML SERVER",
-  "mlServerPreset": "Localhost",
+  // =============================================================================
+  // ML INFERENCE SERVER
+  // Localhost uses the default local dashboard/API address and overrides mlServerUrl.
+  // Use Custom to keep a manually supplied URL, usually in GameRulesConfig.local.json.
+  // =============================================================================
+
+  "mlServerPreset": "Localhost", // Localhost or Custom
   "mlServerUrl": "http://127.0.0.1:8000/predict",
 
-  "_section_llmAdvisor": "LLM ADVISOR",
-  "llmAdvisorProvider": "Ollama",
+  // =============================================================================
+  // IN-GAME LLM ADVISOR
+  // Independent from the providers selected for Player 1 and Player 2.
+  // =============================================================================
+
+  "llmAdvisorProvider": "Gemini",
   "llmAdvisorGeminiModel": "Flash25Lite",
   "llmAdvisorOllamaModel": "Qwen3_8b",
   "llmAdvisorOpenAiModel": "Gpt4oMini",
 
-  "_section_llmShared": "LLM SHARED SETTINGS",
-  "ollamaEndpointPreset": "Localhost",
+  // =============================================================================
+  // SHARED LLM SETTINGS
+  // Localhost uses the local Ollama endpoint and overrides ollamaBaseUrl.
+  // Use Custom to connect to Ollama on another machine.
+  // =============================================================================
+
+  "ollamaEndpointPreset": "Localhost", // Localhost or Custom
   "ollamaBaseUrl": "http://127.0.0.1:11434/api/chat",
+
+  // Load detailed provider-specific rules files. false uses a short built-in prompt.
   "llmUseRulesFile": true,
+
+  // Number of previous turns by the same player included in the prompt. 0 disables history.
   "geminiHistoryTurnsVisible": 1,
   "ollamaHistoryTurnsVisible": 1,
+
+  // true selects a Gemini rate-limit-safe delay automatically.
+  // llmTurnDelay is used only when llmAutoDelay is false.
   "llmAutoDelay": true,
   "llmTurnDelay": 0.0,
 
-  "_section_generation": "GENERATION SETTINGS",
+  // =============================================================================
+  // LLM GENERATION
+  // Temperature: 0 = more deterministic, 1 = more varied.
+  // GPT-5 and o-series reasoning models ignore openAiTemperature.
+  // Keep token limits generous because reasoning may consume part of the output budget.
+  // =============================================================================
+
   "geminiTemperature": 0.2,
   "geminiMaxOutputTokens": 2048,
   "openAiTemperature": 0.2,
   "openAiMaxOutputTokens": 2048,
 
-  "_section_remoteUpload": "OPTIONAL REMOTE LOG UPLOAD",
+  // =============================================================================
+  // LOGGING AND TELEMETRY
+  // logUploadEnabled sends generated logs to the configured remote log server.
+  // Benchmark upload is separate because scene reloads can interrupt requests.
+  // Individual flags control which local files are written under Logs Export.
+  // =============================================================================
+
   "logUploadEnabled": false,
   "uploadLogsDuringBenchmark": false,
-
-  "_section_localLogs": "LOCAL LOG EXPORT",
   "enableReadableBattleLogs": true,
   "enableDeckbuilderBattleLogs": true,
   "enableMatchupStatsLogs": true,
@@ -73,7 +138,12 @@
   "enableLlmPromptLogs": true,
   "enableLlmDecisionLogs": true,
 
-  "_section_visualTiming": "VISUALS AND TIMING",
+  // =============================================================================
+  // PRESENTATION SPEED
+  // aiDelayScale: 0 = instant, 1 = normal speed, values above 1 are slower.
+  // attackPunchScale controls only the visual attack animation strength.
+  // =============================================================================
+
   "aiDelayScale": 1.0,
   "attackPunchScale": 1.25
 }
