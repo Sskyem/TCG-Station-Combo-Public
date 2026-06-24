@@ -1,0 +1,35 @@
+{
+    "cardName": "Kommo-o",
+    "cardId": "kommo-o_1",
+    "imageName": "kommo-o_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 107,
+    "stage": 2,
+    "evolvesFrom": "Hakamo-o",
+    "hp": 200,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Clanging Scales",
+            "damage": 120,
+            "attackDescription": "Heal 20 damage from this Pokemon. During your opponent's next turn, this Pokemon takes 20 more damage from attacks.",
+            "attackCost": [
+                "Lightning",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

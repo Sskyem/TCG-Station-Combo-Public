@@ -1,0 +1,36 @@
+{
+    "cardName": "Bronzong",
+    "cardId": "bronzong_1",
+    "imageName": "bronzong_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 112,
+    "stage": 1,
+    "evolvesFrom": "Bronzor",
+    "hp": 190,
+    "type": "Metal",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Zen Resonance",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 30 less damage from attacks. This attack deals 30 more damage for each Energy on your opponent's Active Pokemon.",
+            "attackCost": [
+                "Metal",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "Psychic",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "cardName": "Regice",
+    "cardId": "regice_1",
+    "imageName": "regice_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 98,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Water",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Ice Prison",
+            "damage": 100,
+            "attackDescription": "Discard 2 random Energy from this Pokemon. Your opponent's Active Pokemon is now Rooted and Paralyzed.",
+            "attackCost": [
+                "Water",
+                "Colorless",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

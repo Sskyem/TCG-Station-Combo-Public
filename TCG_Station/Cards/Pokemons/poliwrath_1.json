@@ -1,0 +1,25 @@
+{
+    "cardName": "Poliwrath",
+    "cardId": "poliwrath_1",
+    "imageName": "poliwrath_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 171,
+    "stage": 2,
+    "evolvesFrom": "Poliwhirl",
+    "hp": 220,
+    "type": "Water",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Hydro Knuckle",
+            "damage": 120,
+            "attackDescription": "",
+            "attackCost": [
+                "Fighting",
+                "Water",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

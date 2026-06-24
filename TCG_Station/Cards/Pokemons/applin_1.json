@@ -1,0 +1,30 @@
+{
+    "cardName": "Applin",
+    "cardId": "applin_1",
+    "imageName": "applin_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 108,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Apple Roll",
+            "damage": 50,
+            "attackDescription": "Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

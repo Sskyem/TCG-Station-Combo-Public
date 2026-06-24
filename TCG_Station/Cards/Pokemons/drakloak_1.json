@@ -1,0 +1,30 @@
+{
+    "cardName": "Drakloak",
+    "cardId": "drakloak_1",
+    "imageName": "drakloak_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 27,
+    "stage": 1,
+    "evolvesFrom": "Dreepy",
+    "hp": 120,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Dragon Headbutt",
+            "damage": 60,
+            "attackDescription": "Draw 1 cards.",
+            "attackCost": [
+                "Fire",
+                "Psychic"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

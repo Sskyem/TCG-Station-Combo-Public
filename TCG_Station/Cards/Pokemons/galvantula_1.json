@@ -1,0 +1,35 @@
+{
+    "cardName": "Galvantula",
+    "cardId": "galvantula_1",
+    "imageName": "galvantula_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 241,
+    "stage": 1,
+    "evolvesFrom": "Joltik",
+    "hp": 150,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Charged Web",
+            "damage": 60,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon. Your opponent's Active Pokemon is now Rooted.",
+            "attackCost": [
+                "Grass",
+                "Lightning"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "cardName": "Tinkatink",
+    "cardId": "tinkatink_1",
+    "imageName": "tinkatink_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 236,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Beat",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "cardName": "Ekans",
+    "cardId": "ekans_1",
+    "imageName": "ekans_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 142,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Darkness",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Venomous Fang",
+            "damage": 10,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned. Do 20 damage rather than the usual amount for this Special Condition.",
+            "attackCost": [
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

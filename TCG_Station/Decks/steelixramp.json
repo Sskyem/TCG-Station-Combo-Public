@@ -1,0 +1,59 @@
+{
+    "deckName": "SteelixRamp",
+    "cards": [
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 38,
+            "cardId": "dialga_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 187,
+            "cardId": "duraludon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 121,
+            "cardId": "onix_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 122,
+            "cardId": "steelix_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fighting",
+        "Metal"
+    ]
+}

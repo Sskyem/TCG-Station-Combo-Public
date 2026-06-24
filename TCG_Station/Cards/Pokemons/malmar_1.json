@@ -1,0 +1,36 @@
+{
+    "cardName": "Malmar",
+    "cardId": "malmar_1",
+    "imageName": "malmar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 246,
+    "stage": 1,
+    "evolvesFrom": "Inkay",
+    "hp": 170,
+    "type": "Darkness",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Mental Trash",
+            "damage": 30,
+            "attackDescription": "This attack also does 30 damage to all your opponent's Benched Pokemon. Your opponent's Active Pokemon is now Asleep.",
+            "attackCost": [
+                "Psychic",
+                "Darkness",
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

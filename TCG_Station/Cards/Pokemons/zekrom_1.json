@@ -1,0 +1,31 @@
+{
+    "cardName": "Zekrom",
+    "cardId": "zekrom_1",
+    "imageName": "zekrom_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 100,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Rampaging Thunder",
+            "damage": 140,
+            "attackDescription": "This Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Lightning",
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

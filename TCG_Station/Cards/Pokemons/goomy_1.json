@@ -1,0 +1,27 @@
+{
+    "cardName": "Goomy",
+    "cardId": "goomy_1",
+    "imageName": "goomy_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 157,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 130,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Sticky Membrane",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Slowed.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

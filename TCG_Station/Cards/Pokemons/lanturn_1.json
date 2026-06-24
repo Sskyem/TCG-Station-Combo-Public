@@ -1,0 +1,36 @@
+{
+    "cardName": "Lanturn",
+    "cardId": "lanturn_1",
+    "imageName": "lanturn_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 191,
+    "stage": 1,
+    "evolvesFrom": "Chinchou",
+    "hp": 170,
+    "type": "Lightning",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Flashing Lure",
+            "damage": 70,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed and Confused.",
+            "attackCost": [
+                "Water",
+                "Lightning",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

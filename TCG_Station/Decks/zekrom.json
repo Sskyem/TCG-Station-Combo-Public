@@ -1,0 +1,64 @@
+{
+    "deckName": "Zekrom",
+    "cards": [
+        {
+            "deckCardID": 76,
+            "cardId": "toxel_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 181,
+            "cardId": "tadbulb_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 182,
+            "cardId": "bellibolt_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 136,
+            "cardId": "poke_pill_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 77,
+            "cardId": "toxtricity_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 100,
+            "cardId": "zekrom_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 2
+        }
+    ],
+    "energyTypes": [
+        "Lightning",
+        "Darkness"
+    ]
+}

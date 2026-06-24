@@ -1,0 +1,29 @@
+{
+    "cardName": "Froslass",
+    "cardId": "froslass_1",
+    "imageName": "froslass_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 97,
+    "stage": 1,
+    "evolvesFrom": "Snorunt",
+    "hp": 150,
+    "type": "Water",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Crystal Breath",
+            "damage": 50,
+            "attackDescription": "Your opponent's Active Pokemon is now Rooted.",
+            "attackCost": [
+                "Water"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

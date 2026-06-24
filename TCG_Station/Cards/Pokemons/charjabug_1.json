@@ -1,0 +1,30 @@
+{
+    "cardName": "Charjabug",
+    "cardId": "charjabug_1",
+    "imageName": "charjabug_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 243,
+    "stage": 1,
+    "evolvesFrom": "Grubbin",
+    "hp": 160,
+    "type": "Grass",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Shocking Block",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 40 less damage from attacks. During your opponent's next turn, if this Pokemon is damaged by an attack, do 40 damage to the attacking Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Lightning"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 40
+                }
+            ]
+        }
+    ]
+}

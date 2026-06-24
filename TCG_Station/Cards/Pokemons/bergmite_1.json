@@ -1,0 +1,35 @@
+{
+    "cardName": "Bergmite",
+    "cardId": "bergmite_1",
+    "imageName": "bergmite_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 228,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Water",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Icicle",
+            "damage": 40,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 20 less damage from attacks. This Pokemon is now Slowed.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

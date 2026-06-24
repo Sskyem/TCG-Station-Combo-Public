@@ -1,0 +1,35 @@
+{
+    "cardName": "Articuno",
+    "cardId": "articuno_1",
+    "imageName": "articuno_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 35,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Water",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Blizzard",
+            "damage": 20,
+            "attackDescription": "This attack also does 20 damage to all your opponent's Benched Pokemon. Your opponent's Active Pokemon is now Slowed.",
+            "attackCost": [
+                "Water",
+                "Water"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

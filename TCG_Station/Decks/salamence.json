@@ -1,0 +1,59 @@
+{
+    "deckName": "Salamence",
+    "cards": [
+        {
+            "deckCardID": 19,
+            "cardId": "bagon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 20,
+            "cardId": "shelgon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 21,
+            "cardId": "salamence_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 22,
+            "cardId": "druddigon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 198,
+            "cardId": "whismur_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 199,
+            "cardId": "loudred_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 200,
+            "cardId": "exploud_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire",
+        "Water"
+    ]
+}

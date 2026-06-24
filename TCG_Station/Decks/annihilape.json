@@ -1,0 +1,59 @@
+{
+    "deckName": "Annihilape",
+    "cards": [
+        {
+            "deckCardID": 52,
+            "cardId": "meditite_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 53,
+            "cardId": "medicham_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 48,
+            "cardId": "mankey_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 49,
+            "cardId": "primeape_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 50,
+            "cardId": "annihilape_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 133,
+            "cardId": "potion_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fighting",
+        "Psychic"
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "cardName": "Kingambit",
+    "cardId": "kingambit_1",
+    "imageName": "kingambit_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 251,
+    "stage": 2,
+    "evolvesFrom": "Bisharp",
+    "hp": 200,
+    "type": "Metal",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Shadow Blade",
+            "damage": 70,
+            "attackDescription": "During your opponent's next turn, if this Pokemon is damaged by an attack, do 40 damage to the attacking Pokemon. Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Darkness",
+                "Metal",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 40
+                },
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

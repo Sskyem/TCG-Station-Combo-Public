@@ -1,0 +1,27 @@
+{
+    "cardName": "Trapinch",
+    "cardId": "trapinch_1",
+    "imageName": "trapinch_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 153,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Pinch",
+            "damage": 10,
+            "attackDescription": "Your opponent's Active Pokemon is now Rooted.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

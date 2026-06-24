@@ -1,0 +1,24 @@
+{
+    "cardName": "Medicham",
+    "cardId": "medicham_1",
+    "imageName": "medicham_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 53,
+    "stage": 1,
+    "evolvesFrom": "Meditite",
+    "hp": 150,
+    "type": "Fighting",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Psykick",
+            "damage": 90,
+            "attackDescription": "",
+            "attackCost": [
+                "Fighting",
+                "Psychic"
+            ],
+            "effects": []
+        }
+    ]
+}

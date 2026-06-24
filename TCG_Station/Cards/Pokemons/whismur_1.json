@@ -1,0 +1,29 @@
+{
+    "cardName": "Whismur",
+    "cardId": "whismur_1",
+    "imageName": "whismur_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 198,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Sound Wave",
+            "damage": 10,
+            "attackDescription": "This attack also does 10 damage to all your opponent's Benched Pokemon.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

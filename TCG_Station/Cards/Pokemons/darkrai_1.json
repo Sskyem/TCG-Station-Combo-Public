@@ -1,0 +1,36 @@
+{
+    "cardName": "Darkrai",
+    "cardId": "darkrai_1",
+    "imageName": "darkrai_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 186,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Darkness",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Dark Slumber",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed and Asleep. Affected Pokemon takes 50 damage more, rather than the usual amount for this Special Condition.",
+            "attackCost": [
+                "Darkness",
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 50
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "cardName": "Flygon",
+    "cardId": "flygon_1",
+    "imageName": "flygon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 155,
+    "stage": 2,
+    "evolvesFrom": "Vibrava",
+    "hp": 180,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Sand Sweep",
+            "damage": 30,
+            "attackDescription": "Heal 30 from all your Benched Pokemon. This attack also does 30 damage to all your opponent's Benched Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchHeal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

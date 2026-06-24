@@ -1,0 +1,16 @@
+{
+    "cardName": "Poke Pill",
+    "cardId": "poke_pill_1",
+    "imageName": "poke pill_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Item",
+    "deckCardId": 136,
+    "effectDescription": "Remove all Special Conditions from your Active Pokemon.",
+    "effects": [
+        {
+            "cardEffectType": "Cleanse",
+            "cardEffectTarget": "Self",
+            "effectAmount": 0
+        }
+    ]
+}

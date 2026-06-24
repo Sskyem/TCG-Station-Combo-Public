@@ -1,0 +1,35 @@
+{
+    "cardName": "Tauros",
+    "cardId": "tauros_1",
+    "imageName": "tauros_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 51,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Fighting",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Raging Horns",
+            "damage": 60,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed and Confused.",
+            "attackCost": [
+                "Fighting",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

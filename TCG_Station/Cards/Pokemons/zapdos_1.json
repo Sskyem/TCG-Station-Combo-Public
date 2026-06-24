@@ -1,0 +1,35 @@
+{
+    "cardName": "Zapdos",
+    "cardId": "zapdos_1",
+    "imageName": "zapdos_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 34,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Lightning",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Thundering Hurricane",
+            "damage": 40,
+            "attackDescription": "This attack also does 10 damage to all your opponent's Benched Pokemon. Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Lightning",
+                "Lightning"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

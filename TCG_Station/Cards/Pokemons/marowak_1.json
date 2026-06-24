@@ -1,0 +1,23 @@
+{
+    "cardName": "Marowak",
+    "cardId": "marowak_1",
+    "imageName": "marowak_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 47,
+    "stage": 1,
+    "evolvesFrom": "Cubone",
+    "hp": 120,
+    "type": "Fighting",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Bonemerang",
+            "damage": 50,
+            "attackDescription": "",
+            "attackCost": [
+                "Fighting"
+            ],
+            "effects": []
+        }
+    ]
+}

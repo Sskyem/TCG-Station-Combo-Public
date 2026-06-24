@@ -1,0 +1,29 @@
+{
+    "cardName": "Drowzee",
+    "cardId": "drowzee_1",
+    "imageName": "drowzee_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 175,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Yawn",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Asleep.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

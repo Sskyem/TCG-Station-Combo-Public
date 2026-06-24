@@ -1,0 +1,23 @@
+{
+    "cardName": "Axew",
+    "cardId": "axew_1",
+    "imageName": "axew_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 102,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Sharp Fang",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

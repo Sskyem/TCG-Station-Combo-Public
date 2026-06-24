@@ -1,0 +1,59 @@
+{
+    "deckName": "Tinkaton",
+    "cards": [
+        {
+            "deckCardID": 236,
+            "cardId": "tinkatink_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 237,
+            "cardId": "tinkatuff_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 238,
+            "cardId": "tinkaton_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 29,
+            "cardId": "ultra_necrozma_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 156,
+            "cardId": "kecleon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 226,
+            "cardId": "deoxys_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Psychic",
+        "Metal"
+    ]
+}

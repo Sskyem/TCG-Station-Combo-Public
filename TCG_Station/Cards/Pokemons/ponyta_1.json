@@ -1,0 +1,29 @@
+{
+    "cardName": "Ponyta",
+    "cardId": "ponyta_1",
+    "imageName": "ponyta_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 144,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Fire",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Flame Tail",
+            "damage": 40,
+            "attackDescription": "This Pokemon also does 10 damage to itself.",
+            "attackCost": [
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

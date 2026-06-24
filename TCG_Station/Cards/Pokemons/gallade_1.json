@@ -1,0 +1,30 @@
+{
+    "cardName": "Gallade",
+    "cardId": "gallade_1",
+    "imageName": "gallade_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 70,
+    "stage": 2,
+    "evolvesFrom": "Kirlia",
+    "hp": 180,
+    "type": "Fighting",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Energized Blade",
+            "damage": 60,
+            "attackDescription": "This attack deals 20 more damage for each Energy on your opponent's Active Pokemon.",
+            "attackCost": [
+                "Fighting",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Psychic",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

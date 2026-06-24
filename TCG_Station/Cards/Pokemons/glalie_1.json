@@ -1,0 +1,41 @@
+{
+    "cardName": "Glalie",
+    "cardId": "glalie_1",
+    "imageName": "glalie_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 96,
+    "stage": 1,
+    "evolvesFrom": "Snorunt",
+    "hp": 190,
+    "type": "Water",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Frosty Typhoon",
+            "damage": 40,
+            "attackDescription": "This attack deals 20 more damage for each Energy on your opponent's Active Pokemon. Both Active Pokemon are now Slowed.",
+            "attackCost": [
+                "Water",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Psychic",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

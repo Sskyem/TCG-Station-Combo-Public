@@ -1,0 +1,35 @@
+{
+    "cardName": "Salazzle",
+    "cardId": "salazzle_1",
+    "imageName": "salazzle_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 59,
+    "stage": 1,
+    "evolvesFrom": "Salandit",
+    "hp": 150,
+    "type": "Fire",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Heated Poison",
+            "damage": 20,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned and Burned.",
+            "attackCost": [
+                "Fire",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

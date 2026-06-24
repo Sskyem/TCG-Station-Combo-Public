@@ -1,0 +1,36 @@
+{
+    "cardName": "Mewtwo",
+    "cardId": "mewtwo_1",
+    "imageName": "mewtwo_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 230,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Psychic",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Psyslash",
+            "damage": 90,
+            "attackDescription": "Discard 1 random Energy from this Pokemon. This attack does 20 more damage for each Energy on this Pokemon.",
+            "attackCost": [
+                "Psychic",
+                "Psychic",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

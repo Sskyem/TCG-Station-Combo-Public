@@ -1,0 +1,34 @@
+{
+    "cardName": "Slugma",
+    "cardId": "slugma_1",
+    "imageName": "slugma_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 56,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Fire",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Burning Slime",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Slowed and Burned.",
+            "attackCost": [
+                "Fire"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

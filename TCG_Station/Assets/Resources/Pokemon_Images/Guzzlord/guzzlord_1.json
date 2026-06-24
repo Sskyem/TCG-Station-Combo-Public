@@ -1,0 +1,23 @@
+{
+    "cardName": "Guzzlord",
+    "cardId": "guzzlord_1",
+    "imageName": "guzzlord_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 32,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 180,
+    "type": "Dark",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Grindcore",
+            "damage": 40,
+            "attackDescription": "",
+            "attackCost": [
+                "Dark"
+            ],
+            "effects": []
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "cardName": "Zubat",
+    "cardId": "zubat_1",
+    "imageName": "zubat_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 13,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 70,
+    "type": "Dark",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Razor Wing",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Dark"
+            ],
+            "effects": []
+        }
+    ]
+}

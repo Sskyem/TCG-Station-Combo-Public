@@ -1,0 +1,27 @@
+{
+    "cardName": "Snom",
+    "cardId": "snom_1",
+    "imageName": "snom_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 252,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Water",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Powder Snow",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Slowed.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

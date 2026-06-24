@@ -1,0 +1,35 @@
+{
+    "cardName": "Kecleon",
+    "cardId": "kecleon_1",
+    "imageName": "kecleon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 156,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Chromashift",
+            "damage": 60,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon. Discard 1 random Energy from this Pokemon.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

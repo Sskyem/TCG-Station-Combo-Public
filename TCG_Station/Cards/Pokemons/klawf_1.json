@@ -1,0 +1,30 @@
+{
+    "cardName": "Klawf",
+    "cardId": "klawf_1",
+    "imageName": "klawf_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 177,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Fighting",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Crazy Claw",
+            "damage": 100,
+            "attackDescription": "This Pokemon is now Confused.",
+            "attackCost": [
+                "Fighting",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Confuse",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

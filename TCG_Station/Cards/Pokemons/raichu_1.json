@@ -1,0 +1,36 @@
+{
+    "cardName": "Raichu",
+    "cardId": "raichu_1",
+    "imageName": "raichu_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 74,
+    "stage": 1,
+    "evolvesFrom": "Pikachu",
+    "hp": 150,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Electric Shock",
+            "damage": 90,
+            "attackDescription": "Discard 2 random Energy from this Pokemon. Your opponent's Active Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Lightning",
+                "Lightning",
+                "Lightning"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

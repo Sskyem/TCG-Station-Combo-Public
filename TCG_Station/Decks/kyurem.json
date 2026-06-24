@@ -1,0 +1,59 @@
+{
+    "deckName": "Kyurem",
+    "cards": [
+        {
+            "deckCardID": 25,
+            "cardId": "kyurem_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 256,
+            "cardId": "baxcalibur_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 255,
+            "cardId": "arctibax_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 254,
+            "cardId": "frigibax_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Water",
+        "Metal"
+    ]
+}

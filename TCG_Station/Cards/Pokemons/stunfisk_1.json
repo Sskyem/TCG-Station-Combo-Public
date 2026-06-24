@@ -1,0 +1,34 @@
+{
+    "cardName": "Stunfisk",
+    "cardId": "stunfisk_1",
+    "imageName": "stunfisk_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 183,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Lightning",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Pouncing Trap",
+            "damage": 20,
+            "attackDescription": "Your opponent's Active Pokemon is now Rooted and Exposed.",
+            "attackCost": [
+                "Lightning"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

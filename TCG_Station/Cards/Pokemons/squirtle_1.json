@@ -1,0 +1,23 @@
+{
+    "cardName": "Squirtle",
+    "cardId": "squirtle_1",
+    "imageName": "squirtle_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 7,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Water",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Bubble Blast",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Water"
+            ],
+            "effects": []
+        }
+    ]
+}

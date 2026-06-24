@@ -1,0 +1,36 @@
+{
+    "cardName": "Wigglytuff",
+    "cardId": "wigglytuff_1",
+    "imageName": "wigglytuff_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 161,
+    "stage": 1,
+    "evolvesFrom": "Jigglypuff",
+    "hp": 170,
+    "type": "Colorless",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Comforting Song",
+            "damage": 50,
+            "attackDescription": "Heal 20 damage from this Pokemon. Heal 20 from all your Benched Pokemon.",
+            "attackCost": [
+                "Colorless",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "BenchHeal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

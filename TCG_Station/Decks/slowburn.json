@@ -1,0 +1,58 @@
+{
+    "deckName": "SlowBurn",
+    "cards": [
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 161,
+            "cardId": "wigglytuff_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 55,
+            "cardId": "magmortar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 54,
+            "cardId": "magmar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 160,
+            "cardId": "jigglypuff_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 33,
+            "cardId": "moltres_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 140,
+            "cardId": "net_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire"
+    ]
+}

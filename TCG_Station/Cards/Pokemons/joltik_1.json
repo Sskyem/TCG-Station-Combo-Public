@@ -1,0 +1,27 @@
+{
+    "cardName": "Joltik",
+    "cardId": "joltik_1",
+    "imageName": "joltik_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 240,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 70,
+    "type": "Lightning",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Jolting Bite",
+            "damage": 10,
+            "attackDescription": "This attack does 10 more damage for each Energy on this Pokemon.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

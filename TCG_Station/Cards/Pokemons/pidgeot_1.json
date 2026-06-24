@@ -1,0 +1,30 @@
+{
+    "cardName": "Pidgeot",
+    "cardId": "pidgeot_1",
+    "imageName": "pidgeot_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 117,
+    "stage": 2,
+    "evolvesFrom": "Pidgeotto",
+    "hp": 160,
+    "type": "Colorless",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Whirlwind",
+            "damage": 70,
+            "attackDescription": "Switch out your opponent's Active Pokemon.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapEnemy",
+                    "cardEffectTarget": "Opponent",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

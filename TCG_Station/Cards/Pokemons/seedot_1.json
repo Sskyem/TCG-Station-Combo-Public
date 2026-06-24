@@ -1,0 +1,34 @@
+{
+    "cardName": "Seedot",
+    "cardId": "seedot_1",
+    "imageName": "seedot_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 205,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Growth Spurt",
+            "damage": 0,
+            "attackDescription": "Heal 10 damage from this Pokemon. Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

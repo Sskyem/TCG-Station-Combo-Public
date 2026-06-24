@@ -1,0 +1,29 @@
+{
+    "cardName": "Salandit",
+    "cardId": "salandit_1",
+    "imageName": "salandit_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 58,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Fire",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Poisoned Claw",
+            "damage": 10,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

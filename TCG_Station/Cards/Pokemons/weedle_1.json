@@ -1,0 +1,23 @@
+{
+    "cardName": "Weedle",
+    "cardId": "weedle_1",
+    "imageName": "weedle_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 162,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Bug Bite",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Grass"
+            ],
+            "effects": []
+        }
+    ]
+}

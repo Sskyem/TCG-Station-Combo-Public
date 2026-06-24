@@ -1,0 +1,30 @@
+{
+    "cardName": "Crustle",
+    "cardId": "crustle_1",
+    "imageName": "crustle_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 43,
+    "stage": 1,
+    "evolvesFrom": "Dwebble",
+    "hp": 190,
+    "type": "Fighting",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Stone Cutter",
+            "damage": 40,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 30 less damage from attacks.",
+            "attackCost": [
+                "Fighting",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

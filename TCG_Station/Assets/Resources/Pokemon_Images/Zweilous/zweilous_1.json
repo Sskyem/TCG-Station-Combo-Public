@@ -1,0 +1,30 @@
+{
+    "cardName": "Zweilous",
+    "cardId": "zweilous_1",
+    "imageName": "zweilous_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 151,
+    "stage": 1,
+    "evolvesFrom": "Deino",
+    "hp": 140,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Double Bite",
+            "damage": 40,
+            "attackDescription": "This attack triggers 2 times.",
+            "attackCost": [
+                "Fire",
+                "Dark"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

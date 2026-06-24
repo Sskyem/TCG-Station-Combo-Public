@@ -1,0 +1,30 @@
+{
+    "cardName": "Toxel",
+    "cardId": "toxel_1",
+    "imageName": "toxel_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 76,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Toxic Slap",
+            "damage": 30,
+            "attackDescription": "Your opponent's Active Pokemon is now Poisoned.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

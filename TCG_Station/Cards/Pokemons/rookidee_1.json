@@ -1,0 +1,23 @@
+{
+    "cardName": "Rookidee",
+    "cardId": "rookidee_1",
+    "imageName": "rookidee_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 178,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Flap",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

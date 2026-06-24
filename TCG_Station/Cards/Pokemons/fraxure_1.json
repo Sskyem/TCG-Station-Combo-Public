@@ -1,0 +1,30 @@
+{
+    "cardName": "Fraxure",
+    "cardId": "fraxure_1",
+    "imageName": "fraxure_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 103,
+    "stage": 1,
+    "evolvesFrom": "Axew",
+    "hp": 120,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Fructure Wound",
+            "damage": 60,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed.",
+            "attackCost": [
+                "Fighting",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

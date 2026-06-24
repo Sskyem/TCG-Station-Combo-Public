@@ -1,0 +1,24 @@
+{
+    "cardName": "Poliwhirl",
+    "cardId": "poliwhirl_1",
+    "imageName": "poliwhirl_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 170,
+    "stage": 1,
+    "evolvesFrom": "Poliwag",
+    "hp": 140,
+    "type": "Water",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Spiral Punch",
+            "damage": 60,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

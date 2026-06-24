@@ -1,0 +1,30 @@
+{
+    "cardName": "Sligoo",
+    "cardId": "sligoo_1",
+    "imageName": "sligoo_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 158,
+    "stage": 1,
+    "evolvesFrom": "Goomy",
+    "hp": 160,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Gooey Slap",
+            "damage": 60,
+            "attackDescription": "Your opponent's Active Pokemon is now Slowed.",
+            "attackCost": [
+                "Water",
+                "Psychic"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

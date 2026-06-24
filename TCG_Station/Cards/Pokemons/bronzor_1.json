@@ -1,0 +1,27 @@
+{
+    "cardName": "Bronzor",
+    "cardId": "bronzor_1",
+    "imageName": "bronzor_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 111,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 70,
+    "type": "Metal",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Metal Body",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 10 less damage from attacks.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "cardName": "Wartortle",
+    "cardId": "wartortle_1",
+    "imageName": "wartortle_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 8,
+    "stage": 1,
+    "evolvesFrom": "Squirtle",
+    "hp": 120,
+    "type": "Water",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Shell Attack",
+            "damage": 60,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 10 less damage from attacks.",
+            "attackCost": [
+                "Water",
+                "Water"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

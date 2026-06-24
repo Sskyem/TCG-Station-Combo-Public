@@ -1,0 +1,74 @@
+{
+  "run": "bc_20260611_072557",
+  "winners_only": true,
+  "profile": null,
+  "sources": [
+    "benchmark",
+    "interactive/algorithm_vs_algorithm",
+    "interactive/algorithm_vs_llm"
+  ],
+  "grad_accum": 32,
+  "max_games": 0,
+  "from_model": "D:\\PROJEKTY Desktop\\Projekty Unity\\TCG-Station-Combo\\ML Pipeline\\models\\bc_20260610_213859.pt",
+  "training_stage": "fine_tune",
+  "patch_no": null,
+  "patch_ts": null,
+  "games_selected": 48659,
+  "train_games": 44767,
+  "val_games": 3892,
+  "train_examples": 2120828,
+  "val_examples": 183481,
+  "epochs_requested": 4,
+  "seed": 1234,
+  "val_ratio": 0.08,
+  "device": "cuda",
+  "completed_epochs": 4,
+  "best_epoch": 4,
+  "val_acc": 0.968,
+  "val_loss": 0.0956,
+  "val_macro_acc": 0.97,
+  "val_accuracy_by_category": {
+    "AttachEnergy": 0.9695,
+    "Attack": 0.9854,
+    "PlayBasic": 0.9798,
+    "Retreat": 0.9452
+  },
+  "history": {
+    "epochs": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "train_loss": [
+      0.124,
+      0.1171,
+      0.1135,
+      0.1106
+    ],
+    "train_acc": [
+      0.9558,
+      0.9583,
+      0.9597,
+      0.9609
+    ],
+    "val_loss": [
+      0.1006,
+      0.098,
+      0.0964,
+      0.0956
+    ],
+    "val_acc": [
+      0.9662,
+      0.9672,
+      0.9675,
+      0.968
+    ],
+    "val_macro_acc": [
+      0.9682,
+      0.9691,
+      0.9695,
+      0.97
+    ]
+  }
+}

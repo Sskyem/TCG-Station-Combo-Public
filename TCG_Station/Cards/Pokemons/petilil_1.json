@@ -1,0 +1,29 @@
+{
+    "cardName": "Petilil",
+    "cardId": "petilil_1",
+    "imageName": "petilil_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 203,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Magical Leaf",
+            "damage": 10,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

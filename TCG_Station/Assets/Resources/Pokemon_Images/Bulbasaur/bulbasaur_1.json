@@ -1,0 +1,30 @@
+{
+    "cardName": "Bulbasaur",
+    "cardId": "bulbasaur_1",
+    "imageName": "bulbasaur_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 1,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Vine Absorb",
+            "damage": 30,
+            "attackDescription": "Heal 20 damage from this Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

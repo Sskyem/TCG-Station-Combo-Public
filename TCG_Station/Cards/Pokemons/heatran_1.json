@@ -1,0 +1,31 @@
+{
+    "cardName": "Heatran",
+    "cardId": "heatran_1",
+    "imageName": "heatran_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 87,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Metal",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Melting Steel",
+            "damage": 130,
+            "attackDescription": "This Pokemon also does 30 damage to itself.",
+            "attackCost": [
+                "Fire",
+                "Metal",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

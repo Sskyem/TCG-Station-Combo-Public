@@ -1,0 +1,35 @@
+{
+    "cardName": "Weepinbell",
+    "cardId": "weepinbell_1",
+    "imageName": "weepinbell_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 212,
+    "stage": 1,
+    "evolvesFrom": "Bellsprout",
+    "hp": 150,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Corrosive Acid",
+            "damage": 0,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed and Burned.",
+            "attackCost": [
+                "Grass",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

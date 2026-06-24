@@ -1,0 +1,21 @@
+{
+    "cardName": "Tynamo",
+    "cardId": "tynamo_1",
+    "imageName": "tynamo_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 147,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 70,
+    "type": "Lightning",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Tiny Charge",
+            "damage": 10,
+            "attackDescription": "",
+            "attackCost": [],
+            "effects": []
+        }
+    ]
+}

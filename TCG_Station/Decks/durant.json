@@ -1,0 +1,59 @@
+{
+    "deckName": "Durant",
+    "cards": [
+        {
+            "deckCardID": 80,
+            "cardId": "metapod_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 84,
+            "cardId": "scyther_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 79,
+            "cardId": "caterpie_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 81,
+            "cardId": "butterfree_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 85,
+            "cardId": "scizor_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 132,
+            "cardId": "durant_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Grass",
+        "Metal"
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "deckName": "Kammo-o",
+    "cards": [
+        {
+            "deckCardID": 107,
+            "cardId": "kommo-o_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 106,
+            "cardId": "hakamo-o_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 105,
+            "cardId": "jangmo-o_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 156,
+            "cardId": "kecleon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 48,
+            "cardId": "mankey_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 49,
+            "cardId": "primeape_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 127,
+            "cardId": "sabrina_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Lightning",
+        "Fighting"
+    ]
+}

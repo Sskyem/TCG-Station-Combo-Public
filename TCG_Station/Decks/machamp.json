@@ -1,0 +1,58 @@
+{
+    "deckName": "Machamp",
+    "cards": [
+        {
+            "deckCardID": 172,
+            "cardId": "machop_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 173,
+            "cardId": "machoke_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 174,
+            "cardId": "machamp_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 51,
+            "cardId": "tauros_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 46,
+            "cardId": "cubone_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 47,
+            "cardId": "marowak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fighting"
+    ]
+}

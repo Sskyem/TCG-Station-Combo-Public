@@ -1,0 +1,35 @@
+{
+    "cardName": "Toxtricity",
+    "cardId": "toxtricity_1",
+    "imageName": "toxtricity_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 77,
+    "stage": 1,
+    "evolvesFrom": "Toxel",
+    "hp": 170,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Sinister Surge",
+            "damage": 70,
+            "attackDescription": "This attack also does 20 damage to all of your Benched Pokemon. Take 2 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Lightning",
+                "Darkness"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

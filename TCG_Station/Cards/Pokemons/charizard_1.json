@@ -1,0 +1,32 @@
+{
+    "cardName": "Charizard",
+    "cardId": "charizard_1",
+    "imageName": "charizard_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 6,
+    "stage": 2,
+    "evolvesFrom": "Charmeleon",
+    "hp": 200,
+    "type": "Fire",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Crimson Storm",
+            "damage": 170,
+            "attackDescription": "Discard 2 random Energy from this Pokemon.",
+            "attackCost": [
+                "Fire",
+                "Fire",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

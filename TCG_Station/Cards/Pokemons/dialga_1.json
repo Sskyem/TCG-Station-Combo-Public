@@ -1,0 +1,30 @@
+{
+    "cardName": "Dialga",
+    "cardId": "dialga_1",
+    "imageName": "dialga_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 38,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Metal",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Heavy Metal",
+            "damage": 40,
+            "attackDescription": "Take 2 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Metal",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

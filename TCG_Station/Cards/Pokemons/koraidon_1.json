@@ -1,0 +1,36 @@
+{
+    "cardName": "Koraidon",
+    "cardId": "koraidon_1",
+    "imageName": "koraidon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 235,
+    "stage": 1,
+    "evolvesFrom": "Cyclizar",
+    "hp": 170,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Primordial Shred",
+            "damage": 40,
+            "attackDescription": "This attack triggers 2 times. Your opponent's Active Pokemon is now Exposed.",
+            "attackCost": [
+                "Fire",
+                "Fighting",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

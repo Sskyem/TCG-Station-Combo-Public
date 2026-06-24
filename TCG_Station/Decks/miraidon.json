@@ -1,0 +1,59 @@
+{
+    "deckName": "Miraidon",
+    "cards": [
+        {
+            "deckCardID": 234,
+            "cardId": "miraidon_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 233,
+            "cardId": "cyclizar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 217,
+            "cardId": "helioptile_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 218,
+            "cardId": "heliolisk_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 67,
+            "cardId": "raltz_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 68,
+            "cardId": "kirlia_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 69,
+            "cardId": "gardevoir_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 129,
+            "cardId": "diantha_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Lightning",
+        "Psychic"
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "deckName": "Garchomp",
+    "cards": [
+        {
+            "deckCardID": 169,
+            "cardId": "poliwag_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 170,
+            "cardId": "poliwhirl_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 171,
+            "cardId": "poliwrath_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 118,
+            "cardId": "gible_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 119,
+            "cardId": "gabite_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 120,
+            "cardId": "garchomp_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Water",
+        "Fighting"
+    ]
+}

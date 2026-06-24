@@ -1,0 +1,30 @@
+{
+    "cardName": "Machoke",
+    "cardId": "machoke_1",
+    "imageName": "machoke_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 173,
+    "stage": 1,
+    "evolvesFrom": "Machop",
+    "hp": 140,
+    "type": "Fighting",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Guard Breaker",
+            "damage": 50,
+            "attackDescription": "Your opponent's Active Pokemon is now Exposed.",
+            "attackCost": [
+                "Fighting",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Expose",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

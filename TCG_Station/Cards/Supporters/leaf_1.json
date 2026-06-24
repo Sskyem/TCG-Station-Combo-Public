@@ -1,0 +1,16 @@
+{
+    "cardName": "Leaf",
+    "cardId": "leaf_1",
+    "imageName": "leaf_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Supporter",
+    "deckCardId": 128,
+    "effectDescription": "Switch your Active Pokemon with 1 of your Benched Pokemon.",
+    "effects": [
+        {
+            "cardEffectType": "SwapSelf",
+            "cardEffectTarget": "Self",
+            "effectAmount": 1
+        }
+    ]
+}

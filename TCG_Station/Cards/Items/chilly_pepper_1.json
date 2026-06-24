@@ -1,0 +1,21 @@
+{
+    "cardName": "Chilly Pepper",
+    "cardId": "chilly_pepper_1",
+    "imageName": "chilly pepper_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Item",
+    "deckCardId": 137,
+    "effectDescription": "Heal 50 damage from your Active Pokemon. Your Active Pokemon is now Burned.",
+    "effects": [
+        {
+            "cardEffectType": "Heal",
+            "cardEffectTarget": "Self",
+            "effectAmount": 50
+        },
+        {
+            "cardEffectType": "Burn",
+            "cardEffectTarget": "Self",
+            "effectAmount": 20
+        }
+    ]
+}

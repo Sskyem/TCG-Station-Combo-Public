@@ -1,0 +1,36 @@
+{
+    "cardName": "Butterfree",
+    "cardId": "butterfree_1",
+    "imageName": "butterfree_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 81,
+    "stage": 2,
+    "evolvesFrom": "Metapod",
+    "hp": 160,
+    "type": "Grass",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Powder Heal",
+            "damage": 40,
+            "attackDescription": "Heal 30 damage from this Pokemon. Heal 30 from all your Benched Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

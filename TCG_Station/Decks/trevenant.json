@@ -1,0 +1,59 @@
+{
+    "deckName": "Trevenant",
+    "cards": [
+        {
+            "deckCardID": 231,
+            "cardId": "phantump_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 232,
+            "cardId": "trevenant_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 211,
+            "cardId": "bellsprout_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 212,
+            "cardId": "weepinbell_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 213,
+            "cardId": "victreebel_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 71,
+            "cardId": "shuppet_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 72,
+            "cardId": "banette_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 127,
+            "cardId": "sabrina_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Grass",
+        "Psychic"
+    ]
+}

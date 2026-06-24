@@ -1,0 +1,27 @@
+{
+    "cardName": "Raltz",
+    "cardId": "raltz_1",
+    "imageName": "raltz_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 67,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Teleport",
+            "damage": 0,
+            "attackDescription": "Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [],
+            "effects": [
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

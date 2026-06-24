@@ -1,0 +1,23 @@
+{
+    "cardName": "Eelektrik",
+    "cardId": "eelektrik_1",
+    "imageName": "eelektrik_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 148,
+    "stage": 1,
+    "evolvesFrom": "Tynamo",
+    "hp": 140,
+    "type": "Lightning",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Volt Wave",
+            "damage": 40,
+            "attackDescription": "",
+            "attackCost": [
+                "Lightning"
+            ],
+            "effects": []
+        }
+    ]
+}

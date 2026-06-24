@@ -1,0 +1,58 @@
+{
+    "deckName": "Zapdos",
+    "cards": [
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 182,
+            "cardId": "bellibolt_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 73,
+            "cardId": "pikachu_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 34,
+            "cardId": "zapdos_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 74,
+            "cardId": "raichu_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 181,
+            "cardId": "tadbulb_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Lightning"
+    ]
+}

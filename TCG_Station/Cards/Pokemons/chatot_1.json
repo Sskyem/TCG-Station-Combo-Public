@@ -1,0 +1,34 @@
+{
+    "cardName": "Chatot",
+    "cardId": "chatot_1",
+    "imageName": "chatot_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 124,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 100,
+    "type": "Colorless",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "A Capella",
+            "damage": 0,
+            "attackDescription": "Draw 1 cards. Your opponent's Active Pokemon is now Asleep.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Asleep",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

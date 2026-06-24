@@ -1,0 +1,32 @@
+{
+    "cardName": "Tyranitar",
+    "cardId": "tyranitar_1",
+    "imageName": "tyranitar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 210,
+    "stage": 2,
+    "evolvesFrom": "Pupitar",
+    "hp": 300,
+    "type": "Dragon",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Dark Mountain",
+            "damage": 160,
+            "attackDescription": "Discard 3 cards. If you can't, this does nothing.",
+            "attackCost": [
+                "Darkness",
+                "Darkness",
+                "Fighting",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DiscardHand",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 3
+                }
+            ]
+        }
+    ]
+}

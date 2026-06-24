@@ -1,0 +1,29 @@
+{
+    "cardName": "Helioptile",
+    "cardId": "helioptile_1",
+    "imageName": "helioptile_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 217,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Solar Beam",
+            "damage": 20,
+            "attackDescription": "This attack does 10 more damage for each Energy on this Pokemon.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "cardName": "Potion",
+    "cardId": "potion_1",
+    "imageName": "potion_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Item",
+    "deckCardId": 133,
+    "effectDescription": "Heal 30 damage from your Active Pokemon.",
+    "effects": [
+        {
+            "cardEffectType": "Heal",
+            "cardEffectTarget": "Self",
+            "effectAmount": 30
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "cardName": "Sneasel",
+    "cardId": "sneasel_1",
+    "imageName": "sneasel_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 36,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Darkness",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Claw",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

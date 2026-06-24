@@ -1,0 +1,30 @@
+{
+    "cardName": "Druddigon",
+    "cardId": "druddigon_1",
+    "imageName": "druddigon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 22,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Rough Skin",
+            "damage": 40,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 20 less damage from attacks. During your opponent's next turn, if this Pokemon is damaged by an attack, do 20 damage to the attacking Pokemon.",
+            "attackCost": [
+                "Fire",
+                "Water"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

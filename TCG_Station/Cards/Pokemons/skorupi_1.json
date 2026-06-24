@@ -1,0 +1,24 @@
+{
+    "cardName": "Skorupi",
+    "cardId": "skorupi_1",
+    "imageName": "skorupi_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 224,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Darkness",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Tail Smash",
+            "damage": 60,
+            "attackDescription": "",
+            "attackCost": [
+                "Darkness",
+                "Darkness"
+            ],
+            "effects": []
+        }
+    ]
+}

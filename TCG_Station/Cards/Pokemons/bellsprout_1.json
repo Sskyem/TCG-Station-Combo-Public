@@ -1,0 +1,29 @@
+{
+    "cardName": "Bellsprout",
+    "cardId": "bellsprout_1",
+    "imageName": "bellsprout_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 211,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Bind Down",
+            "damage": 20,
+            "attackDescription": "Your opponent's Active Pokemon is now Rooted.",
+            "attackCost": [
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

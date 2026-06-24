@@ -1,0 +1,31 @@
+{
+    "cardName": "Haxorus",
+    "cardId": "haxorus_1",
+    "imageName": "haxorus_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 104,
+    "stage": 2,
+    "evolvesFrom": "Fraxure",
+    "hp": 180,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Twin Axe",
+            "damage": 60,
+            "attackDescription": "This attack triggers 2 times.",
+            "attackCost": [
+                "Fighting",
+                "Metal",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

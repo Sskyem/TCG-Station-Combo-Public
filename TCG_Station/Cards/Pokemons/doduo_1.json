@@ -1,0 +1,29 @@
+{
+    "cardName": "Doduo",
+    "cardId": "doduo_1",
+    "imageName": "doduo_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 165,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Simultaneous Peck",
+            "damage": 10,
+            "attackDescription": "This attack triggers 2 times.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

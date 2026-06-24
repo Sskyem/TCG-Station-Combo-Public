@@ -1,0 +1,59 @@
+{
+    "deckName": "Noivern",
+    "cards": [
+        {
+            "deckCardID": 30,
+            "cardId": "noibat_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 31,
+            "cardId": "noivern_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 245,
+            "cardId": "inkay_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 246,
+            "cardId": "malmar_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 138,
+            "cardId": "ice_cream_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 156,
+            "cardId": "kecleon_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Psychic",
+        "Darkness"
+    ]
+}

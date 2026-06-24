@@ -1,0 +1,59 @@
+{
+    "deckName": "Vikavolt",
+    "cards": [
+        {
+            "deckCardID": 242,
+            "cardId": "grubbin_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 243,
+            "cardId": "charjabug_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 244,
+            "cardId": "vikavolt_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 240,
+            "cardId": "joltik_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 241,
+            "cardId": "galvantula_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 127,
+            "cardId": "sabrina_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Grass",
+        "Lightning"
+    ]
+}

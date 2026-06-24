@@ -1,0 +1,30 @@
+{
+    "cardName": "Togemaru",
+    "cardId": "togemaru_1",
+    "imageName": "togemaru_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 219,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Metal",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Spiky Rolling",
+            "damage": 30,
+            "attackDescription": "During your opponent's next turn, if this Pokemon is damaged by an attack, do 30 damage to the attacking Pokemon.",
+            "attackCost": [
+                "Lightning",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

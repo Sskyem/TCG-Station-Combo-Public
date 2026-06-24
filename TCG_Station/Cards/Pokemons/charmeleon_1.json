@@ -1,0 +1,24 @@
+{
+    "cardName": "Charmeleon",
+    "cardId": "charmeleon_1",
+    "imageName": "charmeleon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 5,
+    "stage": 1,
+    "evolvesFrom": "Charmander",
+    "hp": 140,
+    "type": "Fire",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Fire Claws",
+            "damage": 60,
+            "attackDescription": "",
+            "attackCost": [
+                "Fire",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

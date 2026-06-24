@@ -1,0 +1,24 @@
+{
+    "cardName": "Bagon",
+    "cardId": "bagon_1",
+    "imageName": "bagon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 19,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Bash",
+            "damage": 50,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

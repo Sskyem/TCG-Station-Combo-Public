@@ -1,0 +1,30 @@
+{
+    "cardName": "Frigibax",
+    "cardId": "frigibax_1",
+    "imageName": "frigibax_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 254,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Ice Fin",
+            "damage": 40,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Water",
+                "Metal"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "cardName": "Magmortar",
+    "cardId": "magmortar_1",
+    "imageName": "magmortar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 55,
+    "stage": 1,
+    "evolvesFrom": "Magmar",
+    "hp": 170,
+    "type": "Fire",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Magma Surge",
+            "damage": 60,
+            "attackDescription": "Your opponent's Active Pokemon is now Burned. Do 40 damage rather than the usual amount for this Special Condition.",
+            "attackCost": [
+                "Fire",
+                "Fire",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 40
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "cardName": "Beldum",
+    "cardId": "beldum_1",
+    "imageName": "beldum_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 88,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Metal",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Metal Claw",
+            "damage": 50,
+            "attackDescription": "",
+            "attackCost": [
+                "Metal",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

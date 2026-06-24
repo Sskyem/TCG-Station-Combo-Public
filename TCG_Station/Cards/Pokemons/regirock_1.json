@@ -1,0 +1,32 @@
+{
+    "cardName": "Regirock",
+    "cardId": "regirock_1",
+    "imageName": "regirock_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 41,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 180,
+    "type": "Fighting",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Tough Swing",
+            "damage": 70,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 40 less damage from attacks.",
+            "attackCost": [
+                "Fighting",
+                "Fighting",
+                "Fighting",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 40
+                }
+            ]
+        }
+    ]
+}

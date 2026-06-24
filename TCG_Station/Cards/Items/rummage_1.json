@@ -1,0 +1,21 @@
+{
+    "cardName": "Rummage",
+    "cardId": "rummage_1",
+    "imageName": "rummage_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Item",
+    "deckCardId": 134,
+    "effectDescription": "Draw 2 cards. Discard 2 cards. If you can't, this does nothing.",
+    "effects": [
+        {
+            "cardEffectType": "DrawCard",
+            "cardEffectTarget": "Self",
+            "effectAmount": 2
+        },
+        {
+            "cardEffectType": "DiscardHand",
+            "cardEffectTarget": "Self",
+            "effectAmount": 2
+        }
+    ]
+}

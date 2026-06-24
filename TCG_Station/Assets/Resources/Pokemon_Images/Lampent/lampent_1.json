@@ -1,0 +1,24 @@
+{
+    "cardName": "Lampent",
+    "cardId": "lampent_1",
+    "imageName": "lampent_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 93,
+    "stage": 1,
+    "evolvesFrom": "Litwick",
+    "hp": 100,
+    "type": "Psychic",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Will-O-Wisp",
+            "damage": 60,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

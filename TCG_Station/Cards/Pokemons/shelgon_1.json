@@ -1,0 +1,31 @@
+{
+    "cardName": "Shelgon",
+    "cardId": "shelgon_1",
+    "imageName": "shelgon_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 20,
+    "stage": 1,
+    "evolvesFrom": "Bagon",
+    "hp": 160,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Guard Press",
+            "damage": 70,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 30 less damage from attacks.",
+            "attackCost": [
+                "Fire",
+                "Water",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

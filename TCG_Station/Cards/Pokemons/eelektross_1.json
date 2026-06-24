@@ -1,0 +1,36 @@
+{
+    "cardName": "Eelektross",
+    "cardId": "eelektross_1",
+    "imageName": "eelektross_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 149,
+    "stage": 2,
+    "evolvesFrom": "Eelektrik",
+    "hp": 220,
+    "type": "Lightning",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Suction Shock",
+            "damage": 60,
+            "attackDescription": "Switch out your opponent's Active Pokemon. Your opponent's Active Pokemon is now Paralyzed.",
+            "attackCost": [
+                "Lightning",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapEnemy",
+                    "cardEffectTarget": "Opponent",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "Paralyze",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

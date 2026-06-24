@@ -1,0 +1,21 @@
+{
+    "cardName": "X-Speed",
+    "cardId": "x-speed_1",
+    "imageName": "x-speed_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Item",
+    "deckCardId": 239,
+    "effectDescription": "Discard 1 random Energy from your Active Pokemon. Switch your Active Pokemon with 1 of your Benched Pokemon.",
+    "effects": [
+        {
+            "cardEffectType": "EnergyDiscard",
+            "cardEffectTarget": "Self",
+            "effectAmount": 1
+        },
+        {
+            "cardEffectType": "SwapSelf",
+            "cardEffectTarget": "Self",
+            "effectAmount": 1
+        }
+    ]
+}

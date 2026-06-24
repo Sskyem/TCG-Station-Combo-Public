@@ -1,0 +1,16 @@
+{
+    "cardName": "Net",
+    "cardId": "net_1",
+    "imageName": "net_1.png",
+    "cardType": "Trainer",
+    "trainerSubType": "Item",
+    "deckCardId": 140,
+    "effectDescription": "Your opponent's Active Pokemon is now Rooted.",
+    "effects": [
+        {
+            "cardEffectType": "Root",
+            "cardEffectTarget": "EnemyActivePokemon",
+            "effectAmount": 1
+        }
+    ]
+}

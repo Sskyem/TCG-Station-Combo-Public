@@ -1,0 +1,15 @@
+TCG_Station/Assets/UNITY Stuff/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+TCG_Station/ProjectSettings/EditorBuildSettings.asset
+TCG_Station/ProjectSettings/ProjectSettings.asset
+TCG_Station/ProjectSettings/ShaderGraphSettings.asset
+.DS_Store
+TCG_Station/Assets/Resources/PerformanceTestRunInfo.json
+TCG_Station/Assets/UNITY Stuff/Settings/UniversalRP.asset
+TCG_Station/Assets/UNITY Stuff/UniversalRenderPipelineGlobalSettings.asset
+TCG_Station/ProjectSettings/GraphicsSettings.asset
+TCG_Station/Logs Export.zip
+Logs Export Patch -1.zip
+
+.env
+.env.*
+!.env.example

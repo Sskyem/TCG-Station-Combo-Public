@@ -1,0 +1,30 @@
+{
+    "cardName": "Annihilape",
+    "cardId": "annihilape_1",
+    "imageName": "annihilape_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 50,
+    "stage": 2,
+    "evolvesFrom": "Primeape",
+    "hp": 180,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Tantrum",
+            "damage": 130,
+            "attackDescription": "This Pokemon also does 30 damage to itself.",
+            "attackCost": [
+                "Psychic",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

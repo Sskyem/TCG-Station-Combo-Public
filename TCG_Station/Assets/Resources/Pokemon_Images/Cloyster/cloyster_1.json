@@ -1,0 +1,36 @@
+{
+    "cardName": "Cloyster",
+    "cardId": "cloyster_1",
+    "imageName": "cloyster_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 63,
+    "stage": 1,
+    "evolvesFrom": "Shellder",
+    "hp": 190,
+    "type": "Water",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Shell Grab",
+            "damage": 50,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 30 less damage from attacks. Your opponent's Active Pokemon is now Rooted.",
+            "attackCost": [
+                "Water",
+                "Water",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "Root",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

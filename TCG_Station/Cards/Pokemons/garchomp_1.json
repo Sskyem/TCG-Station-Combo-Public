@@ -1,0 +1,35 @@
+{
+    "cardName": "Garchomp",
+    "cardId": "garchomp_1",
+    "imageName": "garchomp_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 120,
+    "stage": 2,
+    "evolvesFrom": "Gabite",
+    "hp": 180,
+    "type": "Dragon",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Reckless Shearing",
+            "damage": 100,
+            "attackDescription": "Draw 1 cards. Discard 1 cards. If you can't, this does nothing.",
+            "attackCost": [
+                "Water",
+                "Fighting"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "DiscardHand",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

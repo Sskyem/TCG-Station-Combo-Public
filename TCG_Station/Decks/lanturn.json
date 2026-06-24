@@ -1,0 +1,59 @@
+{
+    "deckName": "Lanturn",
+    "cards": [
+        {
+            "deckCardID": 191,
+            "cardId": "lanturn_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 190,
+            "cardId": "chinchou_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 133,
+            "cardId": "potion_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 141,
+            "cardId": "mew_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 183,
+            "cardId": "stunfisk_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 165,
+            "cardId": "doduo_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 166,
+            "cardId": "dodrio_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 140,
+            "cardId": "net_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Water",
+        "Lightning"
+    ]
+}

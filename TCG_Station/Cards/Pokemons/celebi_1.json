@@ -1,0 +1,30 @@
+{
+    "cardName": "Celebi",
+    "cardId": "celebi_1",
+    "imageName": "celebi_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 91,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Grass",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Powerful Bloom",
+            "damage": 0,
+            "attackDescription": "This attack does 30 more damage for each Energy on this Pokemon.",
+            "attackCost": [
+                "Grass",
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                }
+            ]
+        }
+    ]
+}

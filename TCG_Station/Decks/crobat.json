@@ -1,0 +1,63 @@
+{
+    "deckName": "Crobat",
+    "cards": [
+        {
+            "deckCardID": 15,
+            "cardId": "crobat_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 14,
+            "cardId": "golbat_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 36,
+            "cardId": "sneasel_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 186,
+            "cardId": "darkrai_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 13,
+            "cardId": "zubat_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 37,
+            "cardId": "weavile_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 2
+        }
+    ],
+    "energyTypes": [
+        "Darkness"
+    ]
+}

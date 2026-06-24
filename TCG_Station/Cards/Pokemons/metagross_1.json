@@ -1,0 +1,35 @@
+{
+    "cardName": "Metagross",
+    "cardId": "metagross_1",
+    "imageName": "metagross_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 90,
+    "stage": 2,
+    "evolvesFrom": "Metang",
+    "hp": 240,
+    "type": "Metal",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Gravity Bend",
+            "damage": 20,
+            "attackDescription": "Switch this Pokemon with 1 of your Benched Pokemon. This attack does 20 more damage for each Energy on this Pokemon.",
+            "attackCost": [
+                "Metal",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "PowerUp",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

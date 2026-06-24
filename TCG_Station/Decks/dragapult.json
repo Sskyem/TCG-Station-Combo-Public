@@ -1,0 +1,59 @@
+{
+    "deckName": "Dragapult",
+    "cards": [
+        {
+            "deckCardID": 26,
+            "cardId": "dreepy_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 226,
+            "cardId": "deoxys_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 27,
+            "cardId": "drakloak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 33,
+            "cardId": "moltres_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 137,
+            "cardId": "chilly_pepper_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 130,
+            "cardId": "irida_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 138,
+            "cardId": "ice_cream_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 28,
+            "cardId": "dragapult_1",
+            "count": 3
+        }
+    ],
+    "energyTypes": [
+        "Fire",
+        "Psychic"
+    ]
+}

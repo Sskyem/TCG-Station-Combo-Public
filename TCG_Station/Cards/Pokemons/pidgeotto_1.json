@@ -1,0 +1,23 @@
+{
+    "cardName": "Pidgeotto",
+    "cardId": "pidgeotto_1",
+    "imageName": "pidgeotto_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 116,
+    "stage": 1,
+    "evolvesFrom": "Pidgey",
+    "hp": 120,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Wing Attack",
+            "damage": 40,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

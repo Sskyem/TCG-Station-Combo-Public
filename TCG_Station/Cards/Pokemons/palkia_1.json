@@ -1,0 +1,37 @@
+{
+    "cardName": "Palkia",
+    "cardId": "palkia_1",
+    "imageName": "palkia_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 39,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Water",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Dimensional Storm",
+            "damage": 150,
+            "attackDescription": "This attack also does 20 damage to all your opponent's Benched Pokemon. Discard 3 random Energy from this Pokemon.",
+            "attackCost": [
+                "Water",
+                "Water",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "BenchDmg",
+                    "cardEffectTarget": "EnemyBenchPokemon",
+                    "effectAmount": 20
+                },
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 3
+                }
+            ]
+        }
+    ]
+}

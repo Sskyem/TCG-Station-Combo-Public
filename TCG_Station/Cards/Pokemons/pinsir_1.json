@@ -1,0 +1,35 @@
+{
+    "cardName": "Pinsir",
+    "cardId": "pinsir_1",
+    "imageName": "pinsir_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 78,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Grass",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Horn Crunch",
+            "damage": 40,
+            "attackDescription": "This Pokemon also does 10 damage to itself. This attack triggers 2 times.",
+            "attackCost": [
+                "Grass",
+                "Grass"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DealDamage",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "Multiattack",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 2
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "cardName": "Vulpix",
+    "cardId": "vulpix_1",
+    "imageName": "vulpix_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 193,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Fire",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Flare",
+            "damage": 30,
+            "attackDescription": "",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

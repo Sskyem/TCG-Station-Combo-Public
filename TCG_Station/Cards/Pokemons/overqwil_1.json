@@ -1,0 +1,35 @@
+{
+    "cardName": "Overqwil",
+    "cardId": "overqwil_1",
+    "imageName": "overqwil_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 66,
+    "stage": 1,
+    "evolvesFrom": "Quilfish",
+    "hp": 170,
+    "type": "Darkness",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Poison Spikes",
+            "damage": 0,
+            "attackDescription": "During your opponent's next turn, if this Pokemon is damaged by an attack, do 50 damage to the attacking Pokemon. Your opponent's Active Pokemon is now Poisoned.",
+            "attackCost": [
+                "Darkness",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Counterattack",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 50
+                },
+                {
+                    "cardEffectType": "Poison",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 10
+                }
+            ]
+        }
+    ]
+}

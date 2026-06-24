@@ -1,0 +1,64 @@
+{
+    "deckName": "Leafdrain",
+    "cards": [
+        {
+            "deckCardID": 211,
+            "cardId": "bellsprout_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 212,
+            "cardId": "weepinbell_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 205,
+            "cardId": "seedot_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 206,
+            "cardId": "nuzleaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 207,
+            "cardId": "shiftry_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 127,
+            "cardId": "sabrina_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 213,
+            "cardId": "victreebel_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 186,
+            "cardId": "darkrai_1",
+            "count": 1
+        }
+    ],
+    "energyTypes": [
+        "Grass",
+        "Darkness"
+    ]
+}

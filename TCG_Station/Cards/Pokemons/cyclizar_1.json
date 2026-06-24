@@ -1,0 +1,34 @@
+{
+    "cardName": "Cyclizar",
+    "cardId": "cyclizar_1",
+    "imageName": "cyclizar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 233,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Colorless",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Overacceleration",
+            "damage": 0,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon. Switch this Pokemon with 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

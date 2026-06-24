@@ -1,0 +1,24 @@
+{
+    "cardName": "Vibrava",
+    "cardId": "vibrava_1",
+    "imageName": "vibrava_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 154,
+    "stage": 1,
+    "evolvesFrom": "Trapinch",
+    "hp": 100,
+    "type": "Dragon",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Cutting Wind",
+            "damage": 80,
+            "attackDescription": "",
+            "attackCost": [
+                "Grass",
+                "Fighting"
+            ],
+            "effects": []
+        }
+    ]
+}

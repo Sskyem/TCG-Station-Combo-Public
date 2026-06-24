@@ -1,0 +1,37 @@
+{
+    "cardName": "Avalugg",
+    "cardId": "avalugg_1",
+    "imageName": "avalugg_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 229,
+    "stage": 1,
+    "evolvesFrom": "Bergmite",
+    "hp": 210,
+    "type": "Water",
+    "retreatCost": 4,
+    "attacks": [
+        {
+            "attackName": "Avalanche",
+            "damage": 90,
+            "attackDescription": "During your opponent's next turn, this Pokemon takes 40 less damage from attacks. This Pokemon is now Slowed.",
+            "attackCost": [
+                "Water",
+                "Water",
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DmgTakenRed",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 40
+                },
+                {
+                    "cardEffectType": "Slow",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

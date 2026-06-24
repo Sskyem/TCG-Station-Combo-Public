@@ -1,0 +1,64 @@
+{
+    "deckName": "Frosmoth Stall",
+    "cards": [
+        {
+            "deckCardID": 252,
+            "cardId": "snom_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 253,
+            "cardId": "frosmoth_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 79,
+            "cardId": "caterpie_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 80,
+            "cardId": "metapod_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 81,
+            "cardId": "butterfree_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 126,
+            "cardId": "jasmine_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 39,
+            "cardId": "palkia_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 137,
+            "cardId": "chilly_pepper_1",
+            "count": 2
+        }
+    ],
+    "energyTypes": [
+        "Grass",
+        "Water"
+    ]
+}

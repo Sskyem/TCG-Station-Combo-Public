@@ -1,0 +1,24 @@
+{
+    "cardName": "Scizor",
+    "cardId": "scizor_1",
+    "imageName": "scizor_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 85,
+    "stage": 1,
+    "evolvesFrom": "Scyther",
+    "hp": 130,
+    "type": "Metal",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "X-Scissor",
+            "damage": 70,
+            "attackDescription": "",
+            "attackCost": [
+                "Metal",
+                "Colorless"
+            ],
+            "effects": []
+        }
+    ]
+}

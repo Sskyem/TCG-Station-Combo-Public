@@ -1,0 +1,29 @@
+{
+    "cardName": "Lapras",
+    "cardId": "lapras_1",
+    "imageName": "lapras_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 64,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Water",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Wave Splash",
+            "damage": 20,
+            "attackDescription": "Take 1 Energy and put it on 1 of your Benched Pokemon.",
+            "attackCost": [
+                "Water"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

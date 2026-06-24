@@ -1,0 +1,26 @@
+{
+    "cardName": "Ultra Necrozma",
+    "cardId": "ultra_necrozma_1",
+    "imageName": "ultra necrozma_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 29,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 160,
+    "type": "Dragon",
+    "retreatCost": 3,
+    "attacks": [
+        {
+            "attackName": "Shoegazing",
+            "damage": 140,
+            "attackDescription": "",
+            "attackCost": [
+                "Psychic",
+                "Psychic",
+                "Metal",
+                "Metal"
+            ],
+            "effects": []
+        }
+    ]
+}

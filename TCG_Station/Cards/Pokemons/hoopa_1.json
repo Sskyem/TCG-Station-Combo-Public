@@ -1,0 +1,36 @@
+{
+    "cardName": "Hoopa",
+    "cardId": "hoopa_1",
+    "imageName": "hoopa_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 146,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 120,
+    "type": "Psychic",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Hyperspace Ring",
+            "damage": 70,
+            "attackDescription": "Switch this Pokemon with 1 of your Benched Pokemon. Switch out your opponent's Active Pokemon.",
+            "attackCost": [
+                "Psychic",
+                "Psychic",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "SwapSelf",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                },
+                {
+                    "cardEffectType": "SwapEnemy",
+                    "cardEffectTarget": "Opponent",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

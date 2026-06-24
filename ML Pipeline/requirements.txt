@@ -1,0 +1,7 @@
+numpy>=1.26
+torch>=2.3
+fastapi>=0.111
+uvicorn[standard]>=0.30
+pydantic>=2.7
+# Optional: fast JSON parsing for decision-log scans (tcg_ml.logs falls back to stdlib json).
+orjson>=3.10

@@ -1,0 +1,30 @@
+{
+    "cardName": "Magmar",
+    "cardId": "magmar_1",
+    "imageName": "magmar_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 54,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 110,
+    "type": "Fire",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Searing Flame",
+            "damage": 20,
+            "attackDescription": "Your opponent's Active Pokemon is now Burned.",
+            "attackCost": [
+                "Fire",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Burn",
+                    "cardEffectTarget": "EnemyActivePokemon",
+                    "effectAmount": 20
+                }
+            ]
+        }
+    ]
+}

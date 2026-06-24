@@ -1,0 +1,36 @@
+{
+    "cardName": "Reshiram",
+    "cardId": "reshiram_1",
+    "imageName": "reshiram_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 101,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 140,
+    "type": "Dragon",
+    "retreatCost": 2,
+    "attacks": [
+        {
+            "attackName": "Virtuous Flame",
+            "damage": 90,
+            "attackDescription": "Heal 30 damage from this Pokemon. Discard 1 random Energy from this Pokemon.",
+            "attackCost": [
+                "Fire",
+                "Lightning",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 30
+                },
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

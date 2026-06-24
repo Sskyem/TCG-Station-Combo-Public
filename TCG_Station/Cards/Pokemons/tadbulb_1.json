@@ -1,0 +1,35 @@
+{
+    "cardName": "Tadbulb",
+    "cardId": "tadbulb_1",
+    "imageName": "tadbulb_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 181,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Lightning",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Shake and Discharge",
+            "damage": 30,
+            "attackDescription": "Take 2 Energy and put it on 1 of your Benched Pokemon. Discard 1 random Energy from this Pokemon.",
+            "attackCost": [
+                "Colorless",
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "EnergyRamp",
+                    "cardEffectTarget": "BenchPokemon",
+                    "effectAmount": 2
+                },
+                {
+                    "cardEffectType": "EnergyDiscard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}

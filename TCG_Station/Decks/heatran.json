@@ -1,0 +1,64 @@
+{
+    "deckName": "Heatran",
+    "cards": [
+        {
+            "deckCardID": 87,
+            "cardId": "heatran_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 111,
+            "cardId": "bronzor_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 112,
+            "cardId": "bronzong_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 56,
+            "cardId": "slugma_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 57,
+            "cardId": "magcargo_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 128,
+            "cardId": "leaf_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 139,
+            "cardId": "brock_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 125,
+            "cardId": "erika_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 131,
+            "cardId": "professor_oak_1",
+            "count": 2
+        },
+        {
+            "deckCardID": 135,
+            "cardId": "pokemon_center_1",
+            "count": 3
+        },
+        {
+            "deckCardID": 239,
+            "cardId": "x-speed_1",
+            "count": 1
+        }
+    ],
+    "energyTypes": [
+        "Fire",
+        "Metal"
+    ]
+}

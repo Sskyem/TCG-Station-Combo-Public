@@ -1,0 +1,23 @@
+{
+    "cardName": "Haunter",
+    "cardId": "haunter_1",
+    "imageName": "haunter_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 11,
+    "stage": 1,
+    "evolvesFrom": "Gastly",
+    "hp": 100,
+    "type": "Psychic",
+    "retreatCost": 0,
+    "attacks": [
+        {
+            "attackName": "Spooky Shot",
+            "damage": 40,
+            "attackDescription": "",
+            "attackCost": [
+                "Psychic"
+            ],
+            "effects": []
+        }
+    ]
+}

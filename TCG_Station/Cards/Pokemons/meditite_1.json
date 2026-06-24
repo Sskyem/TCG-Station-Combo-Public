@@ -1,0 +1,34 @@
+{
+    "cardName": "Meditite",
+    "cardId": "meditite_1",
+    "imageName": "meditite_1.png",
+    "cardType": "Pokemon",
+    "deckCardId": 52,
+    "stage": 0,
+    "evolvesFrom": "",
+    "hp": 90,
+    "type": "Fighting",
+    "retreatCost": 1,
+    "attacks": [
+        {
+            "attackName": "Calm Mind",
+            "damage": 0,
+            "attackDescription": "Heal 10 damage from this Pokemon. Draw 1 cards.",
+            "attackCost": [
+                "Colorless"
+            ],
+            "effects": [
+                {
+                    "cardEffectType": "Heal",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 10
+                },
+                {
+                    "cardEffectType": "DrawCard",
+                    "cardEffectTarget": "Self",
+                    "effectAmount": 1
+                }
+            ]
+        }
+    ]
+}
